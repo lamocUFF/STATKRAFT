@@ -898,7 +898,7 @@ fi
 mkdir GFS   >./LOG.prn 2>&1 
 cd GFS       >>./LOG.prn 2>&1 
 dir_data=`date +"%Y%m%d"`
-grads_data=`date +"00Z%d%b%Y"`
+grads_data=`date +"12Z%d%b%Y"`
 mkdir $dir_data  >>./LOG.prn 2>&1
 cd $dir_data   >>./LOG.prn 2>&1
 cp ../../gfs.gs .
