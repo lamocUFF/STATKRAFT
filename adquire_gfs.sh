@@ -172,7 +172,7 @@ echo "t=t+2"                                    >>figuras_gfs.gs
 echo "endwhile"                                    >>figuras_gfs.gs
 echo "'quit'" >>figuras_gfs.gs 
 
-
+grads -lbc "figuras_gfs.gs"  >>./LOG.prn 2>&1
 cd ..
 cd ..
 
