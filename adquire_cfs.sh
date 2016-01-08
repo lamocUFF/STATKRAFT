@@ -42,7 +42,7 @@ data=`date +"%Y%m%d"`
 DATA0=`date +"%d/%m/%Y"`
 DATA1=`date +"%d/%m/%Y" -d "7 days"`
 DATA2=`date +"%d/%m/%Y" -d "1 days"`
-grads_data=`date +"00Z%d%b%Y"`
+grads_data=`date +"12Z%d%b%Y"`
 #
 # Existem duas rodadas do modelo ao dia. Uma as 00Z e outra as 12Z
 # se nada for informada na linha de comando assume-se 00z

@@ -56,6 +56,8 @@ echo "endvars">>gfsens.ctl
 
 
 grads -lbc "gfs.gs"  >>./LOG.prn 2>&1
+grads -lbc "gfs_1P0.gs"  >>./LOG.prn 2>&1
+
 #grads -lbc "gfsens.gs"  >>./LOG.prn 2>&1
 
 cd ..
