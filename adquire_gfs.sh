@@ -165,6 +165,7 @@ echo "'set map 15 1 6'" >>figuras_gfs.gs
 echo "'draw map'" >>figuras_gfs.gs     
 echo "'cbarn.gs'"                                            >>figuras_gfs.gs
 echo "'draw shp ../../CONTORNOS/SHAPES/BRASIL.shp'"     >>figuras_gfs.gs
+echo "'plota.gs'"                             >>figuras_gfs.gs
 #echo  "plotausina(bacia,page)"                          >>figuras_gfs.gs  
 echo "'plota_hidrografia.gs'"                          >>figuras_gfs.gs
 echo "'printim prec_diaria_'datah'.png white'"      >>figuras_gfs.gs
