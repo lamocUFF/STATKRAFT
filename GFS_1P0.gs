@@ -124,7 +124,7 @@ endwhile     q
 
 function baixagfs(config)
 *'sdfopen http://nomads.ncep.noaa.gov:9090/dods/gfs_0p25/gfs'config'/gfs_0p25_00z'
-'sdfopen http://nomads.ncep.noaa.gov:9090/dods/gfs_0p25/gfs'config'/gfs_1p00_00z'
+'sdfopen http://nomads.ncep.noaa.gov:9090/dods/gfs_1p00/gfs'config'/gfs_1p00_00z'
 
 'set lon 280 330'
 'set lat -40 10'
