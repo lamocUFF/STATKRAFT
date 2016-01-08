@@ -173,6 +173,26 @@ echo "t=t+2"                                    >>figuras_gfs.gs
 echo "endwhile"                                    >>figuras_gfs.gs
 echo "'quit'" >>figuras_gfs.gs 
 
+
+#
+#  cria arquivo de plotagem das bacias no mapa do brasil 
+# 
+echo "'set line 15 1 1'"                                             >plota.gs
+echo "'draw shp ../../CONTORNOS/SHAPES/BRASIL.shp '"                 >>plota.gs
+echo "'set line 1 1 1'"                                              >>plota.gs
+for file in `ls -1 ../../CONTORNOS/SHAPES/contorno*.shp`
+do
+echo "'draw shp "$file"'"                                            >>plota.gs
+done
+#
+#  plota a hidrografia  
+# 
+echo "'set line 5 1 1'"                                             >plota_hidrografia.gs
+echo "'draw shp ../../CONTORNOS/SHAPES/hidrografia.shp '"                 >>plota_hidrografia.gs
+echo "'set line 5 1 1'"                                             >>plota_hidrografia.gs
+
+
+
 grads -lbc "figuras_gfs.gs"  >>./LOG.prn 2>&1
 cd ..
 cd ..
