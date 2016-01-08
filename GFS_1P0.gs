@@ -133,7 +133,7 @@ t=1
 'set gxout fwrite'
 while (t<=33)
 'set t 't
-'d pratesfc*3*3600'
+'d pratesfc*12*3600'
 t=t+1
 endwhile
 'disable fwrite'
