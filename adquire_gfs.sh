@@ -44,6 +44,18 @@ echo "vars 1">>gfs.ctl
 echo "chuva  0  t,y,x  ** chuva mm">>gfs.ctl
 echo "endvars">>gfs.ctl
 
+echo "dset  "$dir_data"_1P0.bin" > gfs_1P0.ctl
+echo "title GFS 1.0 deg starting from 00Z08jul2015, downloaded Jul 08 04:44 UTC" >>gfs_1P0.ctl
+echo "undef 9.999e+20" >>gfs_1P0.ctl
+echo "xdef 51 linear -80 1.00" >>gfs_1P0.ctl
+echo "ydef 51 linear -40 1.00" >>gfs_1P0.ctl
+echo "zdef 1 levels 1000">>gfs_1P0.ctl
+echo "tdef 33 linear "$grads_data" 180mn" >>gfs_1P0.ctl 
+echo "vars 1">>gfs_1P0.ctl
+echo "chuva  0  t,y,x  ** chuva mm">>gfs_1P0.ctl
+echo "endvars">>gfs_1P0.ctl
+
+
 echo "dset  "$dir_data".ens.bin" > gfsens.ctl
 echo "title GFS 0.25 deg starting from 00Z08jul2015, downloaded Jul 08 04:44 UTC" >>gfsens.ctl
 echo "undef 9.999e+20" >>gfsens.ctl

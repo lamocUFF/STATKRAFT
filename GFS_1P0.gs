@@ -23,7 +23,7 @@ pi=extrai(data)
 
 function  extrai(data)
 
-'open gfs.ctl'
+'open gfs_1P0.ctl'
 
 
 *
@@ -56,7 +56,7 @@ status2=status
 precip=0
 conta=0
 t=1
-while (t<=33)
+while (t<=31)
 'set t ' t
 'q time'
 dataprev=subwrd(result,3)
@@ -113,7 +113,7 @@ t=t+2
 endwhile
 
 ************  da linha 36
-endwhile     
+endwhile     q
 'return'
 
 
@@ -129,9 +129,9 @@ function baixagfs(config)
 'set lon 280 330'
 'set lat -40 10'
 t=1
-'set fwrite 'config'.bin'
+'set fwrite 'config'_1P0.bin'
 'set gxout fwrite'
-while (t<=81)
+while (t<=33)
 'set t 't
 'd pratesfc*3*3600'
 t=t+1
