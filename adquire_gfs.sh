@@ -29,6 +29,7 @@ mkdir $dir_data  >>./LOG.prn 2>&1
 cd $dir_data   >>./LOG.prn 2>&1
 cp ../../gfs.gs .
 cp ../../gfsens.gs .
+cp ../../GFS_1P0.gs .
 
 echo $dir_data >gfs.config   
 
