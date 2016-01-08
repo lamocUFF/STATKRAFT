@@ -55,7 +55,7 @@ xxx=write("todomundo.prn",label' 'bacia,append)
 status2=status
 precip=0
 conta=0
-t=0
+t=1
 while (t<=31)
 'set t ' t
 'q time'

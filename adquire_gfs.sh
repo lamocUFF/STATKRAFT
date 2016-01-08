@@ -25,6 +25,8 @@ mkdir GFS   >./LOG.prn 2>&1
 cd GFS       >>./LOG.prn 2>&1 
 dir_data=`date +"%Y%m%d"`
 grads_data=`date +"12Z%d%b%Y"`
+grads_data2=`date +"00Z%d%b%Y"`
+
 mkdir $dir_data  >>./LOG.prn 2>&1
 cd $dir_data   >>./LOG.prn 2>&1
 cp ../../gfs.gs .
@@ -50,7 +52,7 @@ echo "undef 9.999e+20" >>gfs_1P0.ctl
 echo "xdef 51 linear -80 1.00" >>gfs_1P0.ctl
 echo "ydef 51 linear -40 1.00" >>gfs_1P0.ctl
 echo "zdef 1 levels 1000">>gfs_1P0.ctl
-echo "tdef 33 linear "$grads_data" 12hr" >>gfs_1P0.ctl 
+echo "tdef 33 linear "$grads_data2" 12hr" >>gfs_1P0.ctl 
 echo "vars 1">>gfs_1P0.ctl
 echo "chuva  0  t,y,x  ** chuva mm">>gfs_1P0.ctl
 echo "endvars">>gfs_1P0.ctl
