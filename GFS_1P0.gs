@@ -113,7 +113,7 @@ t=t+2
 endwhile
 
 ************  da linha 36
-endwhile     q
+endwhile    
 'return'
 
 
