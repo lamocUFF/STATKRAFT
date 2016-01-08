@@ -25,7 +25,7 @@ function  extrai(data)
 
 'open gfs_1P0.ctl'
 
-
+say '------------->'data
 *
 *  leio arquivo bacia e processo 
 * para cada item dentro desse arquivo
@@ -55,7 +55,7 @@ xxx=write("todomundo.prn",label' 'bacia,append)
 status2=status
 precip=0
 conta=0
-t=1
+t=0
 while (t<=31)
 'set t ' t
 'q time'
