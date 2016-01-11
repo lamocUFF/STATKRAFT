@@ -271,7 +271,7 @@ echo "dia6=substr(datah,4,2)"                       >>figuras_gfs.gs
 
 echo "'coresdiaria.gs'"                                         >>figuras_gfs.gs
 echo "'set gxout shaded'"                                    >>figuras_gfs.gs
-echo "'d sum(chuva,t='t',t='t+1')'"                                 >>figuras_gfs.gs
+echo "'d sum(chuva,t='t',t='t+7')'"                                 >>figuras_gfs.gs
 echo "'draw string 2.5 8.3 PRECIPITACAO DIARIA GFS '"  >>figuras_gfs.gs
 echo "'draw string 2.5 8.1 RODADA :'dia1'/'mes1'/'ano1"               >>figuras_gfs.gs
 echo "'draw string 2.5 7.9 DIA    :'dia6'/'mes6'/'ano6"      >>figuras_gfs.gs
@@ -288,7 +288,7 @@ echo "'plota.gs'"                             >>figuras_gfs.gs
 #echo  "plotausina(bacia,page)"                          >>figuras_gfs.gs  
 echo "'plota_hidrografia.gs'"                          >>figuras_gfs.gs
 echo "'printim prec_diaria_'datah'.0P25.png white'"      >>figuras_gfs.gs
-echo "t=t+2"                                    >>figuras_gfs.gs
+echo "t=t+8"                                    >>figuras_gfs.gs
 echo "endwhile"                                    >>figuras_gfs.gs
 echo "'quit'" >>figuras_gfs.gs 
 
