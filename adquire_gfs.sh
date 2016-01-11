@@ -194,6 +194,105 @@ echo "'set line 5 1 1'"                                             >>plota_hidr
 
 
 grads -lbc "figuras_gfs.gs"  >>./LOG.prn 2>&1
+
+
+#-----------------------------------------------------------------------------------------
+#  cria o script para data operativa por bacia cadastrada
+#  as bacias estao cadastradas em CADASTRO/CADASTRADAS
+# ver documentacao para maiores detalhes
+#
+echo "*"                                                              >figuras_gfs.gs
+echo "* esse script é auto gerado. documentação em adquire_eta.sh"   >>figuras_gfs.gs
+echo "*By reginaldo.venturadesa@gmail.com "                             >>figuras_gfs.gs
+echo "'open gfs.ctl'"            >>figuras_gfs.gs
+#echo "*'set mpdset hires'"               >>figuras_gfs.gs
+echo "'set gxout shaded'"               >>figuras_gfs.gs
+#
+# pega parametros de execucao do grads
+# se é retrato ou paisagem
+#
+echo "'q gxinfo'"   >>figuras_gfs.gs
+echo "var=sublin(result,2)"  >>figuras_gfs.gs
+echo "page=subwrd(var,4)" >>figuras_gfs.gs
+echo "*say page" >>figuras_gfs.gs
+#
+# se for retrato cria vpage
+#
+# echo "if (page ="8.5") " >>figuras_gfs.gs
+# echo "'set parea 0.5 8.5 1.5 10.2'" >>figuras_gfs.gs
+# echo "endif"                                  >>figuras_gfs.gs
+#
+#  data RODADA
+#
+echo "'set t  0'"                     >>figuras_gfs.gs
+echo "'q time'"                         >>figuras_gfs.gs
+echo "var0=subwrd(result,3)"            >>figuras_gfs.gs
+
+
+
+
+#
+# ESCALA  ATUAL 
+#
+echo "* escala SUGERIDA ">coresdiaria.gs
+echo "*">>cores.gscoresdiaria
+echo "'define_colors.gs'">>coresdiaria.gs
+echo "'set rgb 99 251 94 107'">>coresdiaria.gs
+echo "'set clevs    05 10 15 20 25 30 35  50  70  100  150'">>coresdiaria.gs
+echo "'set ccols 00 44 45 47 49 34 37 39  22  23  27    29   99'  ">>coresdiaria.gs
+
+echo "'set lon -80.0000   -30.0000   '"                     >>figuras_gfs.gs
+echo "'set lat   -35 06.0000         ' "                                    >>figuras_gfs.gs
+echo "'set t 1 last'"                     >>figuras_gfs.gs
+echo "'q time'"                         >>figuras_gfs.gs
+echo "var1=subwrd(result,3)"            >>figuras_gfs.gs
+echo "ano1=substr(var1,9,4)"                       >>figuras_gfs.gs
+echo "mes1=substr(var1,6,3)"                       >>figuras_gfs.gs
+echo "dia1=substr(var1,4,2)"                       >>figuras_gfs.gs
+
+echo " t=1"                                    >>figuras_gfs.gs
+echo " while (t<=33)"                                    >>figuras_gfs.gs
+echo "'c'"   >>figuras_gfs.gs
+# data inicial previsao 
+
+
+
+
+echo "'set t 't"                                    >>figuras_gfs.gs
+echo "'q time'"                                    >>figuras_gfs.gs
+echo "datah=subwrd(result,3) "                                    >>figuras_gfs.gs
+# data 7 dias
+echo "ano6=substr(datah,9,4)"                       >>figuras_gfs.gs
+echo "mes6=substr(datah,6,3)"                       >>figuras_gfs.gs
+echo "dia6=substr(datah,4,2)"                       >>figuras_gfs.gs
+
+
+
+
+echo "'coresdiaria.gs'"                                         >>figuras_gfs.gs
+echo "'set gxout shaded'"                                    >>figuras_gfs.gs
+echo "'d sum(chuva,t='t',t='t+1')'"                                 >>figuras_gfs.gs
+echo "'draw string 2.5 8.3 PRECIPITACAO DIARIA GFS '"  >>figuras_gfs.gs
+echo "'draw string 2.5 8.1 RODADA :'dia1'/'mes1'/'ano1"               >>figuras_gfs.gs
+echo "'draw string 2.5 7.9 DIA    :'dia6'/'mes6'/'ano6"      >>figuras_gfs.gs
+#echo "'draw string 2.5 8.1 RODADA :"$DATA0" - "$hora"Z'"     >>figuras_gfs.gs
+#echo "'draw string 2.5 7.9 Periodo:'datah"    >>figuras_gfs.gs
+echo "'set rgb 50   255   255    255'" >>figuras_gfs.gs
+echo "'basemap.gs O 50 0 M'" >>figuras_gfs.gs
+echo "'set mpdset hires'" >>figuras_gfs.gs
+echo "'set map 15 1 6'" >>figuras_gfs.gs
+echo "'draw map'" >>figuras_gfs.gs     
+echo "'cbarn.gs'"                                            >>figuras_gfs.gs
+echo "'draw shp ../../CONTORNOS/SHAPES/BRASIL.shp'"     >>figuras_gfs.gs
+echo "'plota.gs'"                             >>figuras_gfs.gs
+#echo  "plotausina(bacia,page)"                          >>figuras_gfs.gs  
+echo "'plota_hidrografia.gs'"                          >>figuras_gfs.gs
+echo "'printim prec_diaria_'datah'.0P25.png white'"      >>figuras_gfs.gs
+echo "t=t+2"                                    >>figuras_gfs.gs
+echo "endwhile"                                    >>figuras_gfs.gs
+echo "'quit'" >>figuras_gfs.gs 
+
+grads -lbc "figuras_gfs.gs"  >>./LOG.prn 2>&1
 cd ..
 cd ..
 
