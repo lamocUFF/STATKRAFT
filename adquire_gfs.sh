@@ -251,7 +251,7 @@ echo "mes1=substr(var1,6,3)"                       >>figuras_gfs.gs
 echo "dia1=substr(var1,4,2)"                       >>figuras_gfs.gs
 
 echo " t=1"                                    >>figuras_gfs.gs
-echo " while (t<=33)"                                    >>figuras_gfs.gs
+echo " while (t<=81)"                                    >>figuras_gfs.gs
 echo "'c'"   >>figuras_gfs.gs
 # data inicial previsao 
 
