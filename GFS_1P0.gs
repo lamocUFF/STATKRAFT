@@ -95,7 +95,7 @@ valor=subwrd(var,4)
 if (valor >=0 )
 precip=precip+valor
 conta=conta+1
-yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 't,append)
+yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 'precip' 't,append)
 endif 
 *ay result
 endif
