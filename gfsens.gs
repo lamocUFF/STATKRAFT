@@ -56,7 +56,7 @@ status2=status
 precip=0
 conta=0
 t=1
-while (t<=31)
+while (t<=61)
 'set t ' t
 'q time'
 dataprev=subwrd(result,3)
@@ -89,14 +89,8 @@ xlat=subwrd(coord,2)
 *
 
 
-0
-6
-12
-18
-00
 
-e=1
-while (e<=21)
+
 'd sum(gec00,t='t',t='t+3')'
 var=sublin(result,2)
 gec00=subwrd(var,4)
@@ -277,11 +271,6 @@ endif
 yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 'precip' 't,append)
 
 
-
-
-
-
-
 endwhile
 
 md.00=pt.00/(ct.00+0.000001)
@@ -332,9 +321,7 @@ rc.20 = math_format("%5.2f",md.20)
 
 fim=write(bacia'.gens',data' 'dataprev' 'rc.00' 'rc.01' 'rc.02' 'rc.03' 'rc.04' 'rc.05' 'rc.06' 'rc.07' 'rc.08' 'rc.09' 'rc.10' 'rc.11' 'rc.12' 'rc.13' 'rc.14' 'rc.15' 'rc.16' 'rc.17' 'rc.18' 'rc.19' 'rc.20)
 t=t+4
-endwhile
-
-************  da linha 36
+endwhile   ************  da linha 36
 endwhile    
 'return'
 
