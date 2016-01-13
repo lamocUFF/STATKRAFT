@@ -123,7 +123,7 @@ endwhile
 
 
 function baixagfs(config)
-'sdfopen http://nomads.ncep.noaa.gov:9090/dods/gfs_1p00/gfs'config'/gfs_1p00_00z'
+*'sdfopen http://nomads.ncep.noaa.gov:9090/dods/gfs_1p00/gfs'config'/gfs_1p00_00z'
 'sdfopen http://nomads.ncep.noaa.gov:9090/dods/gens/gens'config'/gep_all_00z'
 
 'set lon 280 330'

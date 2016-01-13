@@ -61,11 +61,11 @@ echo "endvars">>gfs_1P0.ctl
 echo "dset  "$dir_data"_gens.bin" > gfsens.ctl
 echo "title GFS 0.25 deg starting from 00Z08jul2015, downloaded Jul 08 04:44 UTC" >>gfsens.ctl
 echo "undef 9.999e+20" >>gfsens.ctl
-echo "xdef 51 linear -80 0.25" >>gfsens.ctl
-echo "ydef 51 linear -40 0.25" >>gfsens.ctl
+echo "xdef 51 linear -80 1" >>gfsens.ctl
+echo "ydef 51 linear -40 1" >>gfsens.ctl
 echo "zdef 1 levels 1000">>gfsens.ctl
 echo "tdef 65 linear "$grads_data" 6hr" >>gfsens.ctl 
-echo "edet 21 " >>gfsens.ctl 
+echo "edef 21 " >>gfsens.ctl 
 echo "gec00 65 "$grads_data >>gfsens.ctl
 echo "gep01 65 "$grads_data >>gfsens.ctl
 echo "gep02 65 "$grads_data >>gfsens.ctl
