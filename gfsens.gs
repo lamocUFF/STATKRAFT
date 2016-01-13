@@ -71,6 +71,7 @@ status2=0
 * execuo esse esse bloco ate  a leitura
 * de todos os pontos de grade que estao na bacia
 *
+
 while (!status2)
 fd=read("../../CONTORNOS/CADASTRADAS/"bacia)
 status2=sublin(fd,1)
@@ -87,10 +88,6 @@ xlat=subwrd(coord,2)
 *
 * pego a precip do ponto de grade
 *
-
-
-
-
 'd sum(gec00,t='t',t='t+3')'
 var=sublin(result,2)
 gec00=subwrd(var,4)
@@ -154,11 +151,6 @@ gep19=subwrd(var,4)
 'd sum(gep20,t='t',t='t+3')'
 var=sublin(result,2)
 gep20=subwrd(var,4)
-
-
-
-
-
 *say valor' 't
 *say result
 
@@ -270,7 +262,7 @@ endif
 
 yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 'precip' 't,append)
 
-
+endif
 endwhile
 
 md.00=pt.00/(ct.00+0.000001)
