@@ -66,30 +66,31 @@ echo "ydef 51 linear -40 1" >>gfsens.ctl
 echo "zdef 1 levels 1000">>gfsens.ctl
 echo "tdef 65 linear "$grads_data" 6hr" >>gfsens.ctl 
 echo "edef 21 " >>gfsens.ctl 
-echo "gec00 65 "$grads_data >>gfsens.ctl
-echo "gep01 65 "$grads_data >>gfsens.ctl
-echo "gep02 65 "$grads_data >>gfsens.ctl
-echo "gep03 65 "$grads_data >>gfsens.ctl
-echo "gep04 65 "$grads_data >>gfsens.ctl
-echo "gep05 65 "$grads_data >>gfsens.ctl
-echo "gep06 65 "$grads_data >>gfsens.ctl
-echo "gep07 65 "$grads_data >>gfsens.ctl
-echo "gep08 65 "$grads_data >>gfsens.ctl
-echo "gep09 65 "$grads_data >>gfsens.ctl
-echo "gep10 65 "$grads_data >>gfsens.ctl
-echo "gep11 65 "$grads_data >>gfsens.ctl
-echo "gep12 65 "$grads_data >>gfsens.ctl
-echo "gep13 65 "$grads_data >>gfsens.ctl
-echo "gep14 65 "$grads_data >>gfsens.ctl
-echo "gep15 65 "$grads_data >>gfsens.ctl
-echo "gep16 65 "$grads_data >>gfsens.ctl
-echo "gep17 65 "$grads_data >>gfsens.ctl
-echo "gep18 65 "$grads_data >>gfsens.ctl
-echo "gep19 65 "$grads_data >>gfsens.ctl
-echo "gep20 65 "$grads_data >>gfsens.ctl
+
 echo "endedef"              >>gfsens.ctl 
 echo "vars 1">>gfsens.ctl
 echo "chuva  0  t,y,x  ** chuva mm">>gfsens.ctl
+echo "gec00 0  t,y,x  ** chuva mm"$grads_data >>gfsens.ctl
+echo "gep01 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep02 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep03 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep04 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep05 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep06 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep07 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep08 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep09 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep10 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep11 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep12 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep13 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep14 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep15 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep16 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep17 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep18 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep19 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
+echo "gep20 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
 echo "endvars">>gfsens.ctl
 
 
