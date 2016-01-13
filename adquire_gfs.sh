@@ -65,11 +65,7 @@ echo "xdef 51 linear -80 1" >>gfsens.ctl
 echo "ydef 51 linear -40 1" >>gfsens.ctl
 echo "zdef 1 levels 1000">>gfsens.ctl
 echo "tdef 65 linear "$grads_data" 6hr" >>gfsens.ctl 
-echo "edef 21 " >>gfsens.ctl 
-
-echo "endedef"              >>gfsens.ctl 
-echo "vars 1">>gfsens.ctl
-echo "chuva  0  t,y,x  ** chuva mm">>gfsens.ctl
+echo "vars 21">>gfsens.ctl
 echo "gec00 0  t,y,x  ** chuva mm"$grads_data >>gfsens.ctl
 echo "gep01 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
 echo "gep02 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
