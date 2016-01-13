@@ -282,8 +282,6 @@ yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 'precip' 't,append)
 
 
 
-*ay result
-endif
 endwhile
 
 md.00=pt.00/(ct.00+0.000001)
