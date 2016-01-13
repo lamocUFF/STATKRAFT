@@ -61,10 +61,33 @@ echo "endvars">>gfs_1P0.ctl
 echo "dset  "$dir_data".ens.bin" > gfsens.ctl
 echo "title GFS 0.25 deg starting from 00Z08jul2015, downloaded Jul 08 04:44 UTC" >>gfsens.ctl
 echo "undef 9.999e+20" >>gfsens.ctl
-echo "xdef 50 linear -80 0.25" >>gfsens.ctl
-echo "ydef 50 linear -40 0.25" >>gfsens.ctl
+echo "xdef 51 linear -80 0.25" >>gfsens.ctl
+echo "ydef 51 linear -40 0.25" >>gfsens.ctl
 echo "zdef 1 levels 1000">>gfsens.ctl
-echo "tdef 1365 linear "$grads_data" 360mn" >>gfsens.ctl 
+echo "tdef 65 linear "$grads_data" 6hr" >>gfsens.ctl 
+echo "edet 21 " >>gfsens.ctl 
+echo "gec00 65 "$grads_data >>gfsens.ctl
+echo "gep01 65 "$grads_data >>gfsens.ctl
+echo "gep02 65 "$grads_data >>gfsens.ctl
+echo "gep03 65 "$grads_data >>gfsens.ctl
+echo "gep04 65 "$grads_data >>gfsens.ctl
+echo "gep05 65 "$grads_data >>gfsens.ctl
+echo "gep06 65 "$grads_data >>gfsens.ctl
+echo "gep07 65 "$grads_data >>gfsens.ctl
+echo "gep08 65 "$grads_data >>gfsens.ctl
+echo "gep09 65 "$grads_data >>gfsens.ctl
+echo "gep10 65 "$grads_data >>gfsens.ctl
+echo "gep11 65 "$grads_data >>gfsens.ctl
+echo "gep12 65 "$grads_data >>gfsens.ctl
+echo "gep13 65 "$grads_data >>gfsens.ctl
+echo "gep14 65 "$grads_data >>gfsens.ctl
+echo "gep15 65 "$grads_data >>gfsens.ctl
+echo "gep16 65 "$grads_data >>gfsens.ctl
+echo "gep17 65 "$grads_data >>gfsens.ctl
+echo "gep18 65 "$grads_data >>gfsens.ctl
+echo "gep19 65 "$grads_data >>gfsens.ctl
+echo "gep20 65 "$grads_data >>gfsens.ctl
+echo "endedef"              >>gfsens.ctl 
 echo "vars 1">>gfsens.ctl
 echo "chuva  0  t,y,x  ** chuva mm">>gfsens.ctl
 echo "endvars">>gfsens.ctl
@@ -72,8 +95,7 @@ echo "endvars">>gfsens.ctl
 
 grads -lbc "gfs.gs"  >>./LOG.prn 2>&1
 grads -lbc "GFS_1P0.gs"  >>./LOG.prn 2>&1
-
-#grads -lbc "gfsens.gs"  >>./LOG.prn 2>&1
+grads -lbc "gfsens.gs"  >>./LOG.prn 2>&1
 
 
 

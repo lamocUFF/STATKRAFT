@@ -23,9 +23,9 @@ pi=extrai(data)
 
 function  extrai(data)
 
-'open gfs.ctl'
+'open gfs_1P0.ctl'
 
-
+say '------------->'data
 *
 *  leio arquivo bacia e processo 
 * para cada item dentro desse arquivo
@@ -53,15 +53,10 @@ label=subwrd(var,2)
 xxx=write("todomundo.prn",label' 'bacia,append)
 *say "calculando para  bacia:"bacia
 status2=status
-
-n=1
-while (n<=21)
 precip=0
 conta=0
-t=65*(n-1)+1
-
-
-while (t<=(65*(n-1)+65))
+t=1
+while (t<=31)
 'set t ' t
 'q time'
 dataprev=subwrd(result,3)
@@ -92,7 +87,7 @@ xlat=subwrd(coord,2)
 *
 * pego a precip do ponto de grade
 *
-'d sum(chuva,t='t',t='t+3')'
+'d sum(chuva,t='t',t='t+1')'
 var=sublin(result,2)
 valor=subwrd(var,4)
 *say valor' 't
@@ -100,7 +95,7 @@ valor=subwrd(var,4)
 if (valor >=0 )
 precip=precip+valor
 conta=conta+1
-yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 't,append)
+yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 'precip' 't,append)
 endif 
 *ay result
 endif
@@ -112,13 +107,13 @@ media=precip/(conta+(0.00001))
 rc1 = math_format("%7.2f",precip)
 rc2 = math_format("%7.0f",conta)
 rc3 = math_format("%5.2f",media)
-fim=write(bacia'.ens',data' 'dataprev' 'rc3,append)
-xxx=write("todomundoens.prn",data' 'dataprev' 'rc3,append)
-t=t+4
+fim=write(bacia'.gs1p0',data' 'dataprev' 'rc3,append)
+xxx=write("todomundo.prn",data' 'dataprev' 'rc3,append)
+t=t+2
 endwhile
 
 ************  da linha 36
-endwhile     
+endwhile    
 'return'
 
 
@@ -128,35 +123,25 @@ endwhile
 
 
 function baixagfs(config)
+'sdfopen http://nomads.ncep.noaa.gov:9090/dods/gfs_1p00/gfs'config'/gfs_1p00_00z'
+'sdfopen http://nomads.ncep.noaa.gov:9090/dods/gens/gens'config'/gep_all_00z'
 
-
-
-
-'sdfopen http://nomads.ncep.noaa.gov:9090/dods/gfs_0p25/gfs'config'/gep_all_00z'
 'set lon 280 330'
 'set lat -40 10'
-
-
-n=1
 t=1
-while (n<=21)
-'set e 'n
-'q dims'
-var=sublin(result,)
-'set fwrite 'config''n'.ens.bin'
+'set fwrite 'config'_1P0.bin'
 'set gxout fwrite'
-'set e 'n
 while (t<=65)
 'set t 't
+n=1
+while (n<=21)
+'set e 'n
 'd pratesfc*6*3600'
-t=t+1
-endwhile
+*'d apcpsfc'
 n=n+1
 endwhile
-
+t=t+1
+endwhile
 'disable fwrite'
 'set gxout shaded'
-
-
 return
-
