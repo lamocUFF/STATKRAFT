@@ -32,6 +32,35 @@ say '- de processamento ------------>'data
 *
 say '   inicio  -------------------------------'
 
+
+
+
+
+
+
+while ( 0=0 )       
+*
+* abre o arquivo bacias
+*
+id=read("../../UTIL/bacias")
+*
+* se status=0 tudo ok. se não ...
+*
+status=sublin(id,1)   
+
+if (status>0) 
+return
+endif
+
+
+
+var=sublin(id,2)
+bacia=subwrd(var,1)
+label=subwrd(var,2)
+xxx=write("todomundo.prn",label' 'bacia,append)
+say "calculando para  bacia:"bacia
+status2=status
+
 pt.00=0
 ct.00=0
 pt.01=0
@@ -75,34 +104,6 @@ ct.19=0
 pt.20=0
 ct.20=0
 
-
-
-
-
-while ( 0=0 )       
-*
-* abre o arquivo bacias
-*
-id=read("../../UTIL/bacias")
-*
-* se status=0 tudo ok. se não ...
-*
-status=sublin(id,1)   
-
-if (status>0) 
-return
-endif
-
-
-
-var=sublin(id,2)
-bacia=subwrd(var,1)
-label=subwrd(var,2)
-xxx=write("todomundo.prn",label' 'bacia,append)
-say "calculando para  bacia:"bacia
-status2=status
-precip=0
-conta=0
 t=1
 say ' -------------------  processa no tempo ----'
 while (t<=61)
