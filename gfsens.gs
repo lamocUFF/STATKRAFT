@@ -87,29 +87,253 @@ xlat=subwrd(coord,2)
 *
 * pego a precip do ponto de grade
 *
-'d sum(chuva,t='t',t='t+1')'
+
+
+0
+6
+12
+18
+00
+
+e=1
+while (e<=21)
+'d sum(gec00,t='t',t='t+3')'
 var=sublin(result,2)
-valor=subwrd(var,4)
+gec00=subwrd(var,4)
+'d sum(gep01,t='t',t='t+3')'
+var=sublin(result,2)
+gep01=subwrd(var,4)
+'d sum(gep02,t='t',t='t+3')'
+var=sublin(result,2)
+gep01=subwrd(var,4)
+'d sum(gep02,t='t',t='t+3')'
+var=sublin(result,2)
+gep02=subwrd(var,4)
+'d sum(gep03,t='t',t='t+3')'
+var=sublin(result,2)
+gep03=subwrd(var,4)
+'d sum(gep04,t='t',t='t+3')'
+var=sublin(result,2)
+gep04=subwrd(var,4)
+'d sum(gep05,t='t',t='t+3')'
+var=sublin(result,2)
+gep05=subwrd(var,4)
+'d sum(gep06,t='t',t='t+3')'
+var=sublin(result,2)
+gep06=subwrd(var,4)
+'d sum(gep07,t='t',t='t+3')'
+var=sublin(result,2)
+gep07=subwrd(var,4)
+'d sum(gep08,t='t',t='t+3')'
+var=sublin(result,2)
+gep08=subwrd(var,4)
+'d sum(gep09,t='t',t='t+3')'
+var=sublin(result,2)
+gep09=subwrd(var,4)
+'d sum(gep10,t='t',t='t+3')'
+var=sublin(result,2)
+gep10=subwrd(var,4)
+'d sum(gep11,t='t',t='t+3')'
+var=sublin(result,2)
+gep11=subwrd(var,4)
+'d sum(gep12,t='t',t='t+3')'
+var=sublin(result,2)
+gep12=subwrd(var,4)
+'d sum(gep13,t='t',t='t+3')'
+var=sublin(result,2)
+gep13=subwrd(var,4)
+'d sum(gep14,t='t',t='t+3')'
+var=sublin(result,2)
+gep14=subwrd(var,4)
+'d sum(gep15,t='t',t='t+3')'
+var=sublin(result,2)
+gep16=subwrd(var,4)
+'d sum(gep17,t='t',t='t+3')'
+var=sublin(result,2)
+gep17=subwrd(var,4)
+'d sum(gep18,t='t',t='t+3')'
+var=sublin(result,2)
+gep18=subwrd(var,4)
+'d sum(gep19,t='t',t='t+3')'
+var=sublin(result,2)
+gep19=subwrd(var,4)
+'d sum(gep20,t='t',t='t+3')'
+var=sublin(result,2)
+gep20=subwrd(var,4)
+
+
+
+
+
 *say valor' 't
 *say result
-if (valor >=0 )
-precip=precip+valor
-conta=conta+1
+
+if (gec00 >=0 )
+pt.00=pt.00+gec00
+ct.00=ct.00+1
+endif
+
+if (gep01 >=0 )
+pt.01=pt.01+gep01
+ct.01=ct.01+1
+endif
+
+if (gep02 >=0 )
+pt.02=pt.02+gep02
+ct.02=ct.02+1
+endif
+
+if (gep03 >=0 )
+pt.03=pt.03+gep03
+ct.03=ct.03+1
+endif
+
+if (gep04 >=0 )
+pt.04=pt.04+gep04
+ct.04=ct.04+1
+endif
+
+if (gep05 >=0 )
+pt.05=pt.05+gep05
+ct.05=ct.05+1
+endif
+
+if (gep06 >=0 )
+pt.06=pt.06+gep06
+ct.06=ct.06+1
+endif
+
+if (gep07 >=0 )
+pt.07=pt.07+gep07
+ct.07=ct.07+1
+endif
+
+if (gep08 >=0 )
+pt.08=pt.08+gep08
+ct.08=ct.08+1
+endif
+
+if (gep09 >=0 )
+pt.09=pt.09+gep09
+ct.09=ct.09+1
+endif
+
+if (gep10 >=0 )
+pt.10=pt.10+gep10
+ct.10=ct.10+1
+endif
+
+if (gep11 >=0 )
+pt.11=pt.11+gep11
+ct.11=ct.11+1
+endif
+
+if (gep12 >=0 )
+pt.12=pt.012+gep12
+ct.12=ct.12+1
+endif
+
+if (gep13 >=0 )
+pt.13=pt.13+gep13
+ct.13=ct.13+1
+endif
+
+if (gep14 >=0 )
+pt.14=pt.14+gep14
+ct.14=ct.14+1
+endif
+
+if (gep15 >=0 )
+pt.15=pt.15+gep15
+ct.15=ct.15+1
+endif
+
+if (gep16 >=0 )
+pt.16=pt.16+gep16
+ct.16=ct.16+1
+endif
+
+if (gep17 >=0 )
+pt.17=pt.17+gep17
+ct.17=ct.17+1
+endif
+
+if (gep18 >=0 )
+pt.18=pt.18+gep18
+ct.18=ct.18+1
+endif
+
+if (gep19 >=0 )
+pt.19=pt.19+gep19
+ct.19=ct.19+1
+endif
+
+if (gep20 >=0 )
+pt.20=pt.20+gep20
+ct.20=ct.20+1
+endif
+
+
 yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 'precip' 't,append)
 endif 
+
+
+
+
+
+
 *ay result
 endif
 endwhile
 
+md.00=pt.00/(ct.00+0.000001)
+md.01=pt.01/(ct.01+0.000001)
+md.02=pt.02/(ct.02+0.000001)
+md.03=pt.03/(ct.03+0.000001)
+md.04=pt.04/(ct.04+0.000001)
+md.05=pt.05/(ct.05+0.000001)
+md.06=pt.06/(ct.06+0.000001)
+md.07=pt.07/(ct.07+0.000001)
+md.08=pt.08/(ct.08+0.000001)
+md.09=pt.09/(ct.09+0.000001)
+md.10=pt.10/(ct.10+0.000001)
+md.11=pt.11/(ct.11+0.000001)
+md.12=pt.12/(ct.12+0.000001)
+md.13=pt.13/(ct.13+0.000001)
+md.14=pt.14/(ct.14+0.000001)
+md.15=pt.15/(ct.15+0.000001)
+md.16=pt.16/(ct.16+0.000001)
+md.17=pt.17/(ct.17+0.000001)
+md.18=pt.18/(ct.18+0.000001)
+md.19=pt.19/(ct.19+0.000001)
+md.20=pt.20/(ct.20+0.000001)
+
+rc.00 = math_format("%5.2f",md.00)
+rc.01 = math_format("%5.2f",md.01)
+rc.02 = math_format("%5.2f",md.02)
+rc.03 = math_format("%5.2f",md.03)
+rc.04 = math_format("%5.2f",md.04)
+rc.05 = math_format("%5.2f",md.05)
+rc.06 = math_format("%5.2f",md.06)
+rc.07 = math_format("%5.2f",md.07)
+rc.08 = math_format("%5.2f",md.08)
+rc.09 = math_format("%5.2f",md.09)
+rc.10 = math_format("%5.2f",md.10)
+rc.11 = math_format("%5.2f",md.11)
+rc.12 = math_format("%5.2f",md.12)
+rc.13 = math_format("%5.2f",md.13)
+rc.14 = math_format("%5.2f",md.14)
+rc.15 = math_format("%5.2f",md.15)
+rc.16 = math_format("%5.2f",md.16)
+rc.17 = math_format("%5.2f",md.17)
+rc.18 = math_format("%5.2f",md.18)
+rc.19 = math_format("%5.2f",md.19)
+rc.20 = math_format("%5.2f",md.20)
 
 
-media=precip/(conta+(0.00001))
-rc1 = math_format("%7.2f",precip)
-rc2 = math_format("%7.0f",conta)
-rc3 = math_format("%5.2f",media)
-fim=write(bacia'.gs1p0',data' 'dataprev' 'rc3,append)
-xxx=write("todomundo.prn",data' 'dataprev' 'rc3,append)
-t=t+2
+
+fim=write(bacia'.gens',data' 'dataprev' 'rc.00' 'rc.01' 'rc.02' 'rc.03' 'rc.04' 'rc.05' 'rc.06' 'rc.07' 'rc.08' 'rc.09' 'rc.10' 'rc.11' 'rc.12' 'rc.13' 'rc.14' 'rc.15' 'rc.16' 'rc.17' 'rc.18' 'rc.19' 'rc.20)
+t=t+4
 endwhile
 
 ************  da linha 36
