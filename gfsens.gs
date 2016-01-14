@@ -275,7 +275,7 @@ endif
 
 
 yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 'precip' 't,append)
-endif 
+
 
 
 
