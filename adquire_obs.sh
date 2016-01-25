@@ -164,8 +164,10 @@ data_rodada=`date +"%d/%m/%Y"`
 #let b="33 + $1"
 grads_data=`date -d "34 days ago" +"12Z%d%b%Y"`
 #data=`date +"%Y%m%d" -d "$1 days ago"`
+rm -r $data
 mkdir $data
 cd $data
+
 cp ../../calcula_chuva_merge.gs .
 
 
@@ -188,7 +190,7 @@ echo "rain     1  00 the grid analysis (0.1mm/day)"           >>chuvamerge.ctl
 echo "gnum     1  00 the number of stn"                       >>chuvamerge.ctl
 echo "ENDVARS"                                                >>chuvamerge.ctl
 
-echo "["`date`"] CALCULANDO CHUVA  OBSERVADA" 
+echo "["`date`"] CALCULANDO CHUVA  OBSERVADA"  >./LOG.prn 2>&1 
 
 grads -lbc "calcula_chuva_merge.gs"  >>./LOG.prn 2>&1 
 
