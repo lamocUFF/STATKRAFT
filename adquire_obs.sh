@@ -369,7 +369,7 @@ echo "'printim 'bacia'_diario_"$data".png white'"                       >>figura
 echo "t=t+1"                    >>figura3.gs
 echo "c"                    >>figura3.gs
 echo "endwhile"                    >>figura3.gs
-
+echo "endif" 					>>figura3.gs
 #------------------------------------------------------------------------------------
 # caso a bacia se ja em forma de paisagem 
 # definido no arquivo limites_das_bacias em CONTORNOS/CADASTRADAS
