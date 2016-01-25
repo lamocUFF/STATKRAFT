@@ -159,6 +159,8 @@ cd ..
 
 
 
+data_rodada=`date +"%d/%m/%Y"`
+
 #let b="33 + $1"
 grads_data=`date -d "34 days ago" +"12Z%d%b%Y"`
 #data=`date +"%Y%m%d" -d "$1 days ago"`
@@ -218,60 +220,7 @@ echo "if (page ="8.5") " >>figura3.gs
 echo "'set parea 0.5 8.5 1.5 10.2'" >>figura3.gs
 echo "endif"                                  >>figura3.gs
 
-#
-#
-#  data RODADA                 UGAMONGA
-#
-echo "'set t  0'"                     >>figura3.gs
-echo "'q time'"                         >>figura3.gs
-echo "var0=subwrd(result,3)"            >>figura3.gs
-#
-#  data da semana operativa 1
-#
-# echo "'set t 1 'tsex"                     >>figura3.gs
-# echo "'q time'"                         >>figura3.gs
-# echo "var1=subwrd(result,3)"            >>figura3.gs
-# echo "var2=subwrd(result,5)"            >>figura3.gs
-# #
-# #  data da semana operativa 2
-# #
-# echo "'set t 'tsab' 'tfinal"                     >>figura3.gs   
-# echo "'q time'"                           >>figura3.gs 
-# echo "var3=subwrd(result,3)"            >>figura3.gs
-# echo "var4=subwrd(result,5)"            >>figura3.gs
 
-# #
-# # semana 7 dias
-# #
-# echo "'set t 1 7'"                     >>figura3.gs   
-# echo "'q time'"                           >>figura3.gs 
-# echo "var5=subwrd(result,5)"            >>figura3.gs
-
-# # data  rodada
-# echo "ano0=substr(var0,9,4)"                       >>figura3.gs
-# echo "mes0=substr(var0,6,3)"                       >>figura3.gs
-# echo "dia0=substr(var0,4,2)"                       >>figura3.gs
-
-# # data inicial previsao 
-# echo "ano1=substr(var1,9,4)"                       >>figura3.gs
-# echo "mes1=substr(var1,6,3)"                       >>figura3.gs
-# echo "dia1=substr(var1,4,2)"                       >>figura3.gs
-# # data proxima sexta-feira
-# echo "ano2=substr(var2,9,4)"                       >>figura3.gs
-# echo "mes2=substr(var2,6,3)"                       >>figura3.gs
-# echo "dia2=substr(var2,4,2)"                       >>figura3.gs
-# # data sabado
-# echo "ano3=substr(var3,9,4)"                       >>figura3.gs
-# echo "mes3=substr(var3,6,3)"                       >>figura3.gs
-# echo "dia3=substr(var3,4,2)"                       >>figura3.gs
-# # data final
-# echo "ano4=substr(var4,9,4)"                       >>figura3.gs
-# echo "mes4=substr(var4,6,3)"                       >>figura3.gs
-# echo "dia4=substr(var4,4,2)"                       >>figura3.gs
-# # data 7 dias
-# echo "ano5=substr(var5,9,4)"                       >>figura3.gs
-# echo "mes5=substr(var5,6,3)"                       >>figura3.gs
-# echo "dia5=substr(var5,4,2)"                       >>figura3.gs
 
 
 #
@@ -317,7 +266,7 @@ echo "'cores.gs'"                    >>figura3.gs
 echo "'d rain'"            >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA DIARIA'"  >>figura3.gs
-echo "'draw string 2.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura3.gs
+echo "'draw string 2.5 10.6 RODADA :"$data_rodada"'"               >>figura3.gs
 echo "'draw string 2.5 10.4 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" 								>>figura3.gs
 echo "'basemap.gs O 50 0 M'" 										>>figura3.gs
@@ -360,7 +309,7 @@ echo "'cores.gs'"                    >>figura3.gs
 echo "'d rain'"         >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 2.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 1'"  >>figura3.gs
-echo "'draw string 2.5 8.1 RODADA :'dia0'/'mes0'/'ano0 "               >>figura3.gs
+echo "'draw string 2.5 8.1 RODADA :"$data_rodada"'"               >>figura3.gs
 echo "'draw string 2.5 7.9 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" >>figura3.gs
 echo "'basemap.gs O 50 0 M'" >>figura3.gs
