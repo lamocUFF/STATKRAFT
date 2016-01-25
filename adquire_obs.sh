@@ -150,7 +150,7 @@ do
 #let b="$n + $1"
 #echo $b
 download_data=`date +"%Y%m%d" -d "$n days ago"`
-ano=`date +"%Y"`
+ano=`date +"%Y" -d "$n days ago"`
 wget -nc ftp1.cptec.inpe.br/modelos/io/produtos/MERGE/$ano/prec_$download_data".bin" >>./LOG.prn 2>&1
 ###wget -nc ftp://ftp.cpc.ncep.noaa.gov/precip/CPC_UNI_PRCP/GAUGE_GLB/RT/$ano/PRCP_CU_GAUGE_V1.0GLB_0.50deg.lnx.$download_data".RT"  >>./LOG.prn 2>&1  
 done
