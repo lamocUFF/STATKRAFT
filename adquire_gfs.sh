@@ -23,6 +23,23 @@ fi
 
 mkdir GFS   >./LOG.prn 2>&1 
 cd GFS       >>./LOG.prn 2>&1 
+
+if [ $1 ="" ];then
+dir_data=`date +"%Y%m%d"`
+grads_data=`date +"12Z%d%b%Y"`
+grads_data2=`date +"00Z%d%b%Y"`
+else
+let b="$1-1"
+data=`date +"%Y%m%d" -d "$1 days ago"`
+datagrads=`date +"%d%b%Y" -d "$b  days ago"` 
+
+dir_data=`date +"%Y%m%d" -d "$1 days ago"`
+grads_data=`date +"12Z%d%b%Y" -d "$b  days ago"`
+grads_data2=`date +"00Z%d%b%Y" -d "$b  days ago"`
+
+fi
+
+
 dir_data=`date +"%Y%m%d"`
 grads_data=`date +"12Z%d%b%Y"`
 grads_data2=`date +"00Z%d%b%Y"`
