@@ -217,39 +217,7 @@ echo "*say page" >>figura3.gs
 echo "if (page ="8.5") " >>figura3.gs
 echo "'set parea 0.5 8.5 1.5 10.2'" >>figura3.gs
 echo "endif"                                  >>figura3.gs
-#
-# Script grads: acha o dia que cai na sexta
-#
-#  t0= tempo inicial 
-#  tsex=tempo com a sexta-feira
-#  tfinal=ultimo tempo
-# 
-# echo "t0=10"                            >>figura3.gs  
-# echo "tfinal=10"                        >>figura3.gs  
-# echo "'set t 1 last'"                   >>figura3.gs
-# echo "'q time'"                         >>figura3.gs
-# echo "var3=subwrd(result,5)"            >>figura3.gs
-# echo "tt=1"                             >>figura3.gs
-# echo "while (tt<=10)"                   >>figura3.gs
-# echo "'set t ' tt"                      >>figura3.gs
-# echo "'q time'"                         >>figura3.gs
-# echo "var=subwrd(result,6)"             >>figura3.gs
-# echo "if (var = "Fri" )"                >>figura3.gs
-# echo "t0=1"                            >>figura3.gs
-# echo "tsex=tt"                            >>figura3.gs
-# echo "tt=12"                            >>figura3.gs
-# echo "endif"                            >>figura3.gs
-# echo "tt=tt+1"                          >>figura3.gs
-# echo "endwhile"                         >>figura3.gs
-# echo "*say t0"                           >>figura3.gs
-# echo "tsab=tsex+1"                       >>figura3.gs
-# echo "tfinal=tsab+6"                    >>figura3.gs
-#
-# pega informacoes
-# de data
-# data de inicio 
-# data do sabado 
-# data final 
+
 #
 #
 #  data RODADA                 UGAMONGA
@@ -351,7 +319,7 @@ echo "'d rain'"            >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA DIARIA'"  >>figura3.gs
 echo "'draw string 2.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura3.gs
-echo "'draw string 2.5 10.4 DIA    :'dia1'/'mes1'/'ano1'  "                     >>figura3.gs
+echo "'draw string 2.5 10.4 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" 								>>figura3.gs
 echo "'basemap.gs O 50 0 M'" 										>>figura3.gs
 echo "'set mpdset hires'" 											>>figura3.gs
@@ -365,7 +333,7 @@ echo "endif"                    >>figura3.gs
 echo "'cbarn.gs'" >>figura3.gs
 echo "'plota_hidrografia.gs'"     >>figura3.gs  
 echo "plotausina(bacia,page)" >>figura3.gs    
-echo "'printim 'bacia'_diario_"$data".png white'"                       >>figura3.gs
+echo "'printim 'bacia'_diario_'var1'.png white'"                       >>figura3.gs
 echo "t=t+1"                    >>figura3.gs
 echo "c"                    >>figura3.gs
 echo "endwhile"                    >>figura3.gs
@@ -397,7 +365,7 @@ echo "'draw string 2.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 1'"  >>figura
 #echo "'draw string 2.5 8.1 RODADA:"$DATA0" - "$hora"Z'"                >>figura3.gs
 #echo "'draw string 2.5 7.9 PERIODO:'dia1'/'mes1'/'ano1' a 'dia2'/'mes2'/'ano2  "                     >>figura3.gs
 echo "'draw string 2.5 8.1 RODADA :'dia0'/'mes0'/'ano0 "               >>figura3.gs
-echo "'draw string 2.5 7.9 DIA    :'dia1'/'mes1'/'ano1'   "                     >>figura3.gs
+echo "'draw string 2.5 7.9 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" >>figura3.gs
 echo "'basemap.gs O 50 0 M'" >>figura3.gs
 echo "'set mpdset hires'" >>figura3.gs
@@ -407,16 +375,17 @@ echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                  
 echo "say shape" >>figura3.gs
 echo "'plota_hidrografia.gs'"     >>figura3.gs
 echo "plotausina(bacia,page)" >>figura3.gs  
-echo "'printim 'bacia'_diaria_"$data".png white'"                       >>figura3.gs
+echo "'printim 'bacia'_diaria_'var1'.png white'"                       >>figura3.gs
 echo "'c'"                                                             >>figura3.gs
 echo "t=t+1"                    >>figura3.gs
-echo "c"                    >>figura3.gs
+echo "'c'"                    >>figura3.gs
 echo "endwhile"                    >>figura3.gs
 
 #
 # PARTE FINAL DO SCRIPT . NÃO MEXER 
 #
 
+echo "endif"                            							>>figura3.gs 
 echo "endif"                            							>>figura3.gs 
 echo "endwhile"                          							>>figura3.gs
 
