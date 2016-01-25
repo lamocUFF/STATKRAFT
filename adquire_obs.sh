@@ -424,7 +424,6 @@ echo "endwhile"                          							>>figura3.gs
 # modulo de debug . para ativar MODDEBUG=1 
 #
 
-if [  MODDEBUG=1 ];then 
 #
 # ESCALA  ATUAL 
 #
@@ -637,4 +636,3 @@ cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1 
 cd ..
 cd ..
-
