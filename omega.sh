@@ -53,5 +53,5 @@ fi
  
 ./adquire_eta40.sh 
 ./adquire_obs.sh
-./aduqire_gfs.sh
+./adquire_gfs.sh
 

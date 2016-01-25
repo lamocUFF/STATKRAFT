@@ -262,7 +262,7 @@ echo "mes1=substr(var1,6,3)"                       >>figura3.gs
 echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura3.gs
-echo "'cores.gs'"                    >>figura3.gs
+echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d rain'"            >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA DIARIA'"  >>figura3.gs
@@ -305,7 +305,7 @@ echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 10.5 1.88392 7.31608'"                     >>figura3.gs
-echo "'cores.gs'"                    >>figura3.gs
+echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d rain'"         >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 2.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 1'"  >>figura3.gs
@@ -462,6 +462,12 @@ echo "'set rgb 99 251 94 107'">>cores.gs
 echo "'set clevs    20 25 30 40 50 75 100 150 200 250 300'">>cores.gs
 echo "'set ccols 00 44 45 47 49 34 37 39  22  23  27  29 99'  ">>cores.gs
 
+echo "* escala SUGERIDA ">coresdiaria.gs
+echo "*">>cores.gscoresdiaria
+echo "'define_colors.gs'">>coresdiaria.gs
+echo "'set rgb 99 251 94 107'">>coresdiaria.gs
+echo "'set clevs    05 10 15 20 25 30 35  50  70  100  150'">>coresdiaria.gs
+echo "'set ccols 00 44 45 47 49 34 37 39  22  23  27    29   99'  ">>coresdiaria.gs
 
 
 
