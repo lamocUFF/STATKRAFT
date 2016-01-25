@@ -141,11 +141,15 @@ echo "VARS  1" >>modelo_all.ctl
 echo "PREC  0  99  Total  24h Precip.        (m)" >>modelo_all.ctl
 echo "ENDVARS" >>modelo_all.ctl
 
+
+##-----------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------
 #  cria o script para data operativa por bacia cadastrada
 #  as bacias estao cadastradas em CADASTRO/CADASTRADAS
 # ver documentacao para maiores detalhes
-#
+##
 echo "*"                                                                 >figura3.gs
 echo "* esse script é auto gerado. documentação em adquire_eta.sh"      >>figura3.gs
 echo "*By reginaldo.venturadesa@gmail.com "                             >>figura3.gs
@@ -572,6 +576,7 @@ echo "'define_colors.gs'">>cores.gs
 echo "'set rgb 99 251 94 107'">>cores.gs
 echo "'set clevs    20 25 30 40 50 75 100 150 200 250 300'">>cores.gs
 echo "'set ccols 00 44 45 47 49 34 37 39  22  23  27  29 99'  ">>cores.gs
+
 
 
 #
@@ -1214,35 +1219,36 @@ echo "'set ccols 00 44 45 47 49 34 37 39  22  23  27  29 99'  ">>cores.gs
 # echo "endwhile"                                    >>figura3.gs
 # echo "'quit'"                          								>>figura3.gs
 
-# #
-# #  cria arquivo de plotagem das bacias no mapa do brasil 
-# # 
-# echo "'set line 15 1 1'"                                             >plota.gs
-# echo "'draw shp ../../CONTORNOS/SHAPES/BRASIL.shp '"                 >>plota.gs
-# echo "'set line 1 1 1'"                                              >>plota.gs
-# for file in `ls -1 ../../CONTORNOS/SHAPES/contorno*.shp`
-# do
-# echo "'draw shp "$file"'"                                            >>plota.gs
-# done
-# #
-# #  plota a hidrografia  
-# # 
-# echo "'set line 5 1 1'"                                             >plota_hidrografia.gs
-# echo "'draw shp ../../CONTORNOS/SHAPES/hidrografia.shp '"                 >>plota_hidrografia.gs
-# echo "'set line 5 1 1'"                                             >>plota_hidrografia.gs
+#
+#  cria arquivo de plotagem das bacias no mapa do brasil 
+# 
+echo "'set line 15 1 1'"                                             >plota.gs
+echo "'draw shp ../../CONTORNOS/SHAPES/BRASIL.shp '"                 >>plota.gs
+echo "'set line 1 1 1'"                                              >>plota.gs
+for file in `ls -1 ../../CONTORNOS/SHAPES/contorno*.shp`
+do
+echo "'draw shp "$file"'"                                            >>plota.gs
+done
+#
+#  plota a hidrografia  
+# 
+echo "'set line 5 1 1'"                                             >plota_hidrografia.gs
+echo "'draw shp ../../CONTORNOS/SHAPES/hidrografia.shp '"                 >>plota_hidrografia.gs
+echo "'set line 5 1 1'"                                             >>plota_hidrografia.gs
 
 
-# #
-# # ESCALA  cores diaria 
-# #
-# echo "* escala SUGERIDA ">coresdiaria.gs
-# echo "*">>cores.gscoresdiaria
-# echo "'define_colors.gs'">>coresdiaria.gs
-# echo "'set rgb 99 251 94 107'">>coresdiaria.gs
-# echo "'set clevs    00 05 10 15 20 25 30 35  50  70  100  150'">>coresdiaria.gs
-# echo "'set ccols 00 43 45 47 49 34 37 39 25  27  29   57   58 59'  ">>coresdiaria.gs
+#
+# ESCALA  cores diaria 
+#
+echo "* escala SUGERIDA ">coresdiaria.gs
+echo "*">>cores.gscoresdiaria
+echo "'define_colors.gs'">>coresdiaria.gs
+echo "'set rgb 99 251 94 107'">>coresdiaria.gs
+echo "'set clevs    00 05 10 15 20 25 30 35  50  70  100  150'">>coresdiaria.gs
+echo "'set ccols 00 43 45 47 49 34 37 39 25  27  29   57   58 59'  ">>coresdiaria.gs
 
 echo "["`date`"] CRIANDO FIGURAS OBSERVADO" 
+cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1 
 cd ..
