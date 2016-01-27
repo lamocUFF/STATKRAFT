@@ -22,11 +22,6 @@
 # essa versao é feita pela conta regisgrundig e nao pela lAMOC
 #
 #--------------------------------------------------------------------------
-
-
-MODDEBUG=1 
-
-
 #
 # Existem duas rodadas do modelo ao dia. Uma as 00Z e outra as 12Z
 # se nada for informada na linha de comando assume-se 00z
@@ -55,11 +50,7 @@ fi
 
 #
 # Pega data do dia (relogio do micro)
-# DATA0 = data de hoje
-# DATA1 = data de amanha (para os produtos)
-# DATA2 = data de 7 dias a frente 
 # 
-
 if [ $1 ="" ];then
 data=`date +"%Y%m%d"`
 datagrads=`date +"%d%b%Y" -d "1 days"` 
@@ -68,16 +59,11 @@ let b="$1-1"
 data=`date +"%Y%m%d" -d "$1 days ago"`
 datagrads=`date +"%d%b%Y" -d "$b  days ago"` 
 fi
-
-echo $data
-echo $datagrads
-
-
-
-
+#
+# há duas rodas por dia. Utilizamos somente a rodada 00Z!
+# com pirmeira chuva as 12Z. 
+#
 hora="00"
-
-
 #
 # cria diretorio dos produtos do dia
 #
@@ -90,16 +76,19 @@ fi
 # onde tudo aocntece. 
 cd SAIDAS
 mkdir $data   >>./LOG.prn 2>&1 
-cd $data
+cd $data      
+echo "["`date`"] INICIO DO LOG ETA40KM "  >./LOG.prn 2>&1 
+echo $data           >>./LOG.prn 2>&1
+echo $datagrads      >>./LOG.prn 2>&1
 
 
-
-echo "["`date`"] BAIXANDO DADOS ETA 40KM " 
 #
 # Adquire os dados no site do CPTEC. 
 # Atençao:  
 # Verifique pois o CPTEC altera os caminhos sem avisar!!!
 #
+echo "["`date`"] BAIXANDO DADOS ETA 40KM " 
+echo "["`date`"] BAIXANDO DADOS ETA 40KM "  >>./LOG.prn 2>&1
 wget -nc ftp://ftp1.cptec.inpe.br/modelos/io/tempo/regional/Eta40km_ENS/prec24/$data$hora/* >>./LOG.prn 2>&1
 #
 # existem 10 arquivos .bin
@@ -142,9 +131,6 @@ echo "PREC  0  99  Total  24h Precip.        (m)" >>modelo_all.ctl
 echo "ENDVARS" >>modelo_all.ctl
 
 
-##-----------------------------------------------------------------------------------------
-#-----------------------------------------------------------------------------------------
-#-----------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------
 #  cria o script para data operativa por bacia cadastrada
 #  as bacias estao cadastradas em CADASTRO/CADASTRADAS
@@ -154,7 +140,6 @@ echo "*"                                                                 >figura
 echo "* esse script é auto gerado. documentação em adquire_eta.sh"      >>figura3.gs
 echo "*By reginaldo.venturadesa@gmail.com "                             >>figura3.gs
 echo "'open modelo_all.ctl'"            >>figura3.gs
-#echo "*'set mpdset hires'"               >>figura3.gs
 echo "'set gxout shaded'"               >>figura3.gs
 #
 # pega parametros de execucao do grads
@@ -170,13 +155,6 @@ echo "*say page" >>figura3.gs
 echo "if (page ="8.5") " >>figura3.gs
 echo "'set parea 0.5 8.5 1.5 10.2'" >>figura3.gs
 echo "endif"                                  >>figura3.gs
-#
-# Script grads: acha o dia que cai na sexta
-#
-#  t0= tempo inicial 
-#  tsex=tempo com a sexta-feira
-#  tfinal=ultimo tempo
-# 
 echo "t0=10"                            >>figura3.gs  
 echo "tfinal=10"                        >>figura3.gs  
 echo "'set t 1 last'"                   >>figura3.gs
@@ -462,7 +440,6 @@ echo "'define_colors.gs'">>coresdiaria.gs
 echo "'set rgb 99 251 94 107'">>coresdiaria.gs
 echo "'set clevs    05 10 15 20 25 30 35  50  70  100  150'">>coresdiaria.gs
 echo "'set ccols 00 44 45 47 49 34 37 39  22  23  27    29   99'  ">>coresdiaria.gs
-
 echo "'set lon -80.0000   -30.0000   '"                     >>figura3.gs
 echo "'set lat   -35 06.0000         ' "                                    >>figura3.gs
 echo " t=1"                                    >>figura3.gs
@@ -576,19 +553,11 @@ echo "'define_colors.gs'">>cores.gs
 echo "'set rgb 99 251 94 107'">>cores.gs
 echo "'set clevs    20 25 30 40 50 75 100 150 200 250 300'">>cores.gs
 echo "'set ccols 00 44 45 47 49 34 37 39  22  23  27  29 99'  ">>cores.gs
-
-
-
 #
 # ESSE ARQUIVO CONTEM AS LOCALIZACOES DAS USNINAS
 # A SEREM PLOTADOS NAS FIGURAS xxxxxxx
 #
 cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
-
-
-
-
-
 echo "["`date`"] CALCULANDO MEDIA POR BACIA" 
 #
 # Geracao de produtos
@@ -596,10 +565,6 @@ echo "["`date`"] CALCULANDO MEDIA POR BACIA"
 cp ../../calcula_versao3.gs .
 echo "["`date`"] CALCULANDO MÉDIA POR BACIA " 
 grads -lbc "calcula_versao3.gs" >>./LOG.prn 2>&1
-
-
-
-
 echo "["`date`"] PLOTANDO FIGURAS SEMANA OPERATIVA FORMATO RETRATO POR BACIAS" 
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1
 echo "["`date`"] PLOTANDO FIGURAS SEMANA OPERATIVA FORMATO PAISAGEM POR BACIAS" 
@@ -613,7 +578,6 @@ mv *semanaoperativa_1*  imagens_semanaoperativa_1  >>./LOG.prn 2>&1
 mv *semanaoperativa_2*  imagens_semanaoperativa_2  >>./LOG.prn 2>&1
 mv *prec07dias* imagens_7dias                      >>./LOG.prn 2>&1
 mv prec_diaria* diaria
-
 cd ..
 cd ..
 pwd
