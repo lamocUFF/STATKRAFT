@@ -48,7 +48,7 @@ mkdir $dir_data  >>./LOG.prn 2>&1
 cd $dir_data   >>./LOG.prn 2>&1
 # cp ../../gfs.gs .
 # cp ../../gfsens.gs .
-cp ../../calcula_gfs_1P00.gs .
+cp ../../calcula_gfs_1P0.gs .
 
 # echo $dir_data >gfs.config   
 # echo "dset  "$dir_data".bin" > gfs_0p25.ctl
