@@ -50,7 +50,9 @@ cd $dir_data   >>./LOG.prn 2>&1
 # cp ../../gfsens.gs .
 cp ../../calcula_gfs_1P0.gs .
 
-# echo $dir_data >gfs.config   
+echo $dir_data >gfs.config   
+
+
 # echo "dset  "$dir_data".bin" > gfs_0p25.ctl
 # echo "title GFS 0.25 deg starting from 00Z08jul2015, downloaded Jul 08 04:44 UTC" >>gfs_0p25.ctl
 # echo "undef 9.999e+20" >>gfs_0p25.ctl
