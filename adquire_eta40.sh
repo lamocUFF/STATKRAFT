@@ -247,6 +247,7 @@ echo 'fd=read("../../CONTORNOS/CADASTRADAS/limites_das_bacias.dat")' >>figura3.g
 echo "status2=sublin(fd,1) "    >>figura3.gs
 echo "if (status2 = 0) "        >>figura3.gs
 echo "linha=sublin(fd,2)"       >>figura3.gs
+echo "say linha"       >>figura3.gs
 echo "bacia=subwrd(linha,3)"     >>figura3.gs
 echo "shape=subwrd(linha,4)"     >>figura3.gs
 echo "x0=subwrd(linha,5)"       >>figura3.gs
