@@ -244,17 +244,21 @@ echo "dia5=substr(var5,4,2)"                       >>figura3.gs
 echo "status2=0"                       >>figura3.gs
 echo "while(!status2)" >>figura3.gs
 echo 'fd=read("../../CONTORNOS/CADASTRADAS/limites_das_bacias.dat")' >>figura3.gs
+
+sobradinho_BA sobradinho_BA.shp   						  -40.7643   -46.6022    -9.0269   -16.7678 RETRATO SIM
+
+
 echo "status2=sublin(fd,1) "    >>figura3.gs
 echo "if (status2 = 0) "        >>figura3.gs
 echo "linha=sublin(fd,2)"       >>figura3.gs
-echo "bacia=subwrd(linha,1)"     >>figura3.gs
-echo "shape=subwrd(linha,2)"     >>figura3.gs
-echo "x0=subwrd(linha,3)"       >>figura3.gs
-echo "x1=subwrd(linha,4)"       >>figura3.gs
-echo "y0=subwrd(linha,5)"       >>figura3.gs
-echo "y1=subwrd(linha,6)"       >>figura3.gs
-echo "tipo=subwrd(linha,7)"     >>figura3.gs
-echo "plota=subwrd(linha,8)"    >>figura3.gs
+echo "bacia=subwrd(linha,3)"     >>figura3.gs
+echo "shape=subwrd(linha,4)"     >>figura3.gs
+echo "x0=subwrd(linha,5)"       >>figura3.gs
+echo "x1=subwrd(linha,6)"       >>figura3.gs
+echo "y0=subwrd(linha,7)"       >>figura3.gs
+echo "y1=subwrd(linha,9)"       >>figura3.gs
+echo "tipo=subwrd(linha,9)"     >>figura3.gs
+echo "plota=subwrd(linha,10)"    >>figura3.gs
 echo "'set lon 'x1' 'x0 "       >>figura3.gs
 echo "'set lat 'y1' 'y0 "       >>figura3.gs
 #------------------------------------------------------------------------------------

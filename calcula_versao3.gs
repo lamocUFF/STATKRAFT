@@ -1,11 +1,32 @@
-*------------------------------------------------------------------------
+*--------------------------------------------------------------------------------------------------
+*███████╗ ██████╗██████╗ ██╗██████╗ ████████╗    ██████╗  █████╗ ██████╗  █████╗      ██████╗ █████╗ ██╗      ██████╗██╗   ██╗██╗      ██████╗     
+*██╔════╝██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝    ██╔══██╗██╔══██╗██╔══██╗██╔══██╗    ██╔════╝██╔══██╗██║     ██╔════╝██║   ██║██║     ██╔═══██╗    
+*███████╗██║     ██████╔╝██║██████╔╝   ██║       ██████╔╝███████║██████╔╝███████║    ██║     ███████║██║     ██║     ██║   ██║██║     ██║   ██║    
+*╚════██║██║     ██╔══██╗██║██╔═══╝    ██║       ██╔═══╝ ██╔══██║██╔══██╗██╔══██║    ██║     ██╔══██║██║     ██║     ██║   ██║██║     ██║   ██║    
+*███████║╚██████╗██║  ██║██║██║        ██║       ██║     ██║  ██║██║  ██║██║  ██║    ╚██████╗██║  ██║███████╗╚██████╗╚██████╔╝███████╗╚██████╔╝    
+*╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝       ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝     ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝   ------------------------------------------------------------------------
 *
-*
-*  SCRIPT CALCULAR CHUVA NA BACIA 
-*  CALCULAR CHUVA ACUMULADA POR BACIA DO SIN 
-*
-*  VERSAO 2.0 
-*
+* ██████╗██╗  ██╗██╗   ██╗██╗   ██╗ █████╗      █████╗  ██████╗██╗   ██╗███╗   ███╗██╗   ██╗██╗      █████╗ ██████╗  █████╗     
+*██╔════╝██║  ██║██║   ██║██║   ██║██╔══██╗    ██╔══██╗██╔════╝██║   ██║████╗ ████║██║   ██║██║     ██╔══██╗██╔══██╗██╔══██╗    
+*██║     ███████║██║   ██║██║   ██║███████║    ███████║██║     ██║   ██║██╔████╔██║██║   ██║██║     ███████║██║  ██║███████║    
+*██║     ██╔══██║██║   ██║╚██╗ ██╔╝██╔══██║    ██╔══██║██║     ██║   ██║██║╚██╔╝██║██║   ██║██║     ██╔══██║██║  ██║██╔══██║    
+*╚██████╗██║  ██║╚██████╔╝ ╚████╔╝ ██║  ██║    ██║  ██║╚██████╗╚██████╔╝██║ ╚═╝ ██║╚██████╔╝███████╗██║  ██║██████╔╝██║  ██║    
+* ╚═════╝╚═╝  ╚═╝ ╚═════╝   ╚═══╝  ╚═╝  ╚═╝    ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝    
+*      
+*██╗   ██╗███████╗██████╗ ███████╗ ██████╗     ██████╗ 
+*██║   ██║██╔════╝██╔══██╗██╔════╝██╔═══██╗    ╚════██╗
+*██║   ██║█████╗  ██████╔╝███████╗██║   ██║     █████╔╝
+*╚██╗ ██╔╝██╔══╝  ██╔══██╗╚════██║██║   ██║     ╚═══██╗
+* ╚████╔╝ ███████╗██║  ██║███████║╚██████╔╝    ██████╔╝
+*  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝     ╚═════╝ 
+*                                                     	
+*██╗      █████╗ ███╗   ███╗ ██████╗  ██████╗    ██╗   ██╗███████╗███████╗
+*██║     ██╔══██╗████╗ ████║██╔═══██╗██╔════╝    ██║   ██║██╔════╝██╔════╝
+*██║     ███████║██╔████╔██║██║   ██║██║         ██║   ██║█████╗  █████╗  
+*██║     ██╔══██║██║╚██╔╝██║██║   ██║██║         ██║   ██║██╔══╝  ██╔══╝  
+*███████╗██║  ██║██║ ╚═╝ ██║╚██████╔╝╚██████╗    ╚██████╔╝██║     ██║     
+*╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝  ╚═════╝     ╚═════╝ ╚═╝     ╚═╝    
+*  
 *
 *  bY regis  reginaldo.venturadesa@gmail.com 
 *  uso:
@@ -17,10 +38,6 @@
 'open modelo_all.ctl'
 'q time'
 data=subwrd(result,3)
-*ga-> q files
-*File 1 : 29help Days of Sample Model Output
-*  Descriptor: modelo.ctl
-*  Binary: pp20150109_0252.bin
 'q files'
 ans=sublin(result,3)
 var=subwrd(ans,2)
@@ -28,61 +45,55 @@ var=subwrd(ans,2)
 * data da rodada
 *
 data1=substr(var,1,10)
-
-
-
 *
 *  leio arquivo bacia e processo 
 * para cada item dentro desse arquivo
 *
-
 while ( 0=0 )       
 *
 * abre o arquivo bacias
 *
-id=read("../../UTIL/bacias")
+id=read("../../UTIL/limites_das_bacias.dat")
 *
 * se status=0 tudo ok. se não ...
 *
 status=sublin(id,1)   
-
 if (status>0) 
 'quit'
 endif
-
-
-
 var=sublin(id,2)
-bacia=subwrd(var,1)
-label=subwrd(var,2)
-xxx=write("todomundo.prn",label' 'bacia,append)
-yyy=write("comremocao.prn",label' 'bacia,append)
+opcao=subwrd(var,1)
+bacia=subwrd(var,2)
+label=subwrd(var,3)
+*
+* SE EM LIMITES-DAS-BACIAS.DAT
+* EH MARCADO COMO NAO , NÃO FAZ
+* CALCULO PARA AQUELA  BACIA
+*
+if (opcao = "NAO") 
+t=100
+else 
+t=1
+endif
+xxx=write("todomundo.prn",label' 'bacia)
+yyy=write("comremocao.prn",label' 'bacia)
 say "calculando para  bacia:"bacia
 status2=status
 chuva=0
 conta=0
 p=0 
 _pchuva.1=0
-
-
-
-t=1
 while (t<=10)
 'set t ' t
 'q time'
 dataprev=subwrd(result,3)
-
-
-
 *
 * tendo o nome da bacia lido no arquivo "bacia"
 * vou pegar os pontos d egrade que estao
 * dentro da bacia
 *
-
 fd=close("../../CONTORNOS/CADASTRADAS/"bacia)
 status2=0
-
 *
 * execuo esse esse bloco ate  a leitura
 * de todos os pontos de grade que estao na bacia
@@ -112,14 +123,10 @@ valor=0
 endif 
 chuva=chuva+valor
 conta=conta+1 
-
-
-yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 't,append)
-
-
-
+yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 't)
 endif
 endwhile
+
 media=chuva/(conta+(0.00001))
 rc1 = math_format("%7.2f",chuva)
 rc2 = math_format("%7.0f",conta)
@@ -127,12 +134,11 @@ rc3 = math_format("%5.2f",media)
 p=p+1
 _pchuva.p=media
 fim=write(bacia,data1' 'dataprev' 'rc3)
-xxx=write("todomundo.prn",data1' 'dataprev' 'rc3,append)
+xxx=write("todomundo.prn",data1' 'dataprev' 'rc3)
 t=t+1
 endwhile
 say "=================================="label' 'data1' 'bacia
 ih=removiessum(label,data1,bacia) 
-
 ************  da linha 36
 endwhile     
 'quit'
@@ -224,7 +230,7 @@ else
 chuva=26
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -275,7 +281,7 @@ else
 chuva=26
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -325,7 +331,7 @@ else
 chuva=26
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -367,7 +373,7 @@ else
 chuva=26
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -417,7 +423,7 @@ else
 chuva=26
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -470,7 +476,7 @@ else
 chuva=27
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -521,7 +527,7 @@ else
 chuva=27
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -572,7 +578,7 @@ else
 chuva=27
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -625,7 +631,7 @@ else
 chuva=27
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -676,7 +682,7 @@ else
 chuva=27
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -727,7 +733,7 @@ else
 chuva=27
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -779,7 +785,7 @@ else
 chuva=27
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -829,7 +835,7 @@ else
 chuva=27
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
@@ -880,7 +886,7 @@ else
 chuva=27
 endif
 rc3 = math_format("%5.2f",chuva)
-yyy=write(arquivo,data1' 'dataprev' 'rc3,append)
+yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
 endif 
