@@ -102,6 +102,7 @@ conta=0
 chuva=0
 while (!status2)
 fd=read("../../CONTORNOS/CADASTRADAS/"bacia)
+say bacia'============================================'
 status2=sublin(fd,1)
 if (status2 = 0) 
 *
