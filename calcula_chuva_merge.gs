@@ -39,7 +39,7 @@ while ( 0=0 )
 *
 * abre o arquivo bacias
 *
-id=read("../../UTIL/bacias")
+id=read("../../UTIL/limites_das_bacias.dat")
 *
 * se status=0 tudo ok. se não ...
 *
@@ -49,21 +49,28 @@ if (status>0)
 say "deu ruim!"
 'quit'
 endif
-
-
-
-
-
 var=sublin(id,2)
-bacia=subwrd(var,1)
-label=subwrd(var,2)
-xxx=write("todomundo.prn",label' 'bacia,append)
+opcao=subwrd(var,1)
+bacia=subwrd(var,2)
+label=subwrd(var,3)
+*
+* SE EM LIMITES-DAS-BACIAS.DAT
+* EH MARCADO COMO NAO , NÃO FAZ
+* CALCULO PARA AQUELA  BACIA
+*
+if (opcao = "NAO") 
+t=100
+else 
+t=1
+endif
+xxx=write("todomundo.prn",label' 'bacia)
+yyy=write("comremocao.prn",label' 'bacia)
 say "calculando para  bacia:"bacia
 status2=status
 chuva=0
 conta=0
-
-t=1
+p=0 
+_pchuva.1=0
 while (t<=34)
 'set t ' t
 'q time'
