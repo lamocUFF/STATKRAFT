@@ -107,9 +107,9 @@ echo "gep20 0  t,y,x  ** chuva mm "$grads_data >>gfsens.ctl
 echo "endvars">>gfsens.ctl
 
 
-grads -lbc "gfs.gs"  >>./LOG.prn 2>&1
+#grads -lbc "gfs.gs"  >>./LOG.prn 2>&1
 grads -lbc "GFS_1P0.gs"  >>./LOG.prn 2>&1
-grads -lbc "gfsens.gs"  >>./LOG.prn 2>&1
+#grads -lbc "gfsens.gs"  >>./LOG.prn 2>&1
 
 
 
