@@ -255,6 +255,7 @@ echo "x1=subwrd(linha,6)"       >>figura3.gs
 echo "y0=subwrd(linha,7)"       >>figura3.gs
 echo "y1=subwrd(linha,9)"       >>figura3.gs
 echo "tipo=subwrd(linha,9)"     >>figura3.gs
+echo "say bacia' 'shape' 'x0' 'x1' 'y0' 'y1' 'tipo"    >>figura3.gs
 echo "plota=subwrd(linha,10)"    >>figura3.gs
 echo "'set lon 'x1' 'x0 "       >>figura3.gs
 echo "'set lat 'y1' 'y0 "       >>figura3.gs
