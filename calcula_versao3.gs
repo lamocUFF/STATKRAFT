@@ -138,7 +138,9 @@ xxx=write("todomundo.prn",data1' 'dataprev' 'rc3)
 t=t+1
 endwhile
 say "=================================="label' 'data1' 'bacia
+if (opcao ="SIM") 
 ih=removiessum(label,data1,bacia) 
+endif 
 ************  da linha 36
 endwhile     
 'quit'
