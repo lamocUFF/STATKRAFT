@@ -65,7 +65,7 @@ status2=status
 chuva=0
 conta=0
 p=0 
-
+precip=0
 _pchuva.1=0
 while (t<=31)
 'set t ' t+1
