@@ -556,5 +556,10 @@ echo "["`date`"] CRIANDO FIGURAS OBSERVADO"
 cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1 
+
+
+mkdir diaria >>./LOG.prn 2>&1
+mv *.png  diaria
+
 cd ..
 cd ..
