@@ -118,14 +118,14 @@ media=precip/(conta+(0.00001))
 rc1 = math_format("%7.2f",precip)
 rc2 = math_format("%7.0f",conta)
 rc3 = math_format("%5.2f",media)
-fim=write(bacia'.gs1p0',data' 'dataprev' 'rc3,append)
+fim=write(bacia,data' 'dataprev' 'rc3)
 xxx=write("todomundo.prn",data' 'dataprev' 'rc3,append)
 t=t+2
 endwhile
 
 ************  da linha 36
 endwhile    
-'return'
+'quit'
 
 
 
