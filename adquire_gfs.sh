@@ -108,6 +108,7 @@ echo "endvars">>gfs_1P0.ctl
 
 # grads -lbc "gfs.gs"  >>./LOG.prn 2>&1
 grads -lbc "calcula_gfs_1P0.gs"  >>./LOG.prn 2>&1
+
 #grads -lbc "gfsens.gs"  >>./LOG.prn 2>&1
 
 
