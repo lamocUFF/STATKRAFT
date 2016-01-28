@@ -429,6 +429,7 @@ cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 # executa script gerador de imagens
 #
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1 
+grads -lbc "figura3.gs"  >>./LOG.prn 2>&1 
 #
 #  copia imagens geradas para dirrtorio diario 
 #

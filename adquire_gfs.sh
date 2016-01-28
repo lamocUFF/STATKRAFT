@@ -332,6 +332,8 @@ cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 #  EXECUTA O SCRIPT GERADO PELO AUTO SCRIPT PARA GERAÇÃO DE FIGURAS
 #
 grads -lbc "figura3.gs"  >>./LOG.prn 2>&1
+grads -pbc "figura3.gs"  >>./LOG.prn 2>&1
+
 #
 # COPIA AS FIGURAS GERADAS PARA O DIRETORIA DIARIO
 #
