@@ -201,7 +201,7 @@ echo "tfinal=tsab+6"                    >>figura3.gs
 #
 #  data RODADA
 #
-echo "'set t  0'"                     >>figura3.gs
+echo "'set t 0'"                     >>figura3.gs
 echo "'q time'"                         >>figura3.gs
 echo "var0=subwrd(result,3)"            >>figura3.gs
 #
@@ -289,7 +289,7 @@ echo "'cores.gs'"                    >>figura3.gs
 echo "'d sum(prec,t=1,t='tsex')'"         >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 1'"  >>figura3.gs
-echo "'draw string 2.5 10.6 RODADA :'dia1=0'/'mes0'/'ano0 "               >>figura3.gs
+echo "'draw string 2.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura3.gs
 echo "'draw string 2.5 10.4 PERIODO:'dia1'/'mes1'/'ano1' a 'dia2'/'mes2'/'ano2  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" >>figura3.gs
 echo "'basemap.gs O 50 0 M'" >>figura3.gs

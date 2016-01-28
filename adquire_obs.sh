@@ -63,11 +63,24 @@ fi
 if [ $1 ="" ];then
 data=`date +"%Y%m%d"`
 datagrads=`date +"%d%b%Y" -d "1 days"` 
+data_rodada=`date +"%d/%m/%Y"`
+grads_data=`date -d "34 days ago" +"12Z%d%b%Y"`
 else
 let b="$1-1"
+let c="$34+$1"
 data=`date +"%Y%m%d" -d "$1 days ago"`
 datagrads=`date +"%d%b%Y" -d "$b  days ago"` 
+data_rodada=`date +"%d/%m/%Y" -d "$b  days ago"`
+grads_data=`date -d "$c days ago" +"12Z%d%b%Y"`
 fi
+
+#
+# data da rodada para referencia
+#  e data para o grads
+#
+
+
+
 
 echo $data
 echo $datagrads
@@ -137,12 +150,7 @@ ano=`date +"%Y" -d "$n days ago"`
 wget -nc ftp1.cptec.inpe.br/modelos/io/produtos/MERGE/$ano/prec_$download_data".bin" >>./LOG.prn 2>&1
 done
 cd ..
-#
-# data da rodada para referencia
-#  e data para o grads
-#
-data_rodada=`date +"%d/%m/%Y"`
-grads_data=`date -d "34 days ago" +"12Z%d%b%Y"`
+
 #
 #  copia o script calculador para diretorio de producao 
 #
@@ -235,7 +243,7 @@ echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d rain'"            >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 2.5 10.8     PRECIPITACAO ACUMULADA DIARIA'"  >>figura3.gs
-echo "'draw string 2.5 10.6 RODADA :"$data_rodada"'"               >>figura3.gs
+echo "'draw string 2.5 10.6 DATA GERAÇÂO IMAGEM :"$data_rodada"'"               >>figura3.gs
 echo "'draw string 2.5 10.4 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" 								>>figura3.gs
 echo "'basemap.gs O 50 0 M'" 										>>figura3.gs
@@ -278,7 +286,8 @@ echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d rain'"         >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 2.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 1'"  >>figura3.gs
-echo "'draw string 2.5 8.1 RODADA :"$data_rodada"'"               >>figura3.gs
+#echo "'draw string 2.5 8.1 RODADA :"$data_rodada"'"               >>figura3.gs
+echo "'draw string 2.5 8.1 DATA GERAÇÂO IMAGEM :"$data_rodada"'"               >>figura3.gs
 echo "'draw string 2.5 7.9 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" >>figura3.gs
 echo "'basemap.gs O 50 0 M'" >>figura3.gs
