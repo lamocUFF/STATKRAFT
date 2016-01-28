@@ -324,6 +324,10 @@ echo "["`date`"] CRIANDO FIGURAS OBSERVADO"                                     
 #------------------------------------------------------------------------------
 #
 #
+#  adiciona o scripts o script que plota bacias
+#
+cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
+#
 #  EXECUTA O SCRIPT GERADO PELO AUTO SCRIPT PARA GERAÇÃO DE FIGURAS
 #
 grads -lbc "figura3.gs"  >>./LOG.prn 2>&1
