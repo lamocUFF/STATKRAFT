@@ -62,15 +62,13 @@ fi
 
 if [ $1 ="" ];then
 data=`date +"%Y%m%d"`
-datagrads=`date +"%d%b%Y" -d "1 days"` 
 data_rodada=`date +"%d/%m/%Y"`
 grads_data=`date -d "34 days ago" +"12Z%d%b%Y"`
 else
 let b="$1-1"
 let c="$34+$1"
 data=`date +"%Y%m%d" -d "$1 days ago"`
-datagrads=`date +"%d%b%Y" -d "$b  days ago"` 
-data_rodada=`date +"%d/%m/%Y" -d "$b  days ago"`
+data_rodada=`date +"%d/%m/%Y" -d "$1  days ago"`
 grads_data=`date -d "$c days ago" +"12Z%d%b%Y"`
 fi
 
