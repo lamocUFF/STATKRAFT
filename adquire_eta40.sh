@@ -259,7 +259,7 @@ echo "dia5=substr(var5,4,2)"                       >>figura3.gs
 # 
 echo "status2=0"                       >>figura3.gs
 echo "while(!status2)" >>figura3.gs
-echo 'fd=read("../../CONTORNOS/CADASTRADAS/limites_das_bacias.dat")' >>figura3.gs
+echo 'fd=read("../../UTIL/limites_das_bacias.dat")' >>figura3.gs
 echo "status2=sublin(fd,1) "    >>figura3.gs
 echo "if (status2 = 0) "        >>figura3.gs
 echo "linha=sublin(fd,2)"       >>figura3.gs
