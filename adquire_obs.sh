@@ -125,12 +125,7 @@ fi
 # onde tudo aocntece. 
 #
 cd CHUVA_DE_GRADE
-#
-# CRIA DIRETORIO DE PRODUCAO 
-#
-#rm -r $data  >>./LOG.prn 2>&1 
-mkdir $data >>./LOG.prn 2>&1 
-cd $data     >>./LOG.prn 2>&1 
+
 #
 # SE NAO EXISTE CRIA DIRETORIO DADOS
 # DIRETORIO DADOS CONTEM OS DADOS DE CHUVA
@@ -150,7 +145,12 @@ ano=`date +"%Y" -d "$n days ago"`
 wget -nc ftp1.cptec.inpe.br/modelos/io/produtos/MERGE/$ano/prec_$download_data".bin" >>./LOG.prn 2>&1
 done
 cd ..
-
+#
+# CRIA DIRETORIO DE PRODUCAO 
+#
+#rm -r $data  >>./LOG.prn 2>&1 
+mkdir $data >>./LOG.prn 2>&1 
+cd $data     >>./LOG.prn 2>&1 
 #
 #  copia o script calculador para diretorio de producao 
 #
