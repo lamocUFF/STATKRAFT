@@ -83,8 +83,6 @@ echo "["`date`"] ADQUIRINDO DADOS OBSERVADOS"
 
 
 
-echo "-----------------------------------------------------------------------------------------------------------------"
-
 
 export LANG=en_us_8859_1
 
@@ -103,77 +101,52 @@ export GASCRP=/usr/local/grads
 fi 
 
 
-
-MODDEBUG=1 
-#
-# Pega data do dia (relogio do micro)
-# DATA0 = data de hoje
-# DATA1 = data de amanha (para os produtos)
-# DATA2 = data de 7 dias a frente 
-# 
-
-#data=`date +"%Y%m%d" -d "$1 days ago"`
-
-# echo `date +"%Y%m%d" -d "$1 days ago"`
-# echo $1
-# echo $data
-
-
 #
 # entra no diretorio de trabalho 
 #
 if [ ! -f ./CHUVA_DE_GRADE ];then 
 mkdir ./CHUVA_DE_GRADE            >./LOG.prn 2>&1 
 fi  
-# entra no direotiro SAIDA e depois diretorio da data do dia
+#
+# entra no direotiro CHUVA_DE_GRADE e depois diretorio da data do dia
 # onde tudo aocntece. 
+#
 cd CHUVA_DE_GRADE
-mkdir $data    >>./LOG.prn 2>&1 
-
+#
+# CRIA DIRETORIO DE PRODUCAO 
+#
+#rm -r $data  >>./LOG.prn 2>&1 
+mkdir $data >>./LOG.prn 2>&1 
+cd $data     >>./LOG.prn 2>&1 
+#
+# SE NAO EXISTE CRIA DIRETORIO DADOS
+# DIRETORIO DADOS CONTEM OS DADOS DE CHUVA
+# ELE É ATUALZIADO TODA A RODADA
+#
 if [ ! -f ./DADOS ];then 
 mkdir ./DADOS            >>./LOG.prn 2>&1 
 fi  
-
 cd DADOS
-
-
-
 #
 # baixa as 63 ultimas chuvas. se jรก baixou passa adiante. 
 #
-
-
-
-
 for n in `seq --format=%02g 0 33`
 do
-#let b="$n + $1"
-#echo $b
 download_data=`date +"%Y%m%d" -d "$n days ago"`
 ano=`date +"%Y" -d "$n days ago"`
 wget -nc ftp1.cptec.inpe.br/modelos/io/produtos/MERGE/$ano/prec_$download_data".bin" >>./LOG.prn 2>&1
-###wget -nc ftp://ftp.cpc.ncep.noaa.gov/precip/CPC_UNI_PRCP/GAUGE_GLB/RT/$ano/PRCP_CU_GAUGE_V1.0GLB_0.50deg.lnx.$download_data".RT"  >>./LOG.prn 2>&1  
 done
-
 cd ..
-
-
-
+#
+# data da rodada para referencia
+#  e data para o grads
+#
 data_rodada=`date +"%d/%m/%Y"`
-
-#let b="33 + $1"
 grads_data=`date -d "34 days ago" +"12Z%d%b%Y"`
-#data=`date +"%Y%m%d" -d "$1 days ago"`
-rm -r $data
-mkdir $data
-cd $data
-
+#
+#  copia o script calculador para diretorio de producao 
+#
 cp ../../calcula_chuva_merge.gs .
-
-
-
-
-
 #
 # cria o arquivo ctl 
 #
@@ -189,13 +162,13 @@ echo "vars 2"                                                 >>chuvamerge.ctl
 echo "rain     1  00 the grid analysis (0.1mm/day)"           >>chuvamerge.ctl
 echo "gnum     1  00 the number of stn"                       >>chuvamerge.ctl
 echo "ENDVARS"                                                >>chuvamerge.ctl
-
 echo "["`date`"] CALCULANDO CHUVA  OBSERVADA"  >./LOG.prn 2>&1 
-
+#
+# executa o calculador
+#
 grads -lbc "calcula_chuva_merge.gs"  >>./LOG.prn 2>&1 
-
-#----------------------------------------------------
-
+#------------------------------------------------------------------------------
+#              AUTO SCRIPT PARA CRIAÇÃO DE FIGURAS
 #-----------------------------------------------------------------------------------------
 #  cria o script para data operativa por bacia cadastrada
 #  as bacias estao cadastradas em CADASTRO/CADASTRADAS
@@ -221,10 +194,6 @@ echo "*say page" >>figura3.gs
 echo "if (page ="8.5") " >>figura3.gs
 echo "'set parea 0.5 8.5 1.5 10.2'" >>figura3.gs
 echo "endif"                                  >>figura3.gs
-
-
-
-
 #
 # a rotina varre o arquivo contendo os contornos das bacias
 # para cada contorno encontrado ele gera as figuras
@@ -245,8 +214,6 @@ echo "tipo=subwrd(linha,10)"     >>figura3.gs
 echo "plota=subwrd(linha,11)"    >>figura3.gs
 echo "'set lon 'x1' 'x0 "       >>figura3.gs
 echo "'set lat 'y1' 'y0 "       >>figura3.gs
-
-
 #------------------------------------------------------------------------------------
 # caso a bacia se ja em forma de retrato 
 # definido no arquivo limites_das_bacias em CONTORNOS/CADASTRADAS
@@ -327,19 +294,12 @@ echo "'c'"                                                             >>figura3
 echo "t=t+1"                    >>figura3.gs
 echo "'c'"                    >>figura3.gs
 echo "endwhile"                    >>figura3.gs
-
 #
 # PARTE FINAL DO SCRIPT . NÃO MEXER 
 #
-
 echo "endif"                            							>>figura3.gs 
 echo "endif"                            							>>figura3.gs 
 echo "endwhile"                          							>>figura3.gs
-
-#
-# modulo de debug . para ativar MODDEBUG=1 
-#
-
 #
 # ESCALA  ATUAL 
 #
@@ -349,40 +309,6 @@ echo "'define_colors.gs'">>coresdiaria.gs
 echo "'set rgb 99 251 94 107'">>coresdiaria.gs
 echo "'set clevs    05 10 15 20 25 30 35  50  70  100  150'">>coresdiaria.gs
 echo "'set ccols 00 44 45 47 49 34 37 39  22  23  27    29   99'  ">>coresdiaria.gs
-
-# echo "'set lon -80.0000   -30.0000   '"                     >>figura3.gs
-# echo "'set lat   -35 06.0000         ' "                                    >>figura3.gs
-# echo " t=1"                                    >>figura3.gs
-# echo " while (t<=33)"                                    >>figura3.gs
-# echo "'c'"   >>figura3.gs
-# echo "'set t 't"                                    >>figura3.gs
-# echo "'q time'"                                    >>figura3.gs
-# echo "datah=subwrd(result,3) "                                    >>figura3.gs
-# # data 7 dias
-# echo "ano6=substr(datah,9,4)"                       >>figura3.gs
-# echo "mes6=substr(datah,6,3)"                       >>figura3.gs
-# echo "dia6=substr(datah,4,2)"                       >>figura3.gs
-# echo "'coresdiaria.gs'"                                         >>figura3.gs
-# echo "'set gxout shaded'"                                    >>figura3.gs
-# echo "'d rain'"                                 >>figura3.gs
-# echo "'draw string 2.5 8.3 PRECIPITACAO DIARIA '"  >>figura3.gs
-# echo "'draw string 2.5 8.1 RODADA :'dia1'/'mes1'/'ano1"               >>figura3.gs
-# echo "'draw string 2.5 7.9 DIA    :'dia6'/'mes6'/'ano6"      >>figura3.gs
-# #echo "'draw string 2.5 8.1 RODADA :"$DATA0" - "$hora"Z'"     >>figura3.gs
-# #echo "'draw string 2.5 7.9 Periodo:'datah"    >>figura3.gs
-# echo "'set rgb 50   255   255    255'" >>figura3.gs
-# echo "'basemap.gs O 50 0 M'" >>figura3.gs
-# echo "'set mpdset hires'" >>figura3.gs
-# echo "'set map 15 1 6'" >>figura3.gs
-# echo "'draw map'" >>figura3.gs     
-# echo "'cbarn.gs'"                                            >>figura3.gs
-# echo "'draw shp ../../CONTORNOS/SHAPES/BRASIL.shp'"     >>figura3.gs
-# #echo  "plotausina(bacia,page)"                          >>figura3.gs  
-# echo "'plota_hidrografia.gs'"                          >>figura3.gs
-# echo "'printim prec_diaria_'datah'.png white'"      >>figura3.gs
-# echo "t=t+1"                                    >>figura3.gs
-# echo "endwhile"                                    >>figura3.gs
-# fi 
 echo "'quit'"                          								>>figura3.gs
 #
 #  cria arquivo de plotagem das bacias no mapa do brasil 
@@ -463,67 +389,12 @@ echo "'define_colors.gs'">>cores.gs
 echo "'set rgb 99 251 94 107'">>cores.gs
 echo "'set clevs    20 25 30 40 50 75 100 150 200 250 300'">>cores.gs
 echo "'set ccols 00 44 45 47 49 34 37 39  22  23  27  29 99'  ">>cores.gs
-
 echo "* escala SUGERIDA ">coresdiaria.gs
 echo "*">>cores.gscoresdiaria
 echo "'define_colors.gs'">>coresdiaria.gs
 echo "'set rgb 99 251 94 107'">>coresdiaria.gs
 echo "'set clevs    05 10 15 20 25 30 35  50  70  100  150'">>coresdiaria.gs
 echo "'set ccols 00 44 45 47 49 34 37 39  22  23  27    29   99'  ">>coresdiaria.gs
-
-
-
-#--------------------------------------------------
-
-# echo "*"                                                              >figura3.gs
-# echo "* esse script é auto gerado. documentação em adquire_eta.sh"   >>figura3.gs
-# echo "*By reginaldo.venturadesa@gmail.com "                             >>figura3.gs
-# echo "'open chuvamerge.ctl'"            >>figura3.gs
-# #echo "*'set mpdset hires'"               >>figura3.gs
-# echo "'set gxout shaded'"               >>figura3.gs
-# #
-# echo "'set lon -80.0000   -30.0000   '"                     >>figura3.gs
-# echo "'set lat   -35 06.0000         ' "                                    >>figura3.gs
-# echo "'set t 1'"                                    >>figura3.gs
-# echo "'q time'"                                    >>figura3.gs
-# echo "datah=subwrd(result,3) "                                    >>figura3.gs
-# # data 7 dias
-# echo "ano1=substr(datah,9,4)"                       >>figura3.gs
-# echo "mes1=substr(datah,6,3)"                       >>figura3.gs
-# echo "dia1=substr(datah,4,2)"                       >>figura3.gs
-# echo " t=1"                                    >>figura3.gs
-# echo " while (t<=34)"                                    >>figura3.gs
-# echo "'c'"   >>figura3.gs
-# echo "'set t 't"                                    >>figura3.gs
-# echo "'q time'"                                    >>figura3.gs
-# echo "datah=subwrd(result,3) "                                    >>figura3.gs
-# # data 7 dias
-# echo "ano6=substr(datah,9,4)"                       >>figura3.gs
-# echo "mes6=substr(datah,6,3)"                       >>figura3.gs
-# echo "dia6=substr(datah,4,2)"                       >>figura3.gs
-# echo "'coresdiaria.gs'"                                         >>figura3.gs
-# echo "'set gxout shaded'"                                    >>figura3.gs
-# echo "'d rain'"                                 >>figura3.gs
-# echo "'set string 1 c '"                                 >>figura3.gs
-# echo "'draw string 2.5 10.8 PRECIPITACAO DIARIA  OBSERVADA'"  >>figura3.gs
-# echo "'draw string 2.0 10.6 RODADA :'dia1'/'mes1'/'ano1"               >>figura3.gs
-# echo "'draw string 2.0 10.4 DIA    :'dia6'/'mes6'/'ano6"      >>figura3.gs
-# #echo "'draw string 2.5 8.1 RODADA :"$DATA0" - "$hora"Z'"     >>figura3.gs
-# #echo "'draw string 2.5 7.9 Periodo:'datah"    >>figura3.gs
-# echo "'set rgb 50   255   255    255'" >>figura3.gs
-# echo "'basemap.gs O 50 0 M'" >>figura3.gs
-# echo "'set mpdset hires'" >>figura3.gs
-# echo "'set map 15 1 6'" >>figura3.gs
-# echo "'draw map'" >>figura3.gs     
-# echo "'cbarn.gs'"                                            >>figura3.gs
-# echo "'draw shp ../../CONTORNOS/SHAPES/BRASIL.shp'"     >>figura3.gs
-# #echo  "plotausina(bacia,page)"                          >>figura3.gs  
-# echo "'plota_hidrografia.gs'"                          >>figura3.gs
-# echo "'printim prec_diaria_'ano6 mes6 dia6'.png white'"      >>figura3.gs
-# echo "t=t+1"                                    >>figura3.gs
-# echo "endwhile"                                    >>figura3.gs
-# echo "'quit'"                          								>>figura3.gs
-
 #
 #  cria arquivo de plotagem das bacias no mapa do brasil 
 # 
@@ -540,8 +411,6 @@ done
 echo "'set line 5 1 1'"                                             >plota_hidrografia.gs
 echo "'draw shp ../../CONTORNOS/SHAPES/hidrografia.shp '"                 >>plota_hidrografia.gs
 echo "'set line 5 1 1'"                                             >>plota_hidrografia.gs
-
-
 #
 # ESCALA  cores diaria 
 #
@@ -551,15 +420,19 @@ echo "'define_colors.gs'">>coresdiaria.gs
 echo "'set rgb 99 251 94 107'">>coresdiaria.gs
 echo "'set clevs    00 05 10 15 20 25 30 35  50  70  100  150'">>coresdiaria.gs
 echo "'set ccols 00 43 45 47 49 34 37 39 25  27  29   57   58 59'  ">>coresdiaria.gs
-
 echo "["`date`"] CRIANDO FIGURAS OBSERVADO" 
+#
+#  adiciona o scripts o script que plota bacias
+#
 cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
-
+#
+# executa script gerador de imagens
+#
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1 
-
-
+#
+#  copia imagens geradas para dirrtorio diario 
+#
 mkdir diaria >>./LOG.prn 2>&1
 mv *.png  diaria
-
 cd ..
 cd ..
