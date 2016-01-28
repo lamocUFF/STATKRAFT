@@ -35,9 +35,9 @@ export LANG=en_us_8859_1
 #
 # executando os processos 
 #
-./adquire_eta40.sh 
-./adquire_obs.sh
-./adquire_gfs.sh 
+./adquire_eta40.sh $1
+./adquire_obs.sh $1
+./adquire_gfs.sh  $1
 
 
 
