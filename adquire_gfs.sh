@@ -43,6 +43,7 @@ fi
 mkdir $dir_data  >>./LOG.prn 2>&1
 cd $dir_data   >>./LOG.prn 2>&1
 cp ../../calcula_gfs_1P0.gs .
+echo "["`date`"] ADQUIRINDO DADOS GFS  E GERANDO MEDIA POR BACIA" 
 #
 #  configurador de data para o grads
 #
@@ -64,7 +65,7 @@ echo "endvars">>gfs_1P0.ctl
 # executa o script calculador 
 #
 grads -lbc "calcula_gfs_1P0.gs"  >>./LOG.prn 2>&1
-
+echo "["`date`"] GERANDO FIGURAS POR BACIA" 
 #------------------------------------------------------------------------------
 #              AUTO SCRIPT PARA CRIAÇÃO DE FIGURAS
 #-----------------------------------------------------------------------------------------
@@ -116,7 +117,7 @@ echo "'set lat 'y1' 'y0 "       >>figura3.gs
 # caso a bacia se ja em forma de retrato 
 # definido no arquivo limites_das_bacias em CONTORNOS/CADASTRADAS
 #
-#   FIGURAS RETRATO SEMANA OPERATIVA 1
+#   FIGURAS RETRATO 
 # 
 echo "if (tipo = "RETRATO" & page ="8.5" & plota="SIM") "   >>figura3.gs
 echo "t=1 "    >>figura3.gs 
@@ -336,6 +337,8 @@ grads -lbc "figura3.gs"  >>./LOG.prn 2>&1
 #
 mkdir diaria >>./LOG.prn 2>&1
 mv *.png  diaria
+echo "["`date`"] FIM DO PROCESSO GFS" 
+
 cd ..
 cd ..
 
