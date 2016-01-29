@@ -435,7 +435,51 @@ echo "'draw shp ../../CONTORNOS/SHAPES/'shape"     >>figura3.gs
 echo "'plota_hidrografia.gs'"     >>figura3.gs
 echo "plotausina(bacia,page)" >>figura3.gs 
 echo "'printim 'bacia'_prec07dias_"$data"_"$hora"Z.png white'"       >>figura3.gs
-echo "*say t0"                           >>figura3.gs
+
+#
+#
+#
+#
+echo "'c'" >>figura3.gs 
+echo "t=1 "    >>figura3.gs 
+echo "while (t<=10) "    >>figura3.gs 
+echo "'set t 't"                     >>figura3.gs   
+echo "'q time'"                           >>figura3.gs 
+echo "var1=subwrd(result,3)"            >>figura3.gs
+echo "ano1=substr(var1,9,4)"                       >>figura3.gs
+echo "mes1=substr(var1,6,3)"                       >>figura3.gs
+echo "dia1=substr(var1,4,2)"                       >>figura3.gs
+echo "'c'"                        >>figura3.gs
+echo "'c'"                        >>figura3.gs
+echo "'set parea 0.5 10.5 1.88392 7.31608'"                     >>figura3.gs
+echo "'coresdiaria.gs'"                    >>figura3.gs
+echo "'d prec'"         >>figura3.gs
+echo "'cbarn.gs'"                       >>figura3.gs
+echo "'draw string 2.5 8.3 PRECIPITACAO DIARIA ETA 40KM'"  >>figura3.gs
+echo "'draw string 2.5 8.1 RODADA :'dia0'/'mes0'/'ano0"               >>figura3.gs
+#echo "'draw string 2.5 8.1 RODADA :"$data_rodada"'"               >>figura3.gs
+echo "'draw string 2.5 7.9 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
+echo "'set rgb 50   255   255    255'" >>figura3.gs
+echo "'basemap.gs O 50 0 M'" >>figura3.gs
+echo "'set mpdset hires'" >>figura3.gs
+echo "'set map 15 1 6'" >>figura3.gs
+echo "'draw map'" >>figura3.gs   
+echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                                  >>figura3.gs
+echo "say shape" >>figura3.gs
+echo "'plota_hidrografia.gs'"     >>figura3.gs
+echo "plotausina(bacia,page)" >>figura3.gs  
+echo "'printim 'bacia'_diaria_'var1'.png white'"                       >>figura3.gs
+echo "'c'"                                                             >>figura3.gs
+echo "t=t+1"                    >>figura3.gs
+echo "'c'"                    >>figura3.gs
+echo "endwhile"                    >>figura3.gs
+
+
+#
+#
+#
+#
+
 echo "endif"                            >>figura3.gs 
 #
 # PARTE FINAL DO SCRIPT . NÃO MEXER 
@@ -481,6 +525,12 @@ echo "'printim prec_diaria_'datah'.png white'"      >>figura3.gs
 echo "t=t+1"                                    >>figura3.gs
 echo "endwhile"                                    >>figura3.gs
 echo "'quit'"                          								>>figura3.gs
+
+#
+#  cria parte comum como tabelas de cores e escalas, hidrografoa etc...
+#
+./common_stuff.sh  
+
 
 #
 # ESSE ARQUIVO CONTEM AS LOCALIZACOES DAS USNINAS
