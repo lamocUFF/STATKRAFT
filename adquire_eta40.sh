@@ -536,38 +536,38 @@ echo "endwhile"                          							>>figura3.gs
 # ESCALA  ATUAL 
 #
 
-echo "'set lon -80.0000   -30.0000   '"                     >>figura3.gs
-echo "'set lat   -35 06.0000         ' "                                    >>figura3.gs
-echo " t=1"                                    >>figura3.gs
-echo " while (t<=10)"                                    >>figura3.gs
-echo "'c'"   >>figura3.gs
-echo "'set t 't"                                    >>figura3.gs
-echo "'q time'"                                    >>figura3.gs
-echo "datah=subwrd(result,3) "                                    >>figura3.gs
-# data 7 dias
-echo "ano6=substr(datah,9,4)"                       >>figura3.gs
-echo "mes6=substr(datah,6,3)"                       >>figura3.gs
-echo "dia6=substr(datah,4,2)"                       >>figura3.gs
-echo "'coresdiaria.gs'"                                         >>figura3.gs
-echo "'set gxout shaded'"                                    >>figura3.gs
-echo "'d prec'"                                 >>figura3.gs
-echo "'draw string 2.5 8.3 PRECIPITACAO DIARIA '"  >>figura3.gs
-echo "'draw string 2.5 8.1 RODADA :'dia1'/'mes1'/'ano1"               >>figura3.gs
-echo "'draw string 2.5 7.9 DIA    :'dia6'/'mes6'/'ano6"      >>figura3.gs
-#echo "'draw string 2.5 8.1 RODADA :"$DATA0" - "$hora"Z'"     >>figura3.gs
-#echo "'draw string 2.5 7.9 Periodo:'datah"    >>figura3.gs
-echo "'set rgb 50   255   255    255'" >>figura3.gs
-echo "'basemap.gs O 50 0 M'" >>figura3.gs
-echo "'set mpdset hires'" >>figura3.gs
-echo "'set map 15 1 6'" >>figura3.gs
-echo "'draw map'" >>figura3.gs     
-echo "'cbarn.gs'"                                            >>figura3.gs
-echo "'draw shp ../../CONTORNOS/SHAPES/BRASIL.shp'"     >>figura3.gs
-#echo  "plotausina(bacia,page)"                          >>figura3.gs  
-echo "'plota_hidrografia.gs'"                          >>figura3.gs
-echo "'printim prec_diaria_'datah'.png white'"      >>figura3.gs
-echo "t=t+1"                                    >>figura3.gs
-echo "endwhile"                                    >>figura3.gs
+# echo "'set lon -80.0000   -30.0000   '"                     >>figura3.gs
+# echo "'set lat   -35 06.0000         ' "                                    >>figura3.gs
+# echo " t=1"                                    >>figura3.gs
+# echo " while (t<=10)"                                    >>figura3.gs
+# echo "'c'"   >>figura3.gs
+# echo "'set t 't"                                    >>figura3.gs
+# echo "'q time'"                                    >>figura3.gs
+# echo "datah=subwrd(result,3) "                                    >>figura3.gs
+# # data 7 dias
+# echo "ano6=substr(datah,9,4)"                       >>figura3.gs
+# echo "mes6=substr(datah,6,3)"                       >>figura3.gs
+# echo "dia6=substr(datah,4,2)"                       >>figura3.gs
+# echo "'coresdiaria.gs'"                                         >>figura3.gs
+# echo "'set gxout shaded'"                                    >>figura3.gs
+# echo "'d prec'"                                 >>figura3.gs
+# echo "'draw string 2.5 8.3 PRECIPITACAO DIARIA '"  >>figura3.gs
+# echo "'draw string 2.5 8.1 RODADA :'dia1'/'mes1'/'ano1"               >>figura3.gs
+# echo "'draw string 2.5 7.9 DIA    :'dia6'/'mes6'/'ano6"      >>figura3.gs
+# #echo "'draw string 2.5 8.1 RODADA :"$DATA0" - "$hora"Z'"     >>figura3.gs
+# #echo "'draw string 2.5 7.9 Periodo:'datah"    >>figura3.gs
+# echo "'set rgb 50   255   255    255'" >>figura3.gs
+# echo "'basemap.gs O 50 0 M'" >>figura3.gs
+# echo "'set mpdset hires'" >>figura3.gs
+# echo "'set map 15 1 6'" >>figura3.gs
+# echo "'draw map'" >>figura3.gs     
+# echo "'cbarn.gs'"                                            >>figura3.gs
+# echo "'draw shp ../../CONTORNOS/SHAPES/BRASIL.shp'"     >>figura3.gs
+# #echo  "plotausina(bacia,page)"                          >>figura3.gs  
+# echo "'plota_hidrografia.gs'"                          >>figura3.gs
+# echo "'printim prec_diaria_'datah'.png white'"      >>figura3.gs
+# echo "t=t+1"                                    >>figura3.gs
+# echo "endwhile"                                    >>figura3.gs
 echo "'quit'"                          								>>figura3.gs
 
 #
