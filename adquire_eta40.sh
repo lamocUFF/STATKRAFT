@@ -600,7 +600,7 @@ mkdir diaria >>./LOG.prn 2>&1
 mv *semanaoperativa_1*  imagens_semanaoperativa_1  >>./LOG.prn 2>&1
 mv *semanaoperativa_2*  imagens_semanaoperativa_2  >>./LOG.prn 2>&1
 mv *prec07dias* imagens_7dias                      >>./LOG.prn 2>&1
-mv prec_diaria* diaria
+mv *.png diaria  >>./LOG.prn 2>&1
 cd ..
 cd ..
 pwd
