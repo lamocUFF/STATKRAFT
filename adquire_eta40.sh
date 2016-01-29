@@ -529,7 +529,7 @@ echo "'quit'"                          								>>figura3.gs
 #
 #  cria parte comum como tabelas de cores e escalas, hidrografoa etc...
 #
-./common_stuff.sh  
+../../common_stuff.sh  
 
 
 #
