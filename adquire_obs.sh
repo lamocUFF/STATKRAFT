@@ -241,8 +241,8 @@ echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d rain'"            >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 2.5 10.8     PRECIPITACAO ACUMULADA DIARIA'"  >>figura3.gs
-echo "'draw string 2.5 10.6 DATA GERAÇÂO IMAGEM :"$data_rodada"'"               >>figura3.gs
-echo "'draw string 2.5 10.4 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
+echo "'draw string 2.5 10.6     DATA GERACAO DA IMAGEM :"$data_rodada"'"               >>figura3.gs
+echo "'draw string 2.5 10.4     DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" 								>>figura3.gs
 echo "'basemap.gs O 50 0 M'" 										>>figura3.gs
 echo "'set mpdset hires'" 											>>figura3.gs
