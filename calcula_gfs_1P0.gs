@@ -139,7 +139,7 @@ function baixagfs(config)
 
 'set lon 280 330'
 'set lat -40 10'
-t=1
+t=2
 'set fwrite 'config'_1P0.bin'
 'set gxout fwrite'
 while (t<=33)
