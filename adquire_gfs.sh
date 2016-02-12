@@ -32,7 +32,7 @@ grads_data=`date +"00Z%d%b%Y"`
 grads_data2=`date +"00Z%d%b%Y"`
 data_rodada=`date +"%d/%m/%Y"`
 else
-let b="$1-1"
+let b="$1+1"
 let c="$34+$1"
 dir_data=`date +"%Y%m%d" -d "$1 days ago"`
 grads_data=`date +"00Z%d%b%Y" -d "$b  days ago"`
