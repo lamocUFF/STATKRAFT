@@ -179,7 +179,7 @@ echo "'set parea 0.5 10.5 1.88392 7.31608'"                     >>figura3.gs
 echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d sum(chuva,t='t',t='t+1')'"         >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
-echo "'draw string 2.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 1'"  >>figura3.gs
+echo "'draw string 2.5 8.3  PRECIPITACAO ACUMULADA DIARIA GFS'"  >>figura3.gs
 echo "'draw string 2.5 8.1 RODADA :"$data_rodada"'"               >>figura3.gs
 echo "'draw string 2.5 7.9 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" >>figura3.gs
