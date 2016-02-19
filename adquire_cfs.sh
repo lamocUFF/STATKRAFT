@@ -55,9 +55,9 @@ echo "["`date`"] ADQUIRINDO DADOS CFS"
 
 echo ### http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs.20160215/00/time_grib_02/prate.02.2016021500.daily.grb2
 
-wget "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsdata1"/00/time_grib_02/prate.02."$cfsdata2".daily.grb2" 
+wget "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsdata2"/00/time_grib_02/prate.02."$cfsdata1".daily.grb2" 
 
-echo wget "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsdata1"/00/time_grib_02/prate.02."$cfsdata2".daily.grb2" 
+echo wget "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsdata2"/00/time_grib_02/prate.02."$cfsdata1".daily.grb2" 
 
 #
 #  configurador de data para o grads
