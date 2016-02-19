@@ -101,11 +101,12 @@ gribmap -i cfs.ctl
 
 
 
-# #
-# # executa o script calculador 
-# #
-# #grads -lbc "calcula_gfs_1P0.gs"  >>./LOG.prn 2>&1
-# echo "["`date`"] GERANDO FIGURAS POR BACIA" 
+#
+# executa o script calculador 
+#
+grads -lbc "calcula_cfs.gs"  >>./LOG.prn 2>&1
+##echo "["`date`"] GERANDO FIGURAS POR BACIA" 
+
 # #------------------------------------------------------------------------------
 # #              AUTO SCRIPT PARA CRIAÇÃO DE FIGURAS
 # #-----------------------------------------------------------------------------------------
