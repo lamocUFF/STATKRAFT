@@ -52,12 +52,12 @@ mkdir $dir_data  >>./LOG.prn 2>&1
 cd $dir_data   >>./LOG.prn 2>&1
 ###cp ../../calcula_gfs_1P0.gs .
 echo "["`date`"] ADQUIRINDO DADOS CFS" 
-
 echo ### http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs.20160215/00/time_grib_02/prate.02.2016021500.daily.grb2
 
 wget "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsdata2"/00/time_grib_02/prate.02."$cfsdata1".daily.grb2" 
+wget "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsdata2"/00/time_grib_02/prate.02."$cfsdata1".daily.grb2.idx" 
 
-echo wget "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsdata2"/00/time_grib_02/prate.02."$cfsdata1".daily.grb2" 
+echo wget "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsdata2"/00/time_grib_02/prate.02."$cfsdata1".daily.grb2"  >>./LOG.prn 2>&1
 
 #
 #  configurador de data para o grads
@@ -66,8 +66,8 @@ echo wget "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsd
 #
 # cria o .ctl 
 #
-echo "dset ^prate.02."$cfsdata".daily.grb2" > cfs.ctl
-echo "index ^prate.02."$cfsdata".daily.grb2.idx" >>cfs.ctl 
+echo "dset ^prate.02."$cfsdata1".daily.grb2" > cfs.ctl
+echo "index ^prate.02."$cfsdata1".daily.grb2.idx" >>cfs.ctl 
 echo "undef 9.999E+20" >>cfs.ctl
 echo "title prate.02.2016021500.daily.grb2" >>cfs.ctl
 echo "dtype grib2" >>cfs.ctl
@@ -100,7 +100,7 @@ return
 #
 # executa o script calculador 
 #
-grads -lbc "calcula_gfs_1P0.gs"  >>./LOG.prn 2>&1
+#grads -lbc "calcula_gfs_1P0.gs"  >>./LOG.prn 2>&1
 echo "["`date`"] GERANDO FIGURAS POR BACIA" 
 #------------------------------------------------------------------------------
 #              AUTO SCRIPT PARA CRIAÇÃO DE FIGURAS
