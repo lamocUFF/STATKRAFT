@@ -8,6 +8,11 @@
 *
 *
 'open cfs.ctl'
+'set t 1'
+'q time'
+data=subwrd(result,3)
+
+
 
 
 *
@@ -26,7 +31,7 @@ id=read("../../UTIL/limites_das_bacias.dat")
 status=sublin(id,1)   
 
 if (status>0) 
-return
+'quit'
 endif
 var=sublin(id,2)
 opcao=subwrd(var,1)
@@ -40,7 +45,7 @@ label=subwrd(var,3)
 if (opcao = "NAO") 
 t=1000
 else 
-t=1
+t=2
 endif
 xxx=write("todomundo.prn",label' 'bacia)
 yyy=write("comremocao.prn",label' 'bacia)
@@ -51,7 +56,7 @@ conta=0
 p=0 
 precip=0
 _pchuva.1=0
-while (t<=426)
+while (t<=424)
 'set t ' t+1
 'q time'
 dataprev=subwrd(result,3)
@@ -82,12 +87,13 @@ xlat=subwrd(coord,2)
 *
 * pego a precip do ponto de grade
 *
-'d sum(chuva,t='t',t='t+3')'
+'d sum(pratesfc*6*3600,t='t',t='t+3')'
 var=sublin(result,2)
 valor=subwrd(var,4)
 *say valor' 't
 *say result
 if (valor >=0 )
+*say precip' 't
 precip=precip+valor
 conta=conta+1
 yyy=write("logao.prn",bacia' 'xlat' 'xlon' 'valor' 'conta' 'precip' 't,append)
@@ -110,6 +116,7 @@ endwhile
 ************  da linha 36
 endwhile    
 'quit'
+'quit'
 
 
 
@@ -118,21 +125,5 @@ endwhile
 
 
 
-function baixagfs(config)
 
-'sdfopen http://nomads.ncep.noaa.gov:9090/dods/gfs_1p00/gfs'config'/gfs_1p00_00z'
 
-'set lon 280 330'
-'set lat -40 10'
-t=2
-'set fwrite 'config'_1P0.bin'
-'set gxout fwrite'
-while (t<=33)
-'set t 't
-'d pratesfc*12*3600'
-*'d apcpsfc'
-t=t+1
-endwhile
-'disable fwrite'
-'set gxout shaded'
-return
