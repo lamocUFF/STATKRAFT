@@ -45,7 +45,7 @@ label=subwrd(var,3)
 if (opcao = "NAO") 
 t=1000
 else 
-t=2
+t=5
 endif
 xxx=write("todomundo.prn",label' 'bacia)
 yyy=write("comremocao.prn",label' 'bacia)

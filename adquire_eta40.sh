@@ -61,7 +61,16 @@ export GADLIB=/usr/local/grads
 export GASCRP=/usr/local/grads
 fi 
 
- 
+ #%
+#% maquina da UFF 
+#%
+MACH=`uname -a | cut -c7-10` 
+if [ $MACH = "DEAMA" ];then 
+export PATH=/home/cataldi/SCRIPT/grads:$PATH
+export GADDIR=/home/cataldi/SCRIPT/grads
+export GADLIB=/home/cataldi/SCRIPT/grads
+export GASCRP=/home/cataldi/SCRIPT/grads
+fi 
 
 
 #

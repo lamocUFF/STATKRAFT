@@ -49,7 +49,16 @@ export GADDIR=/usr/local/grads
 export GADLIB=/usr/local/grads
 export GASCRP=/usr/local/grads
 fi 
-
+#%
+#% maquina da UFF 
+#%
+MACH=`uname -a | cut -c7-10` 
+if [ $MACH = "DEAMA" ];then 
+export PATH=/home/cataldi/SCRIPT/grads:$PATH
+export GADDIR=/home/cataldi/SCRIPT/grads
+export GADLIB=/home/cataldi/SCRIPT/grads
+export GASCRP=/home/cataldi/SCRIPT/grads
+fi 
  
 
 
@@ -94,22 +103,6 @@ echo "["`date`"] ADQUIRINDO DADOS OBSERVADOS"
 
 
 
-
-export LANG=en_us_8859_1
-
-#
-# verifica sistema
-# no cygwin (windows) 
-# se bem instalado deve
-# funcionar sem as variaveis
-#
-MACH=`uname -a | cut -c1-5` 
-if [ $MACH = "Linux" ];then 
-export PATH=$PATH:/usr/local/grads
-export GADDIR=/usr/local/grads
-export GADLIB=/usr/local/grads
-export GASCRP=/usr/local/grads
-fi 
 
 
 #
