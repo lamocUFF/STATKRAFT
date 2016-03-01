@@ -121,6 +121,11 @@ rc3 = math_format("%5.2f",media)
 fim=write(bacia,data' 'dataprev' 'rc3)
 xxx=write("todomundo.prn",data' 'dataprev' 'rc3,append)
 t=t+2
+chuva=0
+conta=0
+p=0 
+precip=0
+_pchuva.1=0
 endwhile
 
 ************  da linha 36
