@@ -56,7 +56,7 @@ conta=0
 p=0 
 precip=0
 _pchuva.1=0
-while (t<=424)
+while (t<=360)
 
 'set t ' t+1
 'q time'

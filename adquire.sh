@@ -39,6 +39,9 @@ export LANG=en_us_8859_1
 ./adquire_eta40.sh $1
 ./adquire_obs.sh $1
 ./adquire_gfs.sh  $1
+./adquire_cfs.sh  $1
+
+
 
 
 
