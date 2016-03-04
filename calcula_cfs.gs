@@ -103,8 +103,6 @@ endif
 endif
 endwhile
 
-
-
 media=precip/(conta+(0.00001))
 rc1 = math_format("%7.2f",precip)
 rc2 = math_format("%7.0f",conta)
