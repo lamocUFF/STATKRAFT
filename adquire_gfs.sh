@@ -82,7 +82,7 @@ echo "undef 9.999e+20" >>gfs_1P0.ctl
 echo "xdef 51 linear -80 1.00" >>gfs_1P0.ctl
 echo "ydef 51 linear -40 1.00" >>gfs_1P0.ctl
 echo "zdef 1 levels 1000">>gfs_1P0.ctl
-echo "tdef 15 linear "$grads_data2" 1dy" >>gfs_1P0.ctl 
+echo "tdef 16 linear "$grads_data2" 1dy" >>gfs_1P0.ctl 
 echo "vars 1">>gfs_1P0.ctl
 echo "chuva  0  t,y,x  ** chuva mm">>gfs_1P0.ctl
 echo "endvars">>gfs_1P0.ctl
