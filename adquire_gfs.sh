@@ -333,7 +333,7 @@ echo "'d sum(chuva,t='tsab2',t='tfinal')'"                                      
 echo "*'cbarn.gs'"                                                      >>figura4.gs
 echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 3 '">>figura4.gs
 echo "'draw string 2.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura4.gs
-echo "'draw string 2.5 10.4 PERIODO:'dia3'/'mes3'/'ano3' a 'dia4'/'mes4'/'ano4  "                     >>figura4.gs
+echo "'draw string 2.5 10.4 PERIODO:'dia6'/'mes6'/'ano6' a 'dia7'/'mes7'/'ano7  "                     >>figura4.gs
 echo "'set rgb 50   255   255    255'"       >>figura4.gs
 echo "'basemap.gs O 50 0 M'"                 >>figura4.gs
 echo "'set mpdset hires'"                    >>figura4.gs
@@ -450,10 +450,10 @@ echo "'d sum(chuva,t='tsab',t='tfinal')'"                                       
 echo "'cbarn.gs'"                                                      >>figura4.gs
 echo "'draw string 2.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 3 '">>figura4.gs
 echo "'draw string 2.5 8.1 RODADA :'dia0'/'mes0'/'ano0"               >>figura4.gs
-echo "'draw string 2.5 7.9 PERIODO:'dia3'/'mes3'/'ano3' a 'dia4'/'mes4'/'ano4  "      >>figura4.gs
+echo "'draw string 2.5 7.9 PERIODO:'dia6'/'mes6'/'ano6' a 'dia7'/'mes7'/'ano7  "      >>figura4.gs
 echo "'set rgb 50   255   255    255'" >>figura4.gs
 echo "'basemap.gs O 50 0 M'" >>figura4.gs
-echo "'set mpdset hires'" >>figura4.gs
+echo "'set mpdset hires'" >>figura4.g
 echo "'set map 15 1 6'" >>figura4.gs
 echo "'draw map'" >>figura4.gs     
 echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                                        >>figura4.gs
