@@ -126,12 +126,12 @@ echo "if (page ="8.5") " >>figura4.gs
 echo "'set parea 0.5 8.5 1.5 10.2'" >>figura4.gs
 echo "endif"                                  >>figura4.gs
 echo "t0=10"                            >>figura4.gs  
-echo "tfinal=10"                        >>figura4.gs  
+echo "tfinal=16"                        >>figura4.gs  
 echo "'set t 1 last'"                   >>figura4.gs
 echo "'q time'"                         >>figura4.gs
 echo "var3=subwrd(result,5)"            >>figura4.gs
 echo "tt=1"                             >>figura4.gs
-echo "while (tt<=10)"                   >>figura4.gs
+echo "while (tt<=16)"                   >>figura4.gs
 echo "'set t ' tt"                      >>figura4.gs
 echo "'q time'"                         >>figura4.gs
 echo "var=subwrd(result,6)"             >>figura4.gs
@@ -142,9 +142,28 @@ echo "tt=22"                            >>figura4.gs
 echo "endif"                            >>figura4.gs
 echo "tt=tt+1"                          >>figura4.gs
 echo "endwhile"                         >>figura4.gs
+echo "tt=tsex+1"                             >>figura4.gs
+echo "while (tt<=16)"                   >>figura4.gs
+echo "'set t ' tt"                      >>figura4.gs
+echo "'q time'"                         >>figura4.gs
+echo "var=subwrd(result,6)"             >>figura4.gs
+echo "if (var = "Fri" )"                >>figura4.gs
+echo "t02=1"                            >>figura4.gs
+echo "tsex2=tt"                            >>figura4.gs
+echo "tt=22"                            >>figura4.gs
+echo "endif"                            >>figura4.gs
+echo "tt=tt+1"                          >>figura4.gs
+echo "endwhile"                         >>figura4.gs
+
+
 echo "*say t0"                           >>figura4.gs
 echo "tsab=tsex+1"                       >>figura4.gs
-echo "tfinal=tsab+6"                    >>figura4.gs
+echo "tsab2=tsex2+1"                       >>figura4.gs
+echo "tfinal=tsab2+6"                    >>figura4.gs
+
+
+
+
 #
 # pega informacoes
 # de data
@@ -168,10 +187,23 @@ echo "var2=subwrd(result,5)"            >>figura4.gs
 #
 #  data da semana operativa 2
 #
-echo "'set t 'tsab' 'tfinal"                     >>figura4.gs   
+echo "'set t 'tsab' 'tsex2"                     >>figura4.gs   
 echo "'q time'"                           >>figura4.gs 
 echo "var3=subwrd(result,3)"            >>figura4.gs
 echo "var4=subwrd(result,5)"            >>figura4.gs
+
+
+#
+#  data da semana operativa 3
+#
+echo "'set t 'tsab2' 'tfinal"                     >>figura4.gs
+echo "'q time'"                         >>figura4.gs
+echo "var1=subwrd(result,3)"            >>figura4.gs
+echo "var2=subwrd(result,5)"            >>figura4.gs
+
+
+
+
 
 #
 # semana 7 dias
