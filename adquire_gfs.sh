@@ -198,8 +198,8 @@ echo "var4=subwrd(result,5)"            >>figura4.gs
 #
 echo "'set t 'tsab2' 'tfinal"                     >>figura4.gs
 echo "'q time'"                         >>figura4.gs
-echo "var1=subwrd(result,3)"            >>figura4.gs
-echo "var2=subwrd(result,5)"            >>figura4.gs
+echo "var6=subwrd(result,3)"            >>figura4.gs
+echo "var7=subwrd(result,5)"            >>figura4.gs
 
 
 
@@ -237,6 +237,13 @@ echo "dia4=substr(var4,4,2)"                       >>figura4.gs
 echo "ano5=substr(var5,9,4)"                       >>figura4.gs
 echo "mes5=substr(var5,6,3)"                       >>figura4.gs
 echo "dia5=substr(var5,4,2)"                       >>figura4.gs
+# sema operativa 3
+echo "ano6=substr(var6,9,4)"                       >>figura4.gs
+echo "mes6=substr(var6,6,3)"                       >>figura4.gs
+echo "dia6=substr(var6,4,2)"                       >>figura4.gs
+echo "ano7=substr(var7,9,4)"                       >>figura4.gs
+echo "mes7=substr(var7,6,3)"                       >>figura4.gs
+echo "dia7=substr(var7,4,2)"                       >>figura4.gs
 
 
 #
@@ -297,7 +304,7 @@ echo "'printim 'bacia'_semanaoperativa_1_"$data".png white'"                    
 echo "'c'"                                                             >>figura4.gs
 echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura4.gs
 echo "'cores.gs'"                                                >>figura4.gs
-echo "'d sum(chuva,t='tsab',t='tfinal')'"                                       >>figura4.gs
+echo "'d sum(chuva,t='tsab',t='tsex2')'"                                       >>figura4.gs
 echo "*'cbarn.gs'"                                                      >>figura4.gs
 echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 2 '">>figura4.gs
 echo "'draw string 2.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura4.gs
@@ -316,6 +323,34 @@ echo "'cbarn.gs'" >>figura4.gs
 echo "'plota_hidrografia.gs'"     >>figura4.gs  
 echo "plotausina(bacia,page)" >>figura4.gs    
 echo "'printim 'bacia'_semanaoperativa_2_"$data".png white'"                       >>figura4.gs
+#
+# FIGURAS RETARTO SEMANA OPERATIVA 3
+#
+echo "'c'"                                                             >>figura4.gs
+echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura4.gs
+echo "'cores.gs'"                                                >>figura4.gs
+echo "'d sum(chuva,t='tsab2',t='tfinal')'"                                       >>figura4.gs
+echo "*'cbarn.gs'"                                                      >>figura4.gs
+echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 3 '">>figura4.gs
+echo "'draw string 2.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura4.gs
+echo "'draw string 2.5 10.4 PERIODO:'dia3'/'mes3'/'ano3' a 'dia4'/'mes4'/'ano4  "                     >>figura4.gs
+echo "'set rgb 50   255   255    255'"       >>figura4.gs
+echo "'basemap.gs O 50 0 M'"                 >>figura4.gs
+echo "'set mpdset hires'"                    >>figura4.gs
+echo "'set map 15 1 6'"                      >>figura4.gs
+echo "'draw map'"                            >>figura4.gs
+echo "if (bacia="brasil")"                    >>figura4.gs
+echo "'plota.gs'"                             >>figura4.gs
+echo "else"                    >>figura4.gs
+echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                                  >>figura4.gs
+echo "endif"                    >>figura4.gs
+echo "'cbarn.gs'" >>figura4.gs
+echo "'plota_hidrografia.gs'"     >>figura4.gs  
+echo "plotausina(bacia,page)" >>figura4.gs    
+echo "'printim 'bacia'_semanaoperativa_3_"$data".png white'"                       >>figura4.gs
+
+
+
 #
 # FIGURA RETRATO SEMANA 7 DIAS CORRIDOS 
 #
@@ -390,7 +425,7 @@ echo "'printim 'bacia'_semanaoperativa_1_"$data".png white'"                    
 echo "'c'"                                                             >>figura4.gs
 echo "'set parea 0.5 10.5 1.88392 7.31608'"                     >>figura4.gs
 echo "'cores.gs'"                                                >>figura4.gs
-echo "'d sum(chuva,t='tsab',t='tfinal')'"                                       >>figura4.gs
+echo "'d sum(chuva,t='tsab',t='tsex2')'"                                       >>figura4.gs
 echo "'cbarn.gs'"                                                      >>figura4.gs
 echo "'draw string 2.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 2 '">>figura4.gs
 echo "'draw string 2.5 8.1 RODADA :'dia0'/'mes0'/'ano0"               >>figura4.gs
@@ -405,6 +440,29 @@ echo "'cbarn.gs'" >>figura4.gs
 echo "'plota_hidrografia.gs'"     >>figura4.gs
 echo "plotausina(bacia,page)" >>figura4.gs  
 echo "'printim 'bacia'_semanaoperativa_2_"$data".png white'"                       >>figura4.gs
+#
+# FIGURA PAISAGEM SEMANA OPERATIVA 3
+#
+echo "'c'"                                                             >>figura4.gs
+echo "'set parea 0.5 10.5 1.88392 7.31608'"                     >>figura4.gs
+echo "'cores.gs'"                                                >>figura4.gs
+echo "'d sum(chuva,t='tsab',t='tfinal')'"                                       >>figura4.gs
+echo "'cbarn.gs'"                                                      >>figura4.gs
+echo "'draw string 2.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 3 '">>figura4.gs
+echo "'draw string 2.5 8.1 RODADA :'dia0'/'mes0'/'ano0"               >>figura4.gs
+echo "'draw string 2.5 7.9 PERIODO:'dia3'/'mes3'/'ano3' a 'dia4'/'mes4'/'ano4  "      >>figura4.gs
+echo "'set rgb 50   255   255    255'" >>figura4.gs
+echo "'basemap.gs O 50 0 M'" >>figura4.gs
+echo "'set mpdset hires'" >>figura4.gs
+echo "'set map 15 1 6'" >>figura4.gs
+echo "'draw map'" >>figura4.gs     
+echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                                        >>figura4.gs
+echo "'cbarn.gs'" >>figura4.gs
+echo "'plota_hidrografia.gs'"     >>figura4.gs
+echo "plotausina(bacia,page)" >>figura4.gs  
+echo "'printim 'bacia'_semanaoperativa_3_"$data".png white'"                       >>figura4.gs
+
+
 #
 # FIGURA PAISAGEM SEMANA 7 dias
 #
@@ -731,11 +789,11 @@ cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 #
 #  EXECUTA O SCRIPT GERADO PELO AUTO SCRIPT PARA GERAÇÃO DE FIGURAS
 #
-grads -lbc "figura3.gs"  >>./LOG.prn 2>&1
-grads -pbc "figura3.gs"  >>./LOG.prn 2>&1
+# grads -lbc "figura3.gs"  >>./LOG.prn 2>&1
+# grads -pbc "figura3.gs"  >>./LOG.prn 2>&1
 
-# grads -lbc "figura4.gs"  >>./LOG.prn 2>&1
-# grads -pbc "figura4.gs"  >>./LOG.prn 2>&1
+grads -lbc "figura4.gs"  >>./LOG.prn 2>&1
+grads -pbc "figura4.gs"  >>./LOG.prn 2>&1
 
 #
 # COPIA AS FIGURAS GERADAS PARA O DIRETORIA DIARIO
