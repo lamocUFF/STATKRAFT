@@ -789,17 +789,22 @@ cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 #
 #  EXECUTA O SCRIPT GERADO PELO AUTO SCRIPT PARA GERAÇÃO DE FIGURAS
 #
-# grads -lbc "figura3.gs"  >>./LOG.prn 2>&1
-# grads -pbc "figura3.gs"  >>./LOG.prn 2>&1
-
+grads -lbc "figura3.gs"  >>./LOG.prn 2>&1
+grads -pbc "figura3.gs"  >>./LOG.prn 2>&1
+mkdir diaria >>./LOG.prn 2>&1
+mv *.png  diaria
 grads -lbc "figura4.gs"  >>./LOG.prn 2>&1
 grads -pbc "figura4.gs"  >>./LOG.prn 2>&1
-
+mkdir imagens_semanaoperativa_1  >>./LOG.prn 2>&1
+mkdir imagens_semanaoperativa_2 >>./LOG.prn 2>&1
+mkdir imagens_7dias   >>./LOG.prn 2>&1
+mkdir diaria >>./LOG.prn 2>&1
+mv *semanaoperativa_1*  imagens_semanaoperativa_1  >>./LOG.prn 2>&1
+mv *semanaoperativa_2*  imagens_semanaoperativa_2  >>./LOG.prn 2>&1
+mv *prec07dias* imagens_7dias                      >>./LOG.prn 2>&1
 #
 # COPIA AS FIGURAS GERADAS PARA O DIRETORIA DIARIO
 #
-mkdir diaria >>./LOG.prn 2>&1
-mv *.png  diaria
 echo "["`date`"] FIM DO PROCESSO GFS" 
 
 cd ..
