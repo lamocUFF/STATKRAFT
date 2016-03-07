@@ -71,6 +71,7 @@ while (t<=15)
 'set t ' t+1
 'q time'
 dataprev=subwrd(result,3)
+'set t 't
 *
 * tendo o nome da bacia lido no arquivo "bacia"
 * vou pegar os pontos d egrade que estao

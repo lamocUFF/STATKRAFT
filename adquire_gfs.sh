@@ -125,13 +125,13 @@ echo "*say page" >>figura4.gs
 echo "if (page ="8.5") " >>figura4.gs
 echo "'set parea 0.5 8.5 1.5 10.2'" >>figura4.gs
 echo "endif"                                  >>figura4.gs
-echo "t0=20"                            >>figura4.gs  
-echo "tfinal=16"                        >>figura4.gs  
+echo "t0=10"                            >>figura4.gs  
+echo "tfinal=10"                        >>figura4.gs  
 echo "'set t 1 last'"                   >>figura4.gs
 echo "'q time'"                         >>figura4.gs
 echo "var3=subwrd(result,5)"            >>figura4.gs
 echo "tt=1"                             >>figura4.gs
-echo "while (tt<=16)"                   >>figura4.gs
+echo "while (tt<=10)"                   >>figura4.gs
 echo "'set t ' tt"                      >>figura4.gs
 echo "'q time'"                         >>figura4.gs
 echo "var=subwrd(result,6)"             >>figura4.gs
@@ -140,7 +140,7 @@ echo "t0=1"                            >>figura4.gs
 echo "tsex=tt"                            >>figura4.gs
 echo "tt=22"                            >>figura4.gs
 echo "endif"                            >>figura4.gs
-echo "tt=tt+2"                          >>figura4.gs
+echo "tt=tt+1"                          >>figura4.gs
 echo "endwhile"                         >>figura4.gs
 echo "*say t0"                           >>figura4.gs
 echo "tsab=tsex+1"                       >>figura4.gs
