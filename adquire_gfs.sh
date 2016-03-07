@@ -578,7 +578,7 @@ echo "'set lat 'y1' 'y0 "       >>figura3.gs
 # 
 echo "if (tipo = "RETRATO" & page ="8.5" & plota="SIM") "   >>figura3.gs
 echo "t=1 "    >>figura3.gs 
-echo "while (t<=33) "    >>figura3.gs 
+echo "while (t<=15) "    >>figura3.gs 
 echo "'set t 't"                     >>figura3.gs   
 echo "'q time'"                           >>figura3.gs 
 echo "var1=subwrd(result,3)"            >>figura3.gs
@@ -588,7 +588,7 @@ echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura3.gs
 echo "'coresdiaria.gs'"                    >>figura3.gs
-echo "'d sum(chuva,t='t',t='t+1')'"            >>figura3.gs
+echo "'d chuva'"            >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 2.5 10.8     PRECIPITACAO ACUMULADA DIARIA GFS '"  >>figura3.gs
 echo "'draw string 2.5 10.6 RODADA :"$data_rodada"'"               >>figura3.gs
@@ -620,7 +620,7 @@ echo "endif" 					>>figura3.gs
 #
 echo "if (tipo = "PAISAGEM" & page ="11" & plota="SIM" ) "   >>figura3.gs
 echo "t=1 "    >>figura3.gs 
-echo "while (t<=33) "    >>figura3.gs 
+echo "while (t<=15) "    >>figura3.gs 
 echo "'set t 't"                     >>figura3.gs   
 echo "'q time'"                           >>figura3.gs 
 echo "var1=subwrd(result,3)"            >>figura3.gs
@@ -631,7 +631,7 @@ echo "'c'"                        >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 10.5 1.88392 7.31608'"                     >>figura3.gs
 echo "'coresdiaria.gs'"                    >>figura3.gs
-echo "'d sum(chuva,t='t',t='t+1')'"         >>figura3.gs
+echo "'d chuva'"         >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 2.5 8.3  PRECIPITACAO ACUMULADA DIARIA GFS'"  >>figura3.gs
 echo "'draw string 2.5 8.1 RODADA :"$data_rodada"'"               >>figura3.gs
