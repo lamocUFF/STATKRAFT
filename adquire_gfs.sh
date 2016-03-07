@@ -82,7 +82,7 @@ echo "undef 9.999e+20" >>gfs_1P0.ctl
 echo "xdef 51 linear -80 1.00" >>gfs_1P0.ctl
 echo "ydef 51 linear -40 1.00" >>gfs_1P0.ctl
 echo "zdef 1 levels 1000">>gfs_1P0.ctl
-echo "tdef 33 linear "$grads_data2" 12hr" >>gfs_1P0.ctl 
+echo "tdef 15 linear "$grads_data2" 1dy" >>gfs_1P0.ctl 
 echo "vars 1">>gfs_1P0.ctl
 echo "chuva  0  t,y,x  ** chuva mm">>gfs_1P0.ctl
 echo "endvars">>gfs_1P0.ctl
@@ -126,12 +126,12 @@ echo "if (page ="8.5") " >>figura4.gs
 echo "'set parea 0.5 8.5 1.5 10.2'" >>figura4.gs
 echo "endif"                                  >>figura4.gs
 echo "t0=20"                            >>figura4.gs  
-echo "tfinal=20"                        >>figura4.gs  
+echo "tfinal=16"                        >>figura4.gs  
 echo "'set t 1 last'"                   >>figura4.gs
 echo "'q time'"                         >>figura4.gs
 echo "var3=subwrd(result,5)"            >>figura4.gs
 echo "tt=1"                             >>figura4.gs
-echo "while (tt<=20)"                   >>figura4.gs
+echo "while (tt<=16)"                   >>figura4.gs
 echo "'set t ' tt"                      >>figura4.gs
 echo "'q time'"                         >>figura4.gs
 echo "var=subwrd(result,6)"             >>figura4.gs

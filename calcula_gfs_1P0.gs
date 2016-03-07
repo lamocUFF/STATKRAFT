@@ -67,7 +67,7 @@ conta=0
 p=0 
 precip=0
 _pchuva.1=0
-while (t<=31)
+while (t<=15)
 'set t ' t+1
 'q time'
 dataprev=subwrd(result,3)
@@ -98,8 +98,9 @@ xlat=subwrd(coord,2)
 *
 * pego a precip do ponto de grade
 *
-'d sum(chuva,t='t',t='t+1')'
-var=sublin(result,2)
+*'d sum(chuva,t='t',t='t+1')'
+'d chuva'
+var=sublin(result,1)
 valor=subwrd(var,4)
 *say valor' 't
 *say result
@@ -120,7 +121,7 @@ rc2 = math_format("%7.0f",conta)
 rc3 = math_format("%5.2f",media)
 fim=write(bacia,data' 'dataprev' 'rc3)
 xxx=write("todomundo.prn",data' 'dataprev' 'rc3,append)
-t=t+2
+t=t+1
 chuva=0
 conta=0
 p=0 
@@ -145,14 +146,17 @@ function baixagfs(config)
 'set lon 280 330'
 'set lat -40 10'
 t=2
+k=1
 'set fwrite 'config'_1P0.bin'
 'set gxout fwrite'
 while (t<=33)
 'set t 't
-'d pratesfc*12*3600'
+'d pratesfc(t='t')*12*3600+pratesfc(t='t+1')*12*3600'
 *'d apcpsfc'
-t=t+1
+t=t+2
+k=k+1
 endwhile
 'disable fwrite'
 'set gxout shaded'
+say k' 't
 return
