@@ -240,7 +240,7 @@ echo "'c'"                        >>figura4.gs
 echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura4.gs
 echo "'set t 1'"                        >>figura4.gs
 echo "'cores.gs'"                    >>figura4.gs
-echo "'d sum(pratesfc*12*3600,t=1,t='tsex')'"         >>figura4.gs
+echo "'d sum(chuva,t=1,t='tsex')'"         >>figura4.gs
 echo "'cbarn.gs'"                       >>figura4.gs
 echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 1'"  >>figura4.gs
 echo "'draw string 2.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura4.gs
@@ -265,7 +265,7 @@ echo "'printim 'bacia'_semanaoperativa_1_"$data".png white'"                    
 echo "'c'"                                                             >>figura4.gs
 echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura4.gs
 echo "'cores.gs'"                                                >>figura4.gs
-echo "'d sum(pratesfc*12*3600,t='tsab',t='tfinal')'"                                       >>figura4.gs
+echo "'d sum(chuva,t='tsab',t='tfinal')'"                                       >>figura4.gs
 echo "*'cbarn.gs'"                                                      >>figura4.gs
 echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 2 '">>figura4.gs
 echo "'draw string 2.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura4.gs
@@ -292,7 +292,7 @@ echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura4.g
 #echo "'set mpdset hires'"                                    >>figura4.gs
 echo "'cores.gs'"                                         >>figura4.gs
 echo "'set gxout shaded'"                                    >>figura4.gs
-echo "'d sum(pratesfc*12*3600,t=1,t=14)'"                                 >>figura4.gs
+echo "'d sum(chuva,t=1,t=14)'"                                 >>figura4.gs
 echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA 7 DIAS '"  >>figura4.gs
 echo "'draw string 2.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura4.gs
 echo "'draw string 2.5 10.4 PERIODO:'dia1'/'mes1'/'ano1' a 'dia5'/'mes5'/'ano5  "                     >>figura4.gs
@@ -335,7 +335,7 @@ echo "'c'"                        >>figura4.gs
 echo "'set parea 0.5 10.5 1.88392 7.31608'"                     >>figura4.gs
 echo "'set t 1'"                        >>figura4.gs
 echo "'cores.gs'"                    >>figura4.gs
-echo "'d sum(pratesfc*12*3600,t=1,t='tsex')'"         >>figura4.gs
+echo "'d sum(chuva,t=1,t='tsex')'"         >>figura4.gs
 echo "'cbarn.gs'"                       >>figura4.gs
 echo "'draw string 2.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 1'"  >>figura4.gs
 #echo "'draw string 2.5 8.1 RODADA:"$DATA0" - "$hora"Z'"                >>figura4.gs
@@ -358,7 +358,7 @@ echo "'printim 'bacia'_semanaoperativa_1_"$data".png white'"                    
 echo "'c'"                                                             >>figura4.gs
 echo "'set parea 0.5 10.5 1.88392 7.31608'"                     >>figura4.gs
 echo "'cores.gs'"                                                >>figura4.gs
-echo "'d sum(pratesfc*12*3600,t='tsab',t='tfinal')'"                                       >>figura4.gs
+echo "'d sum(chuva,t='tsab',t='tfinal')'"                                       >>figura4.gs
 echo "'cbarn.gs'"                                                      >>figura4.gs
 echo "'draw string 2.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 2 '">>figura4.gs
 echo "'draw string 2.5 8.1 RODADA :'dia0'/'mes0'/'ano0"               >>figura4.gs
@@ -382,7 +382,7 @@ echo "*'set parea 0.5 10.5 1.88392 7.31608'"                     >>figura4.gs
 echo "'set mpdset hires'"                                    >>figura4.gs
 echo "'cores.gs'"                                         >>figura4.gs
 echo "'set gxout shaded'"                                    >>figura4.gs
-echo "'d sum(pratesfc*12*3600,t=1,t=14)'"                                 >>figura4.gs
+echo "'d sum(chuva,t=1,t=14)'"                                 >>figura4.gs
 echo "'draw string 2.5 8.3 PRECIPITACAO ACUMULADA 7 DIAS '"  >>figura4.gs
 echo "'draw string 2.5 8.1 RODADA :'dia0'/'mes0'/'ano0"               >>figura4.gs
 echo "'draw string 2.5 7.9 PERIODO:'dia1'/'mes1'/'ano1' a 'dia5'/'mes5'/'ano5  "                     >>figura4.gs
