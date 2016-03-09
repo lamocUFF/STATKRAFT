@@ -85,3 +85,7 @@ echo "'define_colors.gs'">>coresdiaria.gs
 echo "'set rgb 99 251 94 107'">>coresdiaria.gs
 echo "'set clevs    05 10 15 20 25 30 35  50  70  100  150'">>coresdiaria.gs
 echo "'set ccols 00 44 45 47 49 34 37 39  22  23  27    29   99'  ">>coresdiaria.gs
+
+
+
+
