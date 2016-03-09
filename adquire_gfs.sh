@@ -123,7 +123,6 @@ echo "*say page" >>figura4.gs
 # se for retrato cria vpage
 #
 echo "if (page ="8.5") " >>figura4.gs
-echo "'set parea 0.5 8.5 1.5 10.2'" >>figura4.gs
 echo "endif"                                  >>figura4.gs
 echo "t0=10"                            >>figura4.gs  
 echo "tfinal=16"                        >>figura4.gs  
@@ -276,7 +275,7 @@ echo "'set lat 'y1' 'y0 "       >>figura4.gs
 # 
 echo "if (tipo = "RETRATO" & page ="8.5" & plota="SIM") "   >>figura4.gs
 echo "'c'"                        >>figura4.gs
-echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura4.gs
+echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura4.gs
 echo "'set t 1'"                        >>figura4.gs
 echo "'cores.gs'"                    >>figura4.gs
 echo "'d sum(chuva,t=1,t='tsex')'"         >>figura4.gs
@@ -302,7 +301,7 @@ echo "'printim 'bacia'_semanaoperativa_1_"$data".png white'"                    
 # FIGURAS RETARTO SEMANA OPERATIVA 2
 #
 echo "'c'"                                                             >>figura4.gs
-echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura4.gs
+echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura4.gs
 echo "'cores.gs'"                                                >>figura4.gs
 echo "'d sum(chuva,t='tsab',t='tsex2')'"                                       >>figura4.gs
 echo "*'cbarn.gs'"                                                      >>figura4.gs
@@ -327,13 +326,13 @@ echo "'printim 'bacia'_semanaoperativa_2_"$data".png white'"                    
 # FIGURAS RETARTO SEMANA OPERATIVA 3
 #
 echo "'c'"                                                             >>figura4.gs
-echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura4.gs
+echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura4.gs
 echo "'cores.gs'"                                                >>figura4.gs
 echo "'d sum(chuva,t='tsab2',t='tfinal')'"                                       >>figura4.gs
 echo "*'cbarn.gs'"                                                      >>figura4.gs
-echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 3 '">>figura4.gs
-echo "'draw string 2.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura4.gs
-echo "'draw string 2.5 10.4 PERIODO:'dia6'/'mes6'/'ano6' a 'dia7'/'mes7'/'ano7  "                     >>figura4.gs
+echo "'draw string 1.5 10.8 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 3 '">>figura4.gs
+echo "'draw string 1.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura4.gs
+echo "'draw string 1.5 10.4 PERIODO:'dia6'/'mes6'/'ano6' a 'dia7'/'mes7'/'ano7  "                     >>figura4.gs
 echo "'set rgb 50   255   255    255'"       >>figura4.gs
 echo "'basemap.gs O 50 0 M'"                 >>figura4.gs
 echo "'set mpdset hires'"                    >>figura4.gs
@@ -355,14 +354,14 @@ echo "'printim 'bacia'_semanaoperativa_3_"$data".png white'"                    
 # FIGURA RETRATO SEMANA 7 DIAS CORRIDOS 
 #
 echo "'c'"   >>figura4.gs
-echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura4.gs
+echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura4.gs
 #echo "'set mpdset hires'"                                    >>figura4.gs
 echo "'cores.gs'"                                         >>figura4.gs
 echo "'set gxout shaded'"                                    >>figura4.gs
 echo "'d sum(chuva,t=1,t=14)'"                                 >>figura4.gs
-echo "'draw string 2.5 10.8 PRECIPITACAO ACUMULADA 7 DIAS '"  >>figura4.gs
-echo "'draw string 2.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura4.gs
-echo "'draw string 2.5 10.4 PERIODO:'dia1'/'mes1'/'ano1' a 'dia5'/'mes5'/'ano5  "                     >>figura4.gs
+echo "'draw string 1.5 10.8 PRECIPITACAO ACUMULADA 7 DIAS '"  >>figura4.gs
+echo "'draw string 1.5 10.6 RODADA :'dia0'/'mes0'/'ano0 "               >>figura4.gs
+echo "'draw string 1.5 10.4 PERIODO:'dia1'/'mes1'/'ano1' a 'dia5'/'mes5'/'ano5  "                     >>figura4.gs
 echo "'set rgb 50   255   255    255'" >>figura4.gs
 echo "'basemap.gs O 50 0 M'" >>figura4.gs
 echo "'set mpdset hires'" >>figura4.gs
@@ -405,7 +404,6 @@ echo "'cores.gs'"                    >>figura4.gs
 echo "'d sum(chuva,t=1,t='tsex')'"         >>figura4.gs
 echo "'cbarn.gs'"                       >>figura4.gs
 echo "'draw string 1.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 1'"  >>figura4.gs
-#echo "'draw string 2.5 8.1 RODADA:"$DATA0" - "$hora"Z'"                >>figura4.gs
 #echo "'draw string 2.5 7.9 PERIODO:'dia1'/'mes1'/'ano1' a 'dia2'/'mes2'/'ano2  "                     >>figura4.gs
 echo "'draw string 1.5 8.1 RODADA :'dia0'/'mes0'/'ano0 "               >>figura4.gs
 echo "'draw string 1.5 7.9 PERIODO:'dia1'/'mes1'/'ano1' a 'dia2'/'mes2'/'ano2  "                     >>figura4.gs
@@ -586,13 +584,13 @@ echo "ano1=substr(var1,9,4)"                       >>figura3.gs
 echo "mes1=substr(var1,6,3)"                       >>figura3.gs
 echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'c'"                        >>figura3.gs
-echo "'set parea 0.5 8.5 1.5 10.2'"                                  >>figura3.gs
+echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura3.gs
 echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d chuva'"            >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
-echo "'draw string 2.5 10.8     PRECIPITACAO ACUMULADA DIARIA GFS '"  >>figura3.gs
-echo "'draw string 2.5 10.6 RODADA :"$data_rodada"'"               >>figura3.gs
-echo "'draw string 2.5 10.4 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
+echo "'draw string 1.5 10.8     PRECIPITACAO ACUMULADA DIARIA GFS '"  >>figura3.gs
+echo "'draw string 1.5 10.6 RODADA :"$data_rodada"'"               >>figura3.gs
+echo "'draw string 1.5 10.4 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" 								>>figura3.gs
 echo "'basemap.gs O 50 0 M'" 										>>figura3.gs
 echo "'set mpdset hires'" 											>>figura3.gs
@@ -620,6 +618,7 @@ echo "endif" 					>>figura3.gs
 #
 echo "if (tipo = "PAISAGEM" & page ="11" & plota="SIM" ) "   >>figura3.gs
 echo "t=1 "    >>figura3.gs 
+
 echo "while (t<=15) "    >>figura3.gs 
 echo "'set t 't"                     >>figura3.gs   
 echo "'q time'"                           >>figura3.gs 
@@ -629,13 +628,13 @@ echo "mes1=substr(var1,6,3)"                       >>figura3.gs
 echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'c'"                        >>figura3.gs
-echo "'set parea 0.5 10.5 1.88392 7.31608'"                     >>figura3.gs
+echo "''set parea 0.5 10.5 1.5 7.6''"                     >>figura3.gs
 echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d chuva'"         >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
-echo "'draw string 2.5 8.3  PRECIPITACAO ACUMULADA DIARIA GFS'"  >>figura3.gs
-echo "'draw string 2.5 8.1 RODADA :"$data_rodada"'"               >>figura3.gs
-echo "'draw string 2.5 7.9 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
+echo "'draw string 1.5 8.3  PRECIPITACAO ACUMULADA DIARIA GFS'"  >>figura3.gs
+echo "'draw string 1.5 8.1 RODADA :"$data_rodada"'"               >>figura3.gs
+echo "'draw string 1.5 7.9 DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" >>figura3.gs
 echo "'basemap.gs O 50 0 M'" >>figura3.gs
 echo "'set mpdset hires'" >>figura3.gs
