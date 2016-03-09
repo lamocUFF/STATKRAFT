@@ -278,6 +278,7 @@ echo "'c'"                        >>figura4.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura4.gs
 echo "'set t 1'"                        >>figura4.gs
 echo "'cores.gs'"                    >>figura4.gs
+echo "'set csmooth on'"                     >>figura4.gs
 echo "'d sum(chuva,t=1,t='tsex')'"         >>figura4.gs
 echo "'cbarn.gs'"                       >>figura4.gs
 echo "'draw string 1.5 10.8 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 1'"  >>figura4.gs
@@ -303,6 +304,7 @@ echo "'printim 'bacia'_semanaoperativa_1_"$data".png white'"                    
 echo "'c'"                                                             >>figura4.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura4.gs
 echo "'cores.gs'"                                                >>figura4.gs
+echo "'set csmooth on'"                     >>figura4.gs
 echo "'d sum(chuva,t='tsab',t='tsex2')'"                                       >>figura4.gs
 echo "*'cbarn.gs'"                                                      >>figura4.gs
 echo "'draw string 1.5 10.8 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 2 '">>figura4.gs
@@ -328,6 +330,7 @@ echo "'printim 'bacia'_semanaoperativa_2_"$data".png white'"                    
 echo "'c'"                                                             >>figura4.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura4.gs
 echo "'cores.gs'"                                                >>figura4.gs
+echo "'set csmooth on'"                     >>figura4.gs
 echo "'d sum(chuva,t='tsab2',t='tfinal')'"                                       >>figura4.gs
 echo "*'cbarn.gs'"                                                      >>figura4.gs
 echo "'draw string 1.5 10.8 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 3 '">>figura4.gs
@@ -357,6 +360,7 @@ echo "'c'"   >>figura4.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura4.gs
 #echo "'set mpdset hires'"                                    >>figura4.gs
 echo "'cores.gs'"                                         >>figura4.gs
+echo "'set csmooth on'"                     >>figura4.gs
 echo "'set gxout shaded'"                                    >>figura4.gs
 echo "'d sum(chuva,t=1,t=14)'"                                 >>figura4.gs
 echo "'draw string 1.5 10.8 PRECIPITACAO ACUMULADA 7 DIAS '"  >>figura4.gs
@@ -401,6 +405,7 @@ echo "'c'"                        >>figura4.gs
 echo "'set parea 0.5 10.5 1.5 7.6'"                     >>figura4.gs
 echo "'set t 1'"                        >>figura4.gs
 echo "'cores.gs'"                    >>figura4.gs
+echo "'set csmooth on'"                     >>figura4.gs
 echo "'d sum(chuva,t=1,t='tsex')'"         >>figura4.gs
 echo "'cbarn.gs'"                       >>figura4.gs
 echo "'draw string 1.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 1'"  >>figura4.gs
@@ -423,6 +428,7 @@ echo "'printim 'bacia'_semanaoperativa_1_"$data".png white'"                    
 echo "'c'"                                                             >>figura4.gs
 echo "'set parea  0.5 10.5 1.5 7.6'"                     >>figura4.gs
 echo "'cores.gs'"                                                >>figura4.gs
+echo "'set csmooth on'"                     >>figura4.gs
 echo "'d sum(chuva,t='tsab',t='tsex2')'"                                       >>figura4.gs
 echo "'cbarn.gs'"                                                      >>figura4.gs
 echo "'draw string 1.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 2 '">>figura4.gs
@@ -444,6 +450,7 @@ echo "'printim 'bacia'_semanaoperativa_2_"$data".png white'"                    
 echo "'c'"                                                             >>figura4.gs
 echo "'set parea  0.5 10.5 1.5 7.6'"                     >>figura4.gs
 echo "'cores.gs'"                                                >>figura4.gs
+echo "'set csmooth on'"                     >>figura4.gs
 echo "'d sum(chuva,t='tsab',t='tfinal')'"                                       >>figura4.gs
 echo "'cbarn.gs'"                                                      >>figura4.gs
 echo "'draw string 1.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 3 '">>figura4.gs
@@ -470,6 +477,7 @@ echo "*'set parea  0.5 10.5 1.5 7.6'"                     >>figura4.gs
 echo "'set mpdset hires'"                                    >>figura4.gs
 echo "'cores.gs'"                                         >>figura4.gs
 echo "'set gxout shaded'"                                    >>figura4.gs
+echo "'set csmooth on'"                     >>figura4.gs
 echo "'d sum(chuva,t=1,t=14)'"                                 >>figura4.gs
 echo "'draw string 1.5 8.3 PRECIPITACAO ACUMULADA 7 DIAS '"  >>figura4.gs
 echo "'draw string 1.5 8.1 RODADA :'dia0'/'mes0'/'ano0"               >>figura4.gs
@@ -586,6 +594,7 @@ echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura3.gs
 echo "'coresdiaria.gs'"                    >>figura3.gs
+echo "'set csmooth on'"                     >>figura3.gs
 echo "'d chuva'"            >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
 echo "'draw string 1.5 10.8     PRECIPITACAO ACUMULADA DIARIA GFS '"  >>figura3.gs
@@ -628,7 +637,8 @@ echo "mes1=substr(var1,6,3)"                       >>figura3.gs
 echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'c'"                        >>figura3.gs
-echo "''set parea 0.5 10.5 1.5 7.6''"                     >>figura3.gs
+echo "'set parea 0.5 10.5 1.5 7.6'"                     >>figura3.gs
+echo "'set csmooth on'"                     >>figura3.gs
 echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d chuva'"         >>figura3.gs
 echo "'cbarn.gs'"                       >>figura3.gs
