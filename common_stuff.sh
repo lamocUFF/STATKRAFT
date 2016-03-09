@@ -4,7 +4,7 @@
 # 
 echo "'set line 15 1 1'"                                             >plota.gs
 echo "'draw shp ../../CONTORNOS/SHAPES/BRASIL.shp '"                 >>plota.gs
-echo "'set line 1 1 1'"                                              >>plota.gs
+echo "'set line 1 1 3'"                                              >>plota.gs
 for file in `ls -1 ../../CONTORNOS/SHAPES/contorno*.shp`
 do
 echo "'draw shp "$file"'"                                            >>plota.gs
@@ -14,7 +14,7 @@ done
 # 
 echo "'set line 15 1 1'"                                             >plota_hidrografia.gs
 echo "'draw shp ../../CONTORNOS/SHAPES/hidrografia.shp '"                 >>plota_hidrografia.gs
-echo "'set line 5 1 1'"                                             >>plota_hidrografia.gs
+echo "'set line 5 1 3'"                                             >>plota_hidrografia.gs
 #
 #  CRIA ESCALA DE CORES 
 #   (PARA HABILITAR , RETIRE O * DA FRENTE DA LINHA E COLOQUE * NA QUE 
