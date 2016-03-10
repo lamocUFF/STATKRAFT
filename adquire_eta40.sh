@@ -297,7 +297,7 @@ echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                  
 echo "endif"                    >>figura3.gs
 echo "'plota_hidrografia.gs'"     >>figura3.gs  
 echo "plotausina(bacia,page)" >>figura3.gs    
-echo "'cbarn.gs'" >>figura3.gs
+echo "'cbarn.gs 1.0 0 '" >>figura3.gs
 echo "'printim 'bacia'_semanaoperativa_1_"$data".png white'"                       >>figura3.gs
 #
 # FIGURAS RETARTO SEMANA OPERATIVA 2
@@ -325,7 +325,7 @@ echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                  
 echo "endif"                    >>figura3.gs
 echo "'plota_hidrografia.gs'"     >>figura3.gs  
 echo "plotausina(bacia,page)" >>figura3.gs    
-echo "'cbarn.gs'" >>figura3.gs
+echo "'cbarn.gs 1.0 0 '" >>figura3.gs
 echo "'printim 'bacia'_semanaoperativa_2_"$data".png white'"                       >>figura3.gs
 #
 # FIGURA RETRATO SEMANA 7 DIAS CORRIDOS 
@@ -355,7 +355,7 @@ echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                  
 echo "endif"                    >>figura3.gs
 echo "'plota_hidrografia.gs'"     >>figura3.gs
 echo "plotausina(bacia,page)" >>figura3.gs  
-echo "'cbarn.gs'"                                            >>figura3.gs
+echo "'cbarn.gs 1.0 0 '" >>figura3.gs
 echo "'printim 'bacia'_prec07dias_"$data"_"$hora"Z.png white'"       >>figura3.gs
 echo "*say t0"                           >>figura3.gs
 #
@@ -389,7 +389,7 @@ echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                  
 echo "say shape" >>figura3.gs
 echo "'plota_hidrografia.gs'"     >>figura3.gs
 echo "plotausina(bacia,page)" >>figura3.gs  
-echo "'cbarn.gs'"                       >>figura3.gs
+echo "'cbarn.gs 1.0 0 '" >>figura3.gs
 echo "'printim 'bacia'_diaria_'var1'.png white'"                       >>figura3.gs
 echo "'c'"                                                             >>figura3.gs
 echo "t=t+1"                    >>figura3.gs
@@ -447,7 +447,7 @@ echo "'set mpdset hires'" >>figura3.gs
 echo "'set map 15 1 6'" >>figura3.gs
 echo "'draw map'" >>figura3.gs     
 echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                                        >>figura3.gs
-echo "'cbarn.gs'" >>figura3.gs
+echo "'cbarn.gs 1.0 0 '" >>figura3.gs
 echo "'plota_hidrografia.gs'"     >>figura3.gs
 echo "plotausina(bacia,page)" >>figura3.gs  
 
