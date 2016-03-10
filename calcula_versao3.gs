@@ -353,8 +353,8 @@ endif
 *
 if  ( label = "JUFURN"  & ( mes <=3   | mes =12)   ) 
 pp=1
-if (ptoteta10> 114,2 )
-chuvasem=114,2
+if (ptoteta10> 114.2 )
+chuvasem=114.2
 else
 chuvasem=ptoteta10
 endif
@@ -493,7 +493,7 @@ endif
 *   ( inserido em  10/06/2015)  
 *                    
 * ajustes: 16/11/2015 (Talita Reis e Regis )
-* DEZ/JAN: a=0,001080; b=0,74100 e limite 10 dias= 179,5 mm
+* DEZ/JAN: a=0.001080; b=0.74100 e limite 10 dias= 179,5 mm
 * 
 *Montante Emborcação
 *
