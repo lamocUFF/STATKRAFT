@@ -150,7 +150,7 @@ echo "*"                                                                 >figura
 echo "* esse script é auto gerado. documentação em adquire_eta.sh"      >>figura3.gs
 echo "*By reginaldo.venturadesa@gmail.com "                             >>figura3.gs
 echo "'open modelo_all.ctl'"            >>figura3.gs
-echo "'set gxout shaded'"               >>figura3.gs
+
 #
 # pega parametros de execucao do grads
 # se é retrato ou paisagem
@@ -162,9 +162,6 @@ echo "*say page" >>figura3.gs
 #
 # se for retrato cria vpage
 #
-echo "if (page ="8.5") " >>figura3.gs
-#echo "'set parea 0.5 8.5 1.5 10.2'" >>figura3.gs
-echo "endif"                                  >>figura3.gs
 echo "t0=10"                            >>figura3.gs  
 echo "tfinal=10"                        >>figura3.gs  
 echo "'set t 1 last'"                   >>figura3.gs
@@ -276,8 +273,10 @@ echo "'set lat 'y1' 'y0 "       >>figura3.gs
 #   FIGURAS RETRATO SEMANA OPERATIVA 1
 # 
 echo "if (tipo = "RETRATO" & page ="8.5" & plota="SIM") "   >>figura3.gs
+echo "'reset'"                        >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura3.gs
+echo "'set gxout shaded'"                        >>figura3.gs
 echo "'set t 1'"                        >>figura3.gs
 echo "'cores.gs'"                    >>figura3.gs
 echo "'d sum(prec,t=1,t='tsex')'"         >>figura3.gs
@@ -302,8 +301,10 @@ echo "'printim 'bacia'_semanaoperativa_1_"$data".png white'"                    
 #
 # FIGURAS RETARTO SEMANA OPERATIVA 2
 #
-echo "'c'"                                                             >>figura3.gs
+echo "'reset'"                        >>figura3.gs
+echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura3.gs
+echo "'set gxout shaded'"                        >>figura3.gs
 echo "'cores.gs'"                                                >>figura3.gs
 echo "'d sum(prec,t='tsab',t='tfinal')'"                                       >>figura3.gs
 echo "*'cbarn.gs'"                                                      >>figura3.gs
@@ -327,9 +328,11 @@ echo "'printim 'bacia'_semanaoperativa_2_"$data".png white'"                    
 #
 # FIGURA RETRATO SEMANA 7 DIAS CORRIDOS 
 #
-echo "'c'"   >>figura3.gs
+echo "'reset'"                        >>figura3.gs
+echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura3.gs
-#echo "'set mpdset hires'"                                    >>figura3.gs
+echo "'set gxout shaded'"                        >>figura3.gs
+
 echo "'cores.gs'"                                         >>figura3.gs
 echo "'set gxout shaded'"                                    >>figura3.gs
 echo "'d sum(prec,t=1,t=7)'"                                 >>figura3.gs
@@ -355,7 +358,10 @@ echo "*say t0"                           >>figura3.gs
 #
 #
 #
-echo "'c'" >>figura3.gs 
+echo "'reset'"                        >>figura3.gs
+echo "'c'"                        >>figura3.gs
+echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura3.gs
+echo "'set gxout shaded'"                        >>figura3.gs
 echo "t=1 "    >>figura3.gs 
 echo "while (t<=10) "    >>figura3.gs 
 echo "'set t 't"                     >>figura3.gs   
@@ -525,7 +531,7 @@ echo "'quit'"                          								>>figura3.gs
 #  cria parte comum como tabelas de cores e escalas, hidrografoa etc...
 #
 ../../common_stuff.sh  
-
+cp ../../opoly_mres.asc .
 
 #
 # ESSE ARQUIVO CONTEM AS LOCALIZACOES DAS USNINAS
