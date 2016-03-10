@@ -274,6 +274,8 @@ echo "'set lat 'y1' 'y0 "       >>figura3.gs
 # 
 echo "if (tipo = "RETRATO" & page ="8.5" & plota="SIM") "   >>figura3.gs
 echo "'reset'"                        >>figura3.gs
+echo "'set lon 'x1' 'x0 "       >>figura3.gs
+echo "'set lat 'y1' 'y0 "       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura3.gs
 echo "'set gxout shaded'"                        >>figura3.gs
@@ -302,6 +304,8 @@ echo "'printim 'bacia'_semanaoperativa_1_"$data".png white'"                    
 #
 echo "'reset'"                        >>figura3.gs
 echo "'c'"                        >>figura3.gs
+echo "'set lon 'x1' 'x0 "       >>figura3.gs
+echo "'set lat 'y1' 'y0 "       >>figura3.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura3.gs
 echo "'set gxout shaded'"                        >>figura3.gs
 echo "'cores.gs'"                                                >>figura3.gs
@@ -327,6 +331,8 @@ echo "'printim 'bacia'_semanaoperativa_2_"$data".png white'"                    
 # FIGURA RETRATO SEMANA 7 DIAS CORRIDOS 
 #
 echo "'reset'"                        >>figura3.gs
+echo "'set lon 'x1' 'x0 "       >>figura3.gs
+echo "'set lat 'y1' 'y0 "       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura3.gs
 echo "'set gxout shaded'"                        >>figura3.gs
@@ -364,6 +370,8 @@ echo "ano1=substr(var1,9,4)"                       >>figura3.gs
 echo "mes1=substr(var1,6,3)"                       >>figura3.gs
 echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'reset'"                        >>figura3.gs
+echo "'set lon 'x1' 'x0 "       >>figura3.gs
+echo "'set lat 'y1' 'y0 "       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                                  >>figura3.gs
 echo "'set gxout shaded'"                        >>figura3.gs
