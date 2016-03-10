@@ -242,7 +242,7 @@ endif
 *
 * MONTANTE FURNAS
 *
-* MESES DE AGOSTO A SETEMBRO
+* MESES DE AGOSTO A NOVEMBRO
 *
 *   ( inserido em  10/06/2015)
 *                    
@@ -347,14 +347,14 @@ endif
 *
 *   ( inserido em  10/06/2015)
 *                    
-* ajustes: 16/11/2015 (Talita Reis e Regis )
+* ajustes: 09/03/2016 (Talita Reis e Regis )
 *
 *
 *
 if  ( label = "JUFURN"  & ( mes <=3   | mes =12)   ) 
 pp=1
-if (ptoteta10> 179.5 )
-chuvasem=179.5
+if (ptoteta10> 114,2 )
+chuvasem=114,2
 else
 chuvasem=ptoteta10
 endif
@@ -543,7 +543,7 @@ endif
 * 
 *   ( inserido em  10/06/2015)  
 *                    
-* ajustes: 16/11/2015 (Talita Reis e Regis )
+* ajustes: 09/03/2016 (Talita Reis e Regis )
 * FEV/MAR: a=0,001206; b=0,83948 e limite 10 dias= 139,2 mm
 * 
 *Montante Emborcação
@@ -559,8 +559,8 @@ ptotpre=a*(ptoteta10*ptoteta10)+b*(ptoteta10)
 *
 * limite semanal 
 *
-if (ptotpre> 179.5 )
-chuvasem=179.5
+if (ptotpre> 139.2 )
+chuvasem=139.2
 else
 chuvasem=ptotpre
 endif
@@ -588,32 +588,32 @@ endwhile
 endif 
 
 
-
-*=========================================================================================================================================
+* ===========================================================================================================================================
 *
 * EMBORCACAO JUSANTE
 *
-* MESES DE SETEMBRO A NOVEMBRO
+* MESES DE OUTUBRO A NOVEMBRO
 *
 *   ( inserido em  10/06/2015)
 *                    
-* ajustes: 16/11/2015 (Talita Reis e Regis )
+* ajustes: 09/03/2016 (Talita Reis e Regis )
+* OUT/NOV: a=-0,0049; b=1,6943 e limite 10 dias= 75 mm
 *
-*Montante Emborcação
+*Jusante Emborcação
 *
-if  ( label = "JUEMBO"  & ( mes >=9  &  mes <=11 )  ) 
+if  ( label = "JUEMBO"  & ( mes >=10  &  mes <=11 )  ) 
 *
 * constantes a e b 
 *
-a=0.004139
-b=0.56391
+a=-0.0049
+b=1.6943
 pp=1
 ptotpre=a*(ptoteta10*ptoteta10)+b*(ptoteta10)
 *
 * limite semanal 
 *
-if (ptotpre> 118.8 )
-chuvasem=118.8
+if (ptotpre> 75 )
+chuvasem=75
 else
 chuvasem=ptotpre
 endif
@@ -629,16 +629,18 @@ ppre.pp=_pchuva.pp*(chuvasem/ptoteta10)
 *
 * limite diario
 *
-if ( ppre.pp < 27 )
+if ( ppre.pp < 17 )
 chuva=ppre.pp
 else
-chuva=27
+chuva=17
 endif
 rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
-endif 
+endif
+
+
 *=========================================================================================================================================
 *
 * EMBORCACAO JUSANTE
@@ -647,8 +649,8 @@ endif
 * 
 *   ( inserido em  10/06/2015)  
 *                    
-* ajustes: 16/11/2015 (Talita Reis e Regis )
-* DEZ/JAN: a=0,001080; b=0,74100 e limite 10 dias= 179,5 mm
+* ajustes: 09/03/2016 (Talita Reis e Regis )
+* DEZ/JAN: a=-0,0004; b=1,3998 e limite 10 dias= 130 mm
 * 
 *Montante Emborcação
 *
@@ -656,15 +658,15 @@ if  ( label = "JUEMBO"  & ( mes =12  |  mes =1 )  )
 *
 * constantes a e b 
 *
-a=0.001080
-b=0.74100
+a=-0.0004
+b=1.3998
 pp=1
 ptotpre=a*(ptoteta10*ptoteta10)+b*(ptoteta10)
 *
 * limite semanal 
 *
-if (ptotpre> 179.5 )
-chuvasem=179.5
+if (ptotpre> 130 )
+chuvasem=130
 else
 chuvasem=ptotpre
 endif
@@ -680,16 +682,17 @@ ppre.pp=_pchuva.pp*(chuvasem/ptoteta10)
 *
 * limite diario
 *
-if ( ppre.pp < 27 )
+if ( ppre.pp < 23 )
 chuva=ppre.pp
 else
-chuva=27
+chuva=23
 endif
 rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
-endif 
+endif
+
 *=========================================================================================================================================
 *
 * EMBORCACAO JUSANTE
@@ -698,8 +701,8 @@ endif
 * 
 *   ( inserido em  10/06/2015)  
 *                    
-* ajustes: 16/11/2015 (Talita Reis e Regis )
-* FEV/MAR: a=0,001206; b=0,83948 e limite 10 dias= 139,2 mm
+* ajustes: 09/03/2016 (Talita Reis e Regis )
+* FEV/MAR: a=-0,0056 ; b=1,7464 e limite 10 dias= 98 mm
 * 
 *Montante Emborcação
 *
@@ -707,15 +710,15 @@ if  ( label = "JUEMBO"  & ( mes >=2  &  mes <=3 )  )
 *
 * constantes a e b 
 *
-a=0.001206
-b=0.83948
+a=-0.0056
+b=1.7464
 pp=1
 ptotpre=a*(ptoteta10*ptoteta10)+b*(ptoteta10)
 *
 * limite semanal 
 *
-if (ptotpre> 179.5 )
-chuvasem=179.5
+if (ptotpre> 98 )
+chuvasem=98
 else
 chuvasem=ptotpre
 endif
@@ -731,10 +734,10 @@ ppre.pp=_pchuva.pp*(chuvasem/ptoteta10)
 *
 * limite diario
 *
-if ( ppre.pp < 27 )
+if ( ppre.pp < 20 )
 chuva=ppre.pp
 else
-chuva=27
+chuva=20
 endif
 rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
@@ -792,7 +795,8 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
-endif 
+endif
+
 *=========================================================================================================================================
 *
 * MONTANTE 3 MARIAS
@@ -842,7 +846,8 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
-endif 
+endif
+
 *=========================================================================================================================================
 *
 * MONTANTE 3 MARIAS
@@ -851,7 +856,7 @@ endif
 * 
 *   ( inserido em  10/06/2015)  
 *                    
-* ajustes: 16/11/2015 (Talita Reis e Regis )
+* ajustes: 09/03/2016 (Talita Reis e Regis )
 * FEV/MAR: a=0,00144; b=0,49365 e limite 10 dias= 123,0 mm
 * 
 *Montante Emborcação
@@ -867,8 +872,8 @@ ptotpre=a*(ptoteta10*ptoteta10)+b*(ptoteta10)
 *
 * limite semanal 
 *
-if (ptotpre> 179.5 )
-chuvasem=179.5
+if (ptotpre> 123 )
+chuvasem=123
 else
 chuvasem=ptotpre
 endif
