@@ -416,6 +416,7 @@ echo "'set lon 'x1' 'x0 "       >>figura3.gs
 echo "'set lat 'y1' 'y0 "       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'set parea 0.5 10.5 1.5 7.6'"                     >>figura3.gs
+echo "'set gxout shaded'"                        >>figura3.gs
 echo "'set t 1'"                        >>figura3.gs
 echo "'cores.gs'"                    >>figura3.gs
 echo "'d sum(prec,t=1,t='tsex')'"         >>figura3.gs
@@ -442,6 +443,7 @@ echo "'set lon 'x1' 'x0 "       >>figura3.gs
 echo "'set lat 'y1' 'y0 "       >>figura3.gs
 echo "'c'"                                                             >>figura3.gs
 echo "'set parea 0.5 10.5 1.5 7.6'"                     >>figura3.gs
+echo "'set gxout shaded'"                        >>figura3.gs
 echo "'cores.gs'"                                                >>figura3.gs
 echo "'d sum(prec,t='tsab',t='tfinal')'"                                       >>figura3.gs
 
@@ -467,7 +469,7 @@ echo "'reset'"                        >>figura3.gs
 echo "'set lon 'x1' 'x0 "       >>figura3.gs
 echo "'set lat 'y1' 'y0 "       >>figura3.gs
 echo "'set parea 0.5 10.5 1.5 7.6'"                     >>figura3.gs
-#echo "'set parea off'"                                    >>figura3.gs
+echo "'set gxout shaded'"                        >>figura3.gs
 echo "'set mpdset hires'"                                    >>figura3.gs
 echo "'cores.gs'"                                         >>figura3.gs
 echo "'set lon 'x1' 'x0 "       >>figura3.gs
@@ -507,6 +509,7 @@ echo "'reset'"                        >>figura3.gs
 echo "'set parea 0.5 10.5 1.5 7.6'"                     >>figura3.gs
 echo "'set lon 'x1' 'x0 "       >>figura3.gs
 echo "'set lat 'y1' 'y0 "       >>figura3.gs
+echo "'set gxout shaded'"                        >>figura3.gs
 echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d prec'"         >>figura3.gs
 echo "'draw string 1.5 8.3 PRECIPITACAO DIARIA ETA 40KM'"  >>figura3.gs
