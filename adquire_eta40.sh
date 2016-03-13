@@ -510,6 +510,7 @@ echo "'set parea 0.5 10.5 1.5 7.6'"                     >>figura3.gs
 echo "'set lon 'x1' 'x0 "       >>figura3.gs
 echo "'set lat 'y1' 'y0 "       >>figura3.gs
 echo "'set gxout shaded'"                        >>figura3.gs
+echo "'set t 't"                     >>figura3.gs  
 echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d prec'"         >>figura3.gs
 echo "'draw string 1.5 8.3 PRECIPITACAO DIARIA ETA 40KM'"  >>figura3.gs
