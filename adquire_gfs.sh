@@ -653,7 +653,7 @@ echo "'plota_hidrografia.gs'"     >>figura3.gs
 echo "plotausina(bacia,page)" >>figura3.gs    
 echo "'cbarn.gs 1.0 0 '"                         >>figura3.gs
 echo "'printim 'bacia'_diario_'var1'.png white'"                       >>figura3.gs
-echo "t=t+2"                    >>figura3.gs
+echo "t=t+1"                    >>figura3.gs
 echo "c"                    >>figura3.gs
 echo "endwhile"                    >>figura3.gs
 echo "endif" 					>>figura3.gs
@@ -700,7 +700,7 @@ echo "plotausina(bacia,page)" >>figura3.gs
 echo "'cbarn.gs 1.0 0 '"    >>figura3.gs  
 echo "'printim 'bacia'_diaria_'var1'.png white'"                       >>figura3.gs
 echo "'c'"                                                             >>figura3.gs
-echo "t=t+2"                    >>figura3.gs
+echo "t=t+1"                    >>figura3.gs
 echo "'c'"                    >>figura3.gs
 echo "endwhile"                    >>figura3.gs
 #
