@@ -446,7 +446,6 @@ echo "'set parea 0.5 10.5 1.5 7.6'"                     >>figura3.gs
 echo "'set gxout shaded'"                        >>figura3.gs
 echo "'cores.gs'"                                                >>figura3.gs
 echo "'d sum(prec,t='tsab',t='tfinal')'"                                       >>figura3.gs
-
 echo "'draw string 1.5 8.3 PRECIPITACAO ACUMULADA SEMANA OPERATIVA 2 '">>figura3.gs
 echo "'draw string 1.5 8.1 RODADA :'dia0'/'mes0'/'ano0"               >>figura3.gs
 echo "'draw string 1.5 7.9 PERIODO:'dia3'/'mes3'/'ano3' a 'dia4'/'mes4'/'ano4  "      >>figura3.gs
@@ -456,7 +455,6 @@ echo "'set mpdset hires'" >>figura3.gs
 echo "'set map 15 1 6'" >>figura3.gs
 echo "'draw map'" >>figura3.gs     
 echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                                        >>figura3.gs
-
 echo "'plota_hidrografia.gs'"     >>figura3.gs
 echo "plotausina(bacia,page)" >>figura3.gs  
 echo "'cbarn.gs 1.0 0 '" >>figura3.gs
