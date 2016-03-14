@@ -32,6 +32,8 @@
 export LANG=en_us_8859_1
 
 
+
+
 #
 # executando os processos 
 #
