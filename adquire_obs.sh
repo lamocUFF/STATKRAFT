@@ -331,7 +331,7 @@ cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 #
 echo "["`date`"] FORMATO RETRATO"
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1 
-echo "["`date`"] FORMATO PAISAGEM"
+echo "["`date`"] FORMATO PAISSAGEM"
 grads -lbc "figura3.gs"  >>./LOG.prn 2>&1 
 #
 #  copia imagens geradas para dirrtorio diario 
