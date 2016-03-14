@@ -14,7 +14,7 @@ SIM uruguai.bacia URUGUAI uruguai contorno_uruguai.shp             -49.2814   -5
 SIM itaipu.bacia ITAIPU itaipu contorno_itaipu.shp               -49.4369   -55.9418   -18.7408   -25.5827 RETRATO  SIM
 SIM itaipu_d.bacia ITAIPU_D itaipu_d contorno_itaipu_d.shp           -52.9158   -55.9482   -20.9692   -25.5227 RETRATO  SIM
 SIM itaipu_e.bacia ITAIPU_E itaipu_e contorno_itaipu_e.shp           -50.7429   -54.5608   -22.4498   -25.5972 PAISAGEM SIM
-SIM doce contorno_doce.shp                   -40.9047   -43.8242   -17.7587   -21.1810 PAISAGEM SIM     
+SIM doce.bacia contorno_doce.shp                   -40.9047   -43.8242   -17.7587   -21.1810 PAISAGEM SIM     
 SIM emborcacao.bacia MOEMBO emborcacao emborcacao.shp                -46.1343   -48.0012   -15.9822   -19.2940 RETRATO  SIM montante 
 SIM emborcacao-saosimao.bacia JUEMBO emborcacao-saosimao emborcacao-saosimao.shp   -46.0663   -51.7614   -15.4535   -20.1734 PAISAGEM SIM jusante
 SIM furnas.bacia MOFURN furnas furnas.shp                             -43.5879   -46.6769   -20.3308   -22.8880 PAISAGEM SIM 
