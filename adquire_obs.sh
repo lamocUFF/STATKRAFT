@@ -162,7 +162,7 @@ echo "ENDVARS"                                                >>chuvamerge.ctl
 #
 # executa o calculador
 #
-echo "["`date`"] CALCULANDO CHUVA  OBSERVADA"  >./LOG.prn 2>&1 
+echo "["`date`"] CALCULANDO CHUVA  OBSERVADA"
 #
 #  copia o script calculador para diretorio de producao 
 #
@@ -170,7 +170,7 @@ cp ../../calcula_chuva_merge.gs .
 grads -lbc "calcula_chuva_merge.gs"  >>./LOG.prn 2>&1 
 
 
-
+echo "["`date`"] CRIAÇÃO DE FIGURAS"
 #------------------------------------------------------------------------------
 #              AUTO SCRIPT PARA CRIAÇÃO DE FIGURAS
 #-----------------------------------------------------------------------------------------
@@ -234,13 +234,16 @@ echo "ano1=substr(var1,9,4)"                       >>figura3.gs
 echo "mes1=substr(var1,6,3)"                       >>figura3.gs
 echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'c'"                        >>figura3.gs
+echo "'reset'"                        >>figura3.gs
+echo "'set lon 'x1' 'x0 "       >>figura3.gs
+echo "'set lat 'y1' 'y0 "       >>figura3.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                        >>figura3.gs
+echo "'set t 't"                     >>figura3.gs   
 echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d rain'"            >>figura3.gs
-
-echo "'draw string 2.5 10.8     PRECIPITACAO DIARIA OBSERVADA'"  >>figura3.gs
-echo "'draw string 2.5 10.6     DATA GERACAO DA IMAGEM :"$data_rodada"'"               >>figura3.gs
-echo "'draw string 2.5 10.4     DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
+echo "'draw string 1.5 10.8     PRECIPITACAO DIARIA OBSERVADA'"  >>figura3.gs
+echo "'draw string 1.5 10.6     DATA GERACAO DA IMAGEM :"$data_rodada"'"               >>figura3.gs
+echo "'draw string 1.5 10.4     DIA    :'dia1'/'mes1'/'ano1  "                     >>figura3.gs
 echo "'set rgb 50   255   255    255'" 								>>figura3.gs
 echo "'basemap.gs O 50 0 M'" 										>>figura3.gs
 echo "'set mpdset hires'" 											>>figura3.gs
@@ -254,7 +257,7 @@ echo "endif"                    >>figura3.gs
 echo "'cbarn.gs'" >>figura3.gs
 echo "'plota_hidrografia.gs'"     >>figura3.gs  
 echo "plotausina(bacia,page)"     >>figura3.gs   
-echo "'cbarn.gs'"                       >>figura3.gs 
+echo "'cbarn.gs 1.0 0'"                       >>figura3.gs 
 echo "'printim 'bacia'_diario_'var1'.png white'"                       >>figura3.gs
 echo "t=t+1"                    >>figura3.gs
 echo "c"                    >>figura3.gs
@@ -265,7 +268,7 @@ echo "endif" 					>>figura3.gs
 # definido no arquivo limites_das_bacias em CONTORNOS/CADASTRADAS
 #
 #
-#  FIGURA PAISAGEM  SEMANA OPERATIVA 1
+#  FIGURA PAISAGEM  
 #
 echo "if (tipo = "PAISAGEM" & page ="11" & plota="SIM" ) "   >>figura3.gs
 echo "t=1 "    >>figura3.gs 
@@ -277,7 +280,10 @@ echo "ano1=substr(var1,9,4)"                       >>figura3.gs
 echo "mes1=substr(var1,6,3)"                       >>figura3.gs
 echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'c'"                        >>figura3.gs
-echo "'c'"                        >>figura3.gs
+echo "'reset'"                        >>figura3.gs
+echo "'set lon 'x1' 'x0 "       >>figura3.gs
+echo "'set lat 'y1' 'y0 "       >>figura3.gs
+echo "'set t 't"                     >>figura3.gs  
 echo "'set parea 0.5 10.5 1.5 7.6'"                     >>figura3.gs
 echo "'coresdiaria.gs'"                    >>figura3.gs
 echo "'d rain'"         >>figura3.gs
@@ -293,7 +299,7 @@ echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                  
 echo "say shape" >>figura3.gs
 echo "'plota_hidrografia.gs'"     >>figura3.gs
 echo "plotausina(bacia,page)" >>figura3.gs  
-echo "'cbarn.gs'"                       >>figura3.gs
+echo "'cbarn.gs 1.0 0'"                       >>figura3.gs
 echo "'printim 'bacia'_diaria_'var1'.png white'"                       >>figura3.gs
 echo "'c'"                                                             >>figura3.gs
 echo "t=t+1"                    >>figura3.gs
@@ -323,12 +329,15 @@ cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 #
 # executa script gerador de imagens
 #
+echo "["`date`"] FORMATO RETRATO"
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1 
+echo "["`date`"] FORMATO PAISAGEM"
 grads -lbc "figura3.gs"  >>./LOG.prn 2>&1 
 #
 #  copia imagens geradas para dirrtorio diario 
 #
 mkdir diaria >>./LOG.prn 2>&1
 mv *.png  diaria
+echo "["`date`"] FIM DO PROCESSO "
 cd ..
 cd ..
