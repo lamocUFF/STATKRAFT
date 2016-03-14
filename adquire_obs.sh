@@ -235,6 +235,7 @@ echo "mes1=substr(var1,6,3)"                       >>figura3.gs
 echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'reset'"                        >>figura3.gs
+echo "'set gxout shaded'"               >>figura3.gs
 echo "'set lon 'x1' 'x0 "       >>figura3.gs
 echo "'set lat 'y1' 'y0 "       >>figura3.gs
 echo "'set parea 0.5 8.0 1.5 10.2'"                        >>figura3.gs
@@ -254,7 +255,7 @@ echo "'plota.gs'"                             >>figura3.gs
 echo "else"                    >>figura3.gs
 echo "'draw shp ../../CONTORNOS/SHAPES/'shape"                                                  >>figura3.gs
 echo "endif"                    >>figura3.gs
-echo "'cbarn.gs'" >>figura3.gs
+#echo "'cbarn.gs'" >>figura3.gs
 echo "'plota_hidrografia.gs'"     >>figura3.gs  
 echo "plotausina(bacia,page)"     >>figura3.gs   
 echo "'cbarn.gs 1.0 0'"                       >>figura3.gs 
@@ -281,6 +282,7 @@ echo "mes1=substr(var1,6,3)"                       >>figura3.gs
 echo "dia1=substr(var1,4,2)"                       >>figura3.gs
 echo "'c'"                        >>figura3.gs
 echo "'reset'"                        >>figura3.gs
+echo "'set gxout shaded'"               >>figura3.gs
 echo "'set lon 'x1' 'x0 "       >>figura3.gs
 echo "'set lat 'y1' 'y0 "       >>figura3.gs
 echo "'set t 't"                     >>figura3.gs  
