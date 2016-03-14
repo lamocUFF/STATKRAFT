@@ -66,7 +66,7 @@ cp ../../calcula_cfs.gs .
 echo "["`date`"] ADQUIRINDO DADOS CFS" 
 echo ### http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs.20160215/00/time_grib_02/prate.02.2016021500.daily.grb2
 
-wget -nc "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsdata2"/00/time_grib_02/prate.02."$cfsdata1".daily.grb2" 
+wget -nc "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsdata2"/00/time_grib_02/prate.02."$cfsdata1".daily.grb2" >>./LOG.prn 2>&1
 
 
 echo wget "http://nomads.ncep.noaa.gov/pub/data/nccf/com/cfs/prod/cfs/cfs."$cfsdata2"/00/time_grib_02/prate.02."$cfsdata1".daily.grb2"  >>./LOG.prn 2>&1
@@ -109,7 +109,7 @@ echo "ENDVARS">>cfs.ctl
 # cria arquivo de indice 
 # (gribmap é comando que vem junto com o grads
 #
-gribmap -i cfs.ctl 
+gribmap -i cfs.ctl >>./LOG.prn 2>&1
 
 
 
