@@ -58,7 +58,7 @@ precip=0
 _pchuva.1=0
 while (t<=360)
 
-'set t ' t+1
+'set t ' t+2
 'q time'
 dataprev=subwrd(result,3)
 *
