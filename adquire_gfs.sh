@@ -51,7 +51,7 @@ cd GFS       >>./LOG.prn 2>&1
 if [ $1 ="" ];then
 dir_data=`date +"%Y%m%d"`
 grads_data=`date +"00Z%d%b%Y"`
-grads_data2=`date +"00Z%d%b%Y" -d "1  days "`
+grads_data2=`date +"12Z%d%b%Y" -d "1  days "`
 data_rodada=`date +"%d/%m/%Y"`
 else
 let b="$1-1"
