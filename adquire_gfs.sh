@@ -58,7 +58,7 @@ let b="$1-1"
 let c="$34+$1"
 dir_data=`date +"%Y%m%d" -d "$1 days ago"`
 grads_data=`date +"00Z%d%b%Y" -d "$b  days ago"`
-grads_data2=`date +"00Z%d%b%Y" -d "$b  days ago"`
+grads_data2=`date +"12Z%d%b%Y" -d "$b  days ago"`
 data_rodada=`date +"%d/%m/%Y" -d "$c  days ago"`
 fi
 #
