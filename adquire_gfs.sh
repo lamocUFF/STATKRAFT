@@ -31,7 +31,7 @@ fi
 #%
 #% maquina da UFF 
 #%
-MACH=`uname -a | cut -c7-10` 
+MACH=`uname -a | cut -c7-11` 
 if [ $MACH = "DEAMA" ];then 
 export PATH=/home/cataldi/SCRIPT/grads:$PATH
 export GADDIR=/home/cataldi/SCRIPT/grads
