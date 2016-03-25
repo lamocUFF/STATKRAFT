@@ -24,24 +24,15 @@
 #--------------------------------------------------------------------------
 
 
-#
-# Existem duas rodadas do modelo ao dia. Uma as 00Z e outra as 12Z
-# se nada for informada na linha de comando assume-se 00z
-#
-#
+
 export LANG=en_us_8859_1
 
-
-
-
-#
-# executando os processos 
-#
 
 ./adquire_eta40.sh $1
 ./adquire_obs.sh $1
 ./adquire_gfs.sh  $1
 ./adquire_cfs.sh  $1
+
 
 
 
