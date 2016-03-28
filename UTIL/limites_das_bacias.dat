@@ -26,5 +26,5 @@ SIM tres_marias.bacia 3MARIAS tres_marias tres_marias.shp                       
 SIM montante_ita.bacia MONITA montante_ita montante_ita.shp                             -49.2814   -52.3897   -26.6020   -28.7695 PAISAGEM SIM
 SIM sobradinho_MG.bacia SOBRAMG sobradinho_MG sobradinho_MG.shp  						  -43.5170   -47.2858   -13.5717   -20.4257 RETRATO SIM
 SIM sobradinho_BA.bacia SOBRABA sobradinho_BA sobradinho_BA.shp   						  -40.7643   -46.6022    -9.0269   -16.7678 RETRATO SIM
-SIM ladonorte_baciaparanapanema.bacia PANEMANORTE ladodireito_paranapanema ladonorte_baciaparanapanema.shp    -47.4311   -53.0717   -22.1717   -23.9106    PAISAGEM SIM
-SIM ladosul_baciaparanapanema.bacia   PANEMASUL   ladoesquerdo_paranapanema   ladosul_baciaparanapanema.shp       -47.7401   -53.0933   -22.5238   -25.656767   PAISAGEM SIM
+SIM ladodireito_baciaparanapanema.bacia    PANEMADIRETO     ladodireito_paranapanema    ladonorte_baciaparanapanema.shp    -47.4311   -53.0717   -22.1717   -23.9106    PAISAGEM SIM
+SIM ladoesquerdo_baciaparanapanema.bacia   PANEMAESQUERDO   ladoesquerdo_paranapanema   ladosul_baciaparanapanema.shp       -47.7401   -53.0933   -22.5238   -25.656767   PAISAGEM SIM
