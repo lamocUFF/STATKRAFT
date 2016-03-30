@@ -40,7 +40,7 @@ export GASCRP=/home/cataldi/SCRIPT/grads
 fi 
 
 
-set FIGURA=1
+export FIGURA=1
 #----------------------------------------------------------------------------INICIO
 # inicio
 #  CRIAo diretorio de trabalho 
