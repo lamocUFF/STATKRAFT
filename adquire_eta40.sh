@@ -574,7 +574,7 @@ cp ../../calcula_versao3.gs .
 echo "["`date`"] CALCULANDO MÉDIA POR BACIA " 
 grads -lbc "calcula_versao3.gs" >>./LOG.prn 2>&1
 
-if ( FIGURA=1) 
+if [ FIGURA=1 ];then  
 echo "["`date`"] PLOTANDO FIGURAS SEMANA OPERATIVA FORMATO RETRATO POR BACIAS" 
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1
 echo "["`date`"] PLOTANDO FIGURAS SEMANA OPERATIVA FORMATO PAISAGEM POR BACIAS" 
@@ -588,7 +588,8 @@ mv *semanaoperativa_1*  imagens_semanaoperativa_1  >>./LOG.prn 2>&1
 mv *semanaoperativa_2*  imagens_semanaoperativa_2  >>./LOG.prn 2>&1
 mv *prec07dias* imagens_7dias                      >>./LOG.prn 2>&1
 mv *.png diaria  >>./LOG.prn 2>&1
-fi
+
+fi 
 
 
 cd ..
