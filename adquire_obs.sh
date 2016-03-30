@@ -331,7 +331,7 @@ cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 #
 # executa script gerador de imagens
 #
-if (FIGURA=1)
+if [ FIGURA=1 ];then 
 echo "["`date`"] FORMATO RETRATO"
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1 
 echo "["`date`"] FORMATO PAISSAGEM"

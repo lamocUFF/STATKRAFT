@@ -731,7 +731,7 @@ cat  ../../UTIL/modulo_grads.mod  >> figura4.gs
 ../../common_stuff.sh
 cp ../../opoly_mres.asc .
 
-if (FIGURA=1)
+if [ FIGURA=1 ];then 
 #
 #  EXECUTA O SCRIPT GERADO PELO AUTO SCRIPT PARA GERAÇÃO DE FIGURAS
 #
