@@ -58,6 +58,9 @@ export GASCRP=/home/cataldi/SCRIPT/grads
 fi 
 
 
+set FIGURA=1
+
+
 #
 # Pega data do dia (relogio do micro)
 # 
@@ -545,6 +548,8 @@ echo "endif"                            							>>figura3.gs
 echo "endwhile"                          							>>figura3.gs
 echo "'quit'"                          								>>figura3.gs
 
+
+
 #
 #  cria parte comum como tabelas de cores e escalas, hidrografoa etc...
 #
@@ -562,6 +567,8 @@ cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 cp ../../calcula_versao3.gs .
 echo "["`date`"] CALCULANDO MÉDIA POR BACIA " 
 grads -lbc "calcula_versao3.gs" >>./LOG.prn 2>&1
+
+if ( FIGURA=1) 
 echo "["`date`"] PLOTANDO FIGURAS SEMANA OPERATIVA FORMATO RETRATO POR BACIAS" 
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1
 echo "["`date`"] PLOTANDO FIGURAS SEMANA OPERATIVA FORMATO PAISAGEM POR BACIAS" 
@@ -575,6 +582,9 @@ mv *semanaoperativa_1*  imagens_semanaoperativa_1  >>./LOG.prn 2>&1
 mv *semanaoperativa_2*  imagens_semanaoperativa_2  >>./LOG.prn 2>&1
 mv *prec07dias* imagens_7dias                      >>./LOG.prn 2>&1
 mv *.png diaria  >>./LOG.prn 2>&1
+fi
+
+
 cd ..
 cd ..
 pwd

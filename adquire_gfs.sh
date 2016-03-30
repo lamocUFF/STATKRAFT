@@ -39,6 +39,8 @@ export GADLIB=/home/cataldi/SCRIPT/grads
 export GASCRP=/home/cataldi/SCRIPT/grads
 fi 
 
+
+set FIGURA=1
 #----------------------------------------------------------------------------INICIO
 # inicio
 #  CRIAo diretorio de trabalho 
@@ -728,6 +730,8 @@ cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 cat  ../../UTIL/modulo_grads.mod  >> figura4.gs
 ../../common_stuff.sh
 cp ../../opoly_mres.asc .
+
+if (FIGURA=1)
 #
 #  EXECUTA O SCRIPT GERADO PELO AUTO SCRIPT PARA GERAÇÃO DE FIGURAS
 #
@@ -751,6 +755,7 @@ mv *prec07dias* imagens_7dias                      >>./LOG.prn 2>&1
 #
 # COPIA AS FIGURAS GERADAS PARA O DIRETORIA DIARIO
 #
+fi
 echo "["`date`"] FIM DO PROCESSO GFS" 
 
 cd ..

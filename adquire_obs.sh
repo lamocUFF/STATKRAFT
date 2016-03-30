@@ -60,7 +60,7 @@ export GADLIB=/home/cataldi/SCRIPT/grads
 export GASCRP=/home/cataldi/SCRIPT/grads
 fi 
  
-
+set FIGURA=1
 
 #
 # Pega data do dia (relogio do micro)
@@ -331,6 +331,7 @@ cat  ../../UTIL/modulo_grads.mod  >> figura3.gs
 #
 # executa script gerador de imagens
 #
+if (FIGURA=1)
 echo "["`date`"] FORMATO RETRATO"
 grads -pbc "figura3.gs"  >>./LOG.prn 2>&1 
 echo "["`date`"] FORMATO PAISSAGEM"
@@ -340,6 +341,7 @@ grads -lbc "figura3.gs"  >>./LOG.prn 2>&1
 #
 mkdir diaria >>./LOG.prn 2>&1
 mv *.png  diaria
+fi 
 echo "["`date`"] FIM DO PROCESSO "
 cd ..
 cd ..
