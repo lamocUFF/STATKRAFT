@@ -302,7 +302,7 @@ echo "'plota_hidrografia.gs'"     >>figura3.gs
 echo "plotausina(bacia,page)" >>figura3.gs    
 echo "'cbarn.gs 1.0 0 '" >>figura3.gs
 echo "'printim 'bacia'_semanaoperativa_1_"$data".png white'"                       >>figura3.gs
-#echo "jj=write('lista_de_figuras.dat',bacia'_semanaoperativa_1_"$data".png' " >>figura3.gs
+echo "jj=write('lista_de_figuras.dat',bacia'_semanaoperativa_1_$data.png') " >>figura3.gs
 
 #
 # FIGURAS RETARTO SEMANA OPERATIVA 2
