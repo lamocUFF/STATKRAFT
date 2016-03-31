@@ -362,7 +362,7 @@ echo "'plota_hidrografia.gs'"     >>figura3.gs
 echo "plotausina(bacia,page)" >>figura3.gs  
 echo "'cbarn.gs 1.0 0 '" >>figura3.gs
 echo "'printim 'bacia'_prec07dias_"$data"_"$hora"Z.png white'"       >>figura3.gs
-echo "jj=write('lista_de_figuras.dat',bacia'_prec07dias_$data_"$hora"Z.png') " >>figura3.gs
+echo "jj=write('lista_de_figuras.dat',bacia'_prec07dias_"$data"_"$hora"Z.png') " >>figura3.gs
 echo "*say t0"                           >>figura3.gs
 #
 #
