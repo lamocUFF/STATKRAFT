@@ -237,6 +237,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif 
 *=========================================================================================================================================
 *
@@ -288,6 +289,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif 
 *=========================================================================================================================================
 *
@@ -338,6 +340,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif 
 *=========================================================================================================================================
 *
@@ -380,6 +383,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif 
 *=========================================================================================================================================
 *
@@ -430,6 +434,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif 
 
 
@@ -483,6 +488,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif 
 *=========================================================================================================================================
 *
@@ -534,6 +540,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif 
 *=========================================================================================================================================
 *
@@ -585,6 +592,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif 
 
 
@@ -638,6 +646,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif
 
 
@@ -691,6 +700,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif
 
 *=========================================================================================================================================
@@ -743,6 +753,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif 
 
 
@@ -795,6 +806,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif
 
 *=========================================================================================================================================
@@ -846,6 +858,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return
 endif
 
 *=========================================================================================================================================
@@ -898,6 +911,7 @@ rc3 = math_format("%5.2f",chuva)
 yyy=write(arquivo,data1' 'dataprev' 'rc3)
 pp=pp+1
 endwhile
+return 
 endif 
 
 return ptoteta10
